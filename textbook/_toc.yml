@@ -1,0 +1,5 @@
+# jb/_toc.yml
+format: jb-book
+root: intro
+chapters:
+  - file: pygame_intro
