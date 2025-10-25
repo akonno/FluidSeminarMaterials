@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'pygame_intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="流体工学セミナー・講義用教材サイト" href="intro.html" />
+    <link rel="prev" title="JupyterLabの導入" href="jupyterlab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,6 +173,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="miniforge.html">MiniforgeではじめるPythonプログラミング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyterlab.html">JupyterLabの導入</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">第5回: Pythonとpygame-ceでの描画入門</a></li>
 
 </ul>
@@ -356,10 +359,10 @@ document.write(`
 <section id="windows-11-miniforge">
 <h2>環境セットアップ (Windows 11, Miniforge)<a class="headerlink" href="#windows-11-miniforge" title="Link to this heading">#</a></h2>
 <p>ターミナルで以下を実行してください:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pgce-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>pip
-conda<span class="w"> </span>activate<span class="w"> </span>pgce-env
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pygame-ce
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="n">-n</span> <span class="n">PYGAME</span> <span class="n">python</span><span class="p">=</span><span class="n">3</span><span class="p">.</span><span class="n">13</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">PYGAME</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="n">pip</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pygame-ce</span>
 </pre></div>
 </div>
 </section>
@@ -437,12 +440,12 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="jupyterlab.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">流体工学セミナー・講義用教材サイト</p>
+        <p class="prev-next-title">JupyterLabの導入</p>
       </div>
     </a>
 </div>
