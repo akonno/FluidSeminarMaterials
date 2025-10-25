@@ -11,9 +11,9 @@
 
 ターミナルで以下を実行してください:
 
-```bash
-conda create -n pgce-env python=3.11 pip
-conda activate pgce-env
+```powershell
+conda create -n PYGAME python=3.13
+conda activate PYGAME
 python -m pip install --upgrade pip
 python -m pip install pygame-ce
 ```
