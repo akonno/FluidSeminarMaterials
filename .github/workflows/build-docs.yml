@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write  # ← これが大事。mainブランチにpushする許可を明示
+
 jobs:
   build-book:
     runs-on: ubuntu-latest
