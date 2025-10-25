@@ -39,6 +39,8 @@ jobs:
           rm -rf docs/*
           mkdir -p docs
           cp -r textbook/_build/html/* docs/
+          # Jekyllを無効化するためのフラグファイルを置く
+          touch docs/.nojekyll
 
       # 6. コミットしてmainブランチに反映
       - name: Commit and push built docs
