@@ -5,6 +5,9 @@ copyright: "2025 KONNO Akihisa"
 language: ja
 execute:
   execute_notebooks: "off"
+parse:
+  myst_enable_extensions:
+    - deflist
 html:
   meta:
     robots: noindex, nofollow

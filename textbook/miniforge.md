@@ -5,28 +5,26 @@
 
 2025年度授業終了後に要見直し．継ぎ足しで作ったため教材の順番が悪い．
 
+## Pythonとは? Miniforgeとは?
+
 ### プログラミング言語Python
 
 Pythonは現在、世界で最も広く使われているプログラミング言語の一つである。文法がシンプルで読みやすく、初心者でも学びやすいという特徴から、多くの学校や大学で入門用の言語として採用されている。加えて、豊富なライブラリや活発なコミュニティに支えられており、教育から最先端の研究、産業応用まで幅広く利用されている。主な応用分野を以下に示す。
 
-- データサイエンスと機械学習
-
-Pythonにはデータ解析のためのライブラリ（Pandas, NumPy,
+データサイエンスと機械学習  
+: Pythonにはデータ解析のためのライブラリ（Pandas, NumPy,
 Scikit-learnなど）や、ディープラーニング向けのフレームワーク（TensorFlow,
 PyTorch）が揃っている。これにより、大規模データの処理、予測モデルの構築、画像認識や自然言語処理などのタスクを容易に実現できる。
 
-- ウェブ開発
+ウェブ開発  
+: DjangoやFlaskなどのウェブフレームワークが広く使われており、堅牢かつ拡張性の高いウェブアプリケーションを効率的に開発できる。
 
-DjangoやFlaskなどのウェブフレームワークが広く使われており、堅牢かつ拡張性の高いウェブアプリケーションを効率的に開発できる。
-
-- 科学技術計算と可視化
-
-SciPyやMatplotlibなどのライブラリを利用することで、複雑な数値計算やシミュレーション、グラフ描画やデータ可視化が可能である。また、Jupyter
+科学技術計算と可視化  
+: SciPyやMatplotlibなどのライブラリを利用することで、複雑な数値計算やシミュレーション、グラフ描画やデータ可視化が可能である。また、Jupyter
 Notebook環境を用いることで、対話的に実験・解析を行いながら結果を共有できる。
 
-- 自動化とスクレイピング
-
-Pythonはファイル操作やWebスクレイピング（ウェブページから必要なデータを自動で抜き出す技術）、業務の自動化にも活用されており、研究・実務の効率化に役立っている。
+自動化とスクレイピング  
+: Pythonはファイル操作やWebスクレイピング（ウェブページから必要なデータを自動で抜き出す技術）、業務の自動化にも活用されており、研究・実務の効率化に役立っている。
 
 ### Miniforge
 
@@ -67,7 +65,7 @@ Miniforgeインストーラーを以下のサイトからダウンロードし�
 MiniforgeのGitHubサイト。なおこの図はWindowsの画面表示を「ライト」にしている場合である。「ダーク」にしている場合は画面表示が暗くなる。このページ下部の「Install」のところまで行く。
 ```
 
-```{figure} ./images/media/image2.png
+```{figure} ./images/github-miniforge2.drawio.png
 :align: center
 「Instalｌ」の直下にWindowsでのインストール方法が記載されている。「the
 Windows
@@ -91,8 +89,9 @@ Agree」をクリックして進む。
 ```{figure} ./images/media/image5.png
 インストールタイプの選択。「Just
 Me」を選択し（当初からそちらが選ばれているはず）、「Next」をクリックして進む。
-ここ重要!
-説明をよく読むこと
+```
+
+```{figure} ./images/miniforge-install4.drawio.png
 インストール場所の選択。"Destination
 Folder"に**日本語文字など非ASCII文字が含まれている場合にはインストールを続行できない**ため、もし含まれている場合は英数字のみで構成されているフォルダ名、たとえば"C:\\ｍiniforge3"などにすること。なお\\（円記号）はパスの区切りである。
 ```
@@ -104,7 +103,7 @@ Folder"に**日本語文字など非ASCII文字が含まれている場合には
 Folder"に日本語文字など非ASCII文字が含まれていた場合は、このようなエラーメッセージのパネルが表示される。表示されたら適宜修正すること。
 ```
 
-```{figure} ./images/media/image8.png
+```{figure} ./images/miniforge-install6.drawio.png
 インストールオプション選択画面。標準ではいちばん上の項目のみにチェックが入っているはずである。下段の項目の中で"Recommended"になっている項目にチェックを入れることを勧める。（任意。図は"Recommended"の項目を選んだ状態）
 ```
 
@@ -127,22 +126,21 @@ Folder"に日本語文字など非ASCII文字が含まれていた場合は、�
 インストールが成功していれば、スタートメニューにMiniforge
 Promptが追加されているはずなので、これを起動する。
 
-```{figure} ./images/media/image12.png
+```{figure} ./images/Startmenu-Miniforge.drawio.png
 :alt: スタートメニューから「Miniforge Prompt」を起動する。
 現在入っている仮想環境。詳細は後述。
 ```
 
-
-プロンプト
-
-図3-2：Miniforge
+```{figure} ./images/Miniforge-prompt1.drawio.png
+Miniforge
 Promptを起動した画面。「プロンプト」が表示され、そこにキーボードからコマンドを入力してEnterキーを押すと、そのコマンドが実行される。（ウィンドウの色やフォントは「ターミナル」の設定に依るので、この画面とは異なる可能性がある。）
+```
 
 Miniforge
 PromptはWindowsのコマンドラインインターフェイス（ターミナル）である。Pythonを使えるようになっているが、Pythonそのものではない。Miniforge
 Promptが起動したら、pythonコマンドを実行してみよ。つまりプロンプトにpythonと打ち、Enterキーを押してみよ。Python環境に入り、Pythonのプロンプトが表示されるはずである。
 
-```{figure} ./images/media/image14.png
+```{figure} ./images/Miniforge-prompt2.drawio.png
 Miniforge Promptでpythonを起動した例。この例ではPython
 3.12.11が起動していることが分かる。その後exit()でpythonを終了している。
 ```
@@ -255,3 +253,11 @@ conda update -n base -c conda-forge conda
 | Microsoft Store 版（Windows 用） | 導入が容易。Microsoft 標準 | ● インストールが非常に簡単<br>● 自動更新される | ● 特殊な場所に入るため pip で失敗しやすい<br>● 複数環境の切替不可 | 科学技術系演習や研究には不向き |
 | Anaconda / Miniconda | Anaconda 社提供。Anaconda ＝ 多数の科学技術系ライブラリを一括同梱。Miniconda ＝ 最小構成。 | ● conda 環境を利用可能<br>● Anaconda は「全部入り」で初心者がすぐ使える | ● 配布サイズが大きい（Anaconda）<br>● ライセンス制限（商用・研究利用に注意）<br>● Miniconda は defaults チャネル依存で古めのパッケージも多い | かつて広く使われたが、ライセンス問題を考えると今後は非推奨 |
 | Miniforge | conda-forge コミュニティが提供する最小配布。conda＋mamba を同梱、チャネルは conda-forge 固定 | ● 最新で豊富な科学技術系ライブラリ<br>● ライセンス制限なし<br>● 環境を分けて再現性を確保可能 | ● インストールサイズは公式 Python より大きい<br>● conda 環境の学習コストがある | ライセンス制限や環境管理の容易さから、科学技術系演習や研究で最も適切 |
+
+```{note}
+このページの本文と図版は [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
+のもとで提供されています。  
+コードやノートブックの例は MIT License に従います。  
+一部の画像（表で「CC ライセンス適用外」と明記されたスクリーンショットなど）は除外されます。  
+詳細は [LICENSE-docs.md](https://github.com/akonno/FluidSeminarMaterials/blob/main/LICENSE-docs.md) を参照してください。
+```
