@@ -15,10 +15,10 @@ JupyterLabでは、複数のノート、テキストエディタ、ターミナ�
 ## JupyterLabをはじめる
 
 Miniforge
-Promptを起動し、EXERCISE環境に入る。そこでjupyterlabパッケージをインストールする。
+Promptを起動し、EXERCISE環境に入る。そこでjupyterlabパッケージをインストールする。ここではjupyterlabに加えて日本語パックjupyterlab-language-pack-ja-JPをインストールしている．
 
 ```powershell
-conda install jupyterlab
+conda install jupyterlab jupyterlab-language-pack-ja-JP
 ```
 
 インストールに成功したら、jupyter
@@ -31,9 +31,8 @@ jupyter lab
 初めて起動した際は、どのブラウザで開くかを問い合わせるウィンドウが開くはずである。ふだん使っているウェブブラウザを選べば良い。
 
 もしブラウザが自動で開かなかった場合は、Miniforge
-Promptの画面に以下のように表示されるので、アドレスをクリックしてブラウザを起動する。どのアドレスをクリックしても良い。
-
-Ctrlキーを押しながらどれかをクリック
+Promptの画面に以下のように表示されるので、
+Ctrlキーを押しながらアドレスをクリックしてブラウザを起動する。どのアドレスをクリックしても良い。
 
 ```powershell
 To access the server, open this file in a browser:
@@ -43,78 +42,17 @@ Or copy and paste one of these URLs:
     http://127.0.0.1:8888/lab?token=d2dbc583f5df64abe28cf820ea5c5fcf1c8fcf5743fbe04c
 ```
 
-JupyterLabが起動したら"Notebook"の"Python 3
-(ipykernel)"をクリックして新しいノートブックを作成し、そこにコードを記入して実行してみよう。
-
 （初めて起動したときは、"Would you like to get notified about official
 Jupyter
 news?"という問い合わせパネルが表示されるかもしれない。適宜選択すれば良い。）
 
-```{figure} ./images/media/image15.png
-JupyterLabを起動した画面。"Notebook"の"Python 3
-(ipykernel)"をクリックして新しいノートブックを作成する。
-```
-
-```{figure} ./images/media/image16.png
-新しい「ノートブック」が作成される。JupyterLabのノートブックは
-.ipynb
-という形式のファイルで、JupyterLabの中で開いて編集・実行できる。ノートブックの中では、青く囲まれた「セル」にコードを書き込んで実行できる。
-
-③実行結果が表示される（表示されるものがある場合）
-
-② ►（実行）ボタンをクリック
-
-①セルにコードを記入
-
-コードを実行している例。セルにコードを書き込み、上段の►マークをクリックするとコードが実行される。
-```
-
-JupyterLabはPythonのコードを記述・実行できるだけでなく、Markdown（マークダウン）形式で文書を記述できる。このため作業レポートの作成や実行結果の記録・報告などに非常に役立つ。この授業でもレポートをJupyterLabのノートブックとして作成、提出してもらう予定なので、Markdownの基礎も習得してほしい。文末の「補足：Markdownの初歩（JupyterLab用）」を参考にせよ。
-
-④Markdownで記述された文書がフォーマットされる。（修正したいときはダブルクリック）
-
-③►（実行）ボタンをクリック
-
-②Markdown形式で文書を記入
-
-①「Markdown」に変える
-
-図4：Markdown形式で文書を書きフォーマットして表示している例
-
-ノートブックのファイル名は"Untitled.ipynb"となっているはずである。（複数のノートブックを作っていた場合は、Untitled1.ipynbなど番号のついた名前になっているかもしれない。）ファイル名を変更するには、左側のファイルが表示されている部分で当該ファイルを右クリックして"Rename"する。
-
-なお右クリックしたときにブラウザのメニューが表示され、RenameなどJupyterLabの操作ができないことがある。その場合は何度か右クリックして試してみよ。
-
-KU-LMSでJupyterノートブックのサンプル（フィボナッチ数列）を配布しているので、それをJupyterLabで表示し、内容を確認せよ。
-
-"Rename"をクリック
-
-名前を変えたいファイル名を右クリック
-
-ファイル名：
-
-Untitled.ipynb
-
-参考：ファイルを削除したいときは"Move to Trash"をクリック
-
-ファイル名を変えることができた
-
-図5：ノートブックのファイル名を変更する方法
-
-```{figure} ./images/media/image22.png
-サンプルとして配布しているフィボナッチ数列のノートブック
+```{figure} ./images/jupyterlab01en.png
+JupyterLabを起動した画面
 ```
 
 ## JupyterLabの日本語化
 
-JupyterLabは日本語パックをインストールすると，日本語での表示に変更できる．日本語パックはコマンドラインからcondaで以下のようにしてインストールする．
-
-```powershell
-conda activate EXERCISE 🡨 インストールしたい環境を有効化
-conda install jupyterlab-language-pack-ja-JP
-```
-
-その後，JupyterLabの画面でSettings 🡪 Languageから日本語を選ぶ．
+JupyterLabは日本語パックをインストールすると，日本語での表示に変更できる．JupyterLabの画面でSettings 🡪 Languageから日本語を選ぶ．
 
 ```{figure} ./images/media/image31.png
 日本語パックを入れたあとで，Settings 🡪
@@ -128,6 +66,62 @@ and reload"をクリックすると画面が更新される．
 
 ```{figure} ./images/media/image33.png
 日本語化された画面
+```
+
+## はじめてのJupyterLabプログラミング
+
+JupyterLabが起動したら"Notebook"の"Python 3
+(ipykernel)"をクリックして新しいノートブックを作成し、そこにコードを記入して実行してみよう。
+
+```{figure} ./images/jupyterlab01.drawio.png
+JupyterLabを起動した画面。"Notebook"の"Python 3
+(ipykernel)"をクリックして新しいノートブックを作成する。
+```
+
+```{figure} ./images/media/image16.png
+新しい「ノートブック」が作成される。JupyterLabのノートブックは
+.ipynb
+という形式のファイルで、JupyterLabの中で開いて編集・実行できる。ノートブックの中では、青く囲まれた「セル」にコードを書き込んで実行できる。
+```
+
+```{figure} ./images/jupyterlab03.drawio.png
+コードを実行している例。セルにコードを書き込み、上段の►マークをクリックするとコードが実行される。
+```
+
+JupyterLabはPythonのコードを記述・実行できるだけでなく、Markdown（マークダウン）形式で文書を記述できる。このため作業レポートの作成や実行結果の記録・報告などに非常に役立つ。この授業でもレポートをJupyterLabのノートブックとして作成、提出してもらう予定なので、Markdownの基礎も習得してほしい。文末の「補足：Markdownの初歩（JupyterLab用）」を参考にせよ。
+
+```{figure} ./images/jupyterlab04.drawio.png
+Markdown形式で文書を書く方法
+```
+
+```{figure} ./images/jupyterlab05.drawio.png
+Markdown形式で記述した文書をフォーマットして表示する方法
+```
+
+ノートブックのファイル名は"Untitled.ipynb"となっているはずである。（複数のノートブックを作っていた場合は、Untitled1.ipynbなど番号のついた名前になっているかもしれない。）ファイル名を変更するには、左側のファイルが表示されている部分で当該ファイルを右クリックして"Rename"する。
+
+なお右クリックしたときにブラウザのメニューが表示され、RenameなどJupyterLabの操作ができないことがある。その場合は何度か右クリックして試してみよ。
+
+KU-LMSでJupyterノートブックのサンプル（フィボナッチ数列）を配布しているので、それをJupyterLabで表示し、内容を確認せよ。
+
+```{figure} ./images/jupyterlab06f.drawio.png
+ファイルブラウザーが表示されていないときは，左のフォルダーアイコンをクリックする
+```
+
+```{figure} ./images/jupyterlab07.drawio.png
+ノートブックのファイル名を変更する方法その1：ファイルブラウザーでファイル名を右クリック
+```
+
+```{figure} ./images/jupyterlab08.drawio.png
+ノートブックのファイル名を変更する方法その2：「名前を変更」をクリックしファイル名を変更．なおファイルを削除したいときは"Move to Trash"を選択する
+```
+
+```{figure} ./images/jupyterlab09.drawio.png
+ノートブックのファイル名が変更されたことを確認
+```
+
+```{figure} ./images/media/image22.png
+サンプルとして配布しているフィボナッチ数列のノートブック
 ```
 
 ## 課題：最大公約数の求め方・ユークリッドの互除法
@@ -179,42 +173,46 @@ JupyterLabのMarkdownセルにMarkdown形式で記入しフォーマットした
 
 ## 配布されたノートブックをアップロードして開く
 
-これ以降では講義資料をJupyterLabノートブックとしてKU-LMS経由で配布するので，それを学習し，課題に取り組んでほしい．ここでは配布されたノートブックを自分のJupyterLabにアップロードし，開く方法を示す．と言ってもファイルブラウザーにドラッグ＆ドロップして入れるだけなので，簡単である．
+これ以降では講義資料をJupyterLabノートブックとしてGitHubで配布するので，それを学習し，課題に取り組んでほしい．ここでは配布されたノートブックを自分のJupyterLabにアップロードし，開く方法を示す．と言ってもファイルブラウザーにドラッグ＆ドロップして入れるだけなので，簡単である．
 
-```{figure} ./images/media/image25.png
-ファイルブラウザーが表示されていないときは，フォルダーのアイコンをクリックして開く．
-
-ファイルブラウザー
-
-ファイルブラウザーが表示される．今回は新しいフォルダーを作り，その中にノートブックやデータファイルをアップロードすることにする．そのためにはフォルダーに＋がついたマークをクリックする．
+```{figure} ./images/jupyterlab01f.drawio.png
+ファイルブラウザーが表示されていないときは，左上のフォルダーのアイコンをクリックして開く．
 ```
 
-```{figure} ./images/media/image27.png
+```{figure} ./images/jupyterlab10.drawio.png
+今回は新しいフォルダーを作り，その中にノートブックやデータファイルをアップロードすることにする．そのためにはフォルダーに＋がついたマークをクリックする．
+```
+
+```{figure} ./images/jupyterlab11.drawio.png
 新しいフォルダー（この例では"EXERCISE"）が作られたので，ダブルクリックして中に入る．
-
-
-1.  
-2.  
-3.  
-4.  
-
-図11："EXERCISE"に入っていることを確認し（①，②），ファイルブラウザーにアップロードしたいノートブックやファイルをドラッグアンドドロップする（③）．またはアップロードボタン（④）をクリックし，ノートブックやファイルをアップロードする．
 ```
 
-```{figure} ./images/media/image29.png
+```{figure} ./images/jupyterlab12.drawio.png
+"EXERCISE"に入っていることを確認し（①，②），ファイルブラウザーにアップロードしたいノートブックやファイルをドラッグアンドドロップする（③）．またはアップロードボタン（④）をクリックし，ノートブックやファイルをアップロードする．
+```
+
+```{figure} ./images/jupyterlab13ja.png
 アップロードしたファイルがファイルブラウザーに表示される．見たいノートブックをダブルクリックする．
 ```
 
-```{figure} ./images/media/image30.png
-ノートブックが表示される．実行結果も含めて保存されているので，実行結果のグラフなども（自分で実行しなくとも）表示されるはずである．
+```{figure} ./images/jupyterlab14ja.png
+ノートブックが表示される．実行結果も含めて保存されているノートブックであれば，実行結果のグラフなども（自分で実行しなくとも）表示される．
 ```
 
 ## 課題
 
-1.  KU-LMSで配布しているJupyterLabノートブック「Matplotlibでグラフを描く」に掲載されている課題1および課題2に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．課題1と課題2を合わせてひとつのJupyterLabノートブックとすること．
+1.  GitHubで配布しているJupyterLabノートブック「Matplotlibでグラフを描く」に掲載されている課題1および課題2に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．課題1と課題2を合わせてひとつのJupyterLabノートブックとすること．
 
-2.  KU-LMSで配布しているJupyterLabノートブック「3次元のグラフを描く―Matplotlib
+2.  GitHubで配布しているJupyterLabノートブック「3次元のグラフを描く―Matplotlib
     /
     Plotly」に掲載されている課題に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．
 
 提出期限はKU-LMSにて指示する．
+
+```{note}
+このページの本文と図版は [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
+のもとで提供されています。  
+コードやノートブックの例は MIT License に従います。  
+一部の画像（表で「CC ライセンス適用外」と明記されたスクリーンショットなど）は除外されます。  
+詳細は [LICENSE-docs.md](https://github.com/akonno/FluidSeminarMaterials/blob/main/LICENSE-docs.md) を参照してください。
+```

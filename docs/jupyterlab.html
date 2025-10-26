@@ -57,8 +57,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'jupyterlab';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -171,7 +169,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    流体工学セミナー・講義用教材サイト
+                    流体工学セミナー・教材サイト
                 </a>
             </li>
         </ul>
@@ -333,13 +331,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">JupyterLabとは何か</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">JupyterLabをはじめる</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">JupyterLabの日本語化</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">課題：最大公約数の求め方・ユークリッドの互除法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">はじめてのJupyterLabプログラミング</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">課題：最大公約数の求め方・ユークリッドの互除法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-jupyterlab">補足：Markdownの初歩（JupyterLab用）</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">配布されたJupyterLabノートブックを開くには</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">配布されたノートブックをアップロードして開く</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">課題</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">配布されたJupyterLabノートブックを開くには</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">配布されたノートブックをアップロードして開く</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">課題</a></li>
 </ul>
 </li>
 </ul>
@@ -354,7 +353,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="jupyterlab">
+  <section id="jupyterlab">
 <h1>JupyterLabの導入<a class="headerlink" href="#jupyterlab" title="Link to this heading">#</a></h1>
 <p>MiniforgeにJupyterLabを導入し、かんたんなPythonプログラムを記述、実行するとともに、説明テキストを含めたノートブックの作成・提出を目指す。</p>
 <section id="id1">
@@ -367,8 +366,8 @@ document.write(`
 <section id="id2">
 <h2>JupyterLabをはじめる<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Miniforge
-Promptを起動し、EXERCISE環境に入る。そこでjupyterlabパッケージをインストールする。</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">jupyterlab</span>
+Promptを起動し、EXERCISE環境に入る。そこでjupyterlabパッケージをインストールする。ここではjupyterlabに加えて日本語パックjupyterlab-language-pack-ja-JPをインストールしている．</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">jupyterlab</span> <span class="n">jupyterlab-language-pack-ja-JP</span>
 </pre></div>
 </div>
 <p>インストールに成功したら、jupyter
@@ -378,8 +377,8 @@ labコマンドを実行する。このときはjupyterとlabの間にスペー�
 </div>
 <p>初めて起動した際は、どのブラウザで開くかを問い合わせるウィンドウが開くはずである。ふだん使っているウェブブラウザを選べば良い。</p>
 <p>もしブラウザが自動で開かなかった場合は、Miniforge
-Promptの画面に以下のように表示されるので、アドレスをクリックしてブラウザを起動する。どのアドレスをクリックしても良い。</p>
-<p>Ctrlキーを押しながらどれかをクリック</p>
+Promptの画面に以下のように表示されるので、
+Ctrlキーを押しながらアドレスをクリックしてブラウザを起動する。どのアドレスをクリックしても良い。</p>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">access</span> <span class="n">the</span> <span class="n">server</span><span class="p">,</span> <span class="n">open</span> <span class="n">this</span> <span class="n">file</span> <span class="k">in</span> <span class="n">a</span> <span class="n">browser</span><span class="p">:</span>
     <span class="n">file</span><span class="p">:///</span><span class="n">C</span><span class="p">:/</span><span class="n">Users</span><span class="p">/</span><span class="n">konno</span><span class="p">/</span><span class="n">AppData</span><span class="p">/</span><span class="n">Roaming</span><span class="p">/</span><span class="n">jupyter</span><span class="p">/</span><span class="n">runtime</span><span class="p">/</span><span class="n">jpserver</span><span class="p">-</span><span class="n">20560-open</span><span class="p">.</span><span class="n">html</span>
 <span class="n">Or</span> <span class="nb">copy </span><span class="n">and</span> <span class="n">paste</span> <span class="n">one</span> <span class="n">of</span> <span class="n">these</span> <span class="n">URLs</span><span class="p">:</span>
@@ -387,86 +386,114 @@ Promptの画面に以下のように表示されるので、アドレスをク�
     <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8888</span><span class="p">/</span><span class="n">lab</span><span class="k">?</span><span class="n">token</span><span class="p">=</span><span class="n">d2dbc583f5df64abe28cf820ea5c5fcf1c8fcf5743fbe04c</span>
 </pre></div>
 </div>
-<p>JupyterLabが起動したら”Notebook”の”Python 3
-(ipykernel)”をクリックして新しいノートブックを作成し、そこにコードを記入して実行してみよう。</p>
 <p>（初めて起動したときは、”Would you like to get notified about official
 Jupyter
 news?”という問い合わせパネルが表示されるかもしれない。適宜選択すれば良い。）</p>
-<figure class="align-default" id="id8">
-<img alt="_images/image15.png" src="_images/image15.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">JupyterLabを起動した画面。”Notebook”の”Python 3
-(ipykernel)”をクリックして新しいノートブックを作成する。</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 <figure class="align-default" id="id9">
-<img alt="_images/image16.png" src="_images/image16.png" />
+<img alt="_images/jupyterlab01en.png" src="_images/jupyterlab01en.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">新しい「ノートブック」が作成される。JupyterLabのノートブックは
-.ipynb
-という形式のファイルで、JupyterLabの中で開いて編集・実行できる。ノートブックの中では、青く囲まれた「セル」にコードを書き込んで実行できる。</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
-<div class="legend">
-<p>③実行結果が表示される（表示されるものがある場合）</p>
-<p>② ►（実行）ボタンをクリック</p>
-<p>①セルにコードを記入</p>
-<p>コードを実行している例。セルにコードを書き込み、上段の►マークをクリックするとコードが実行される。</p>
-</div>
-</figcaption>
-</figure>
-<p>JupyterLabはPythonのコードを記述・実行できるだけでなく、Markdown（マークダウン）形式で文書を記述できる。このため作業レポートの作成や実行結果の記録・報告などに非常に役立つ。この授業でもレポートをJupyterLabのノートブックとして作成、提出してもらう予定なので、Markdownの基礎も習得してほしい。文末の「補足：Markdownの初歩（JupyterLab用）」を参考にせよ。</p>
-<p>④Markdownで記述された文書がフォーマットされる。（修正したいときはダブルクリック）</p>
-<p>③►（実行）ボタンをクリック</p>
-<p>②Markdown形式で文書を記入</p>
-<p>①「Markdown」に変える</p>
-<p>図4：Markdown形式で文書を書きフォーマットして表示している例</p>
-<p>ノートブックのファイル名は”Untitled.ipynb”となっているはずである。（複数のノートブックを作っていた場合は、Untitled1.ipynbなど番号のついた名前になっているかもしれない。）ファイル名を変更するには、左側のファイルが表示されている部分で当該ファイルを右クリックして”Rename”する。</p>
-<p>なお右クリックしたときにブラウザのメニューが表示され、RenameなどJupyterLabの操作ができないことがある。その場合は何度か右クリックして試してみよ。</p>
-<p>KU-LMSでJupyterノートブックのサンプル（フィボナッチ数列）を配布しているので、それをJupyterLabで表示し、内容を確認せよ。</p>
-<p>“Rename”をクリック</p>
-<p>名前を変えたいファイル名を右クリック</p>
-<p>ファイル名：</p>
-<p>Untitled.ipynb</p>
-<p>参考：ファイルを削除したいときは”Move to Trash”をクリック</p>
-<p>ファイル名を変えることができた</p>
-<p>図5：ノートブックのファイル名を変更する方法</p>
-<figure class="align-default" id="id10">
-<img alt="_images/image22.png" src="_images/image22.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">サンプルとして配布しているフィボナッチ数列のノートブック</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">JupyterLabを起動した画面</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id3">
 <h2>JupyterLabの日本語化<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>JupyterLabは日本語パックをインストールすると，日本語での表示に変更できる．日本語パックはコマンドラインからcondaで以下のようにしてインストールする．</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">EXERCISE</span> <span class="err">🡨</span> <span class="n">インストールしたい環境を有効化</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="n">jupyterlab-language-pack-ja-JP</span>
-</pre></div>
-</div>
-<p>その後，JupyterLabの画面でSettings 🡪 Languageから日本語を選ぶ．</p>
-<figure class="align-default" id="id11">
+<p>JupyterLabは日本語パックをインストールすると，日本語での表示に変更できる．JupyterLabの画面でSettings 🡪 Languageから日本語を選ぶ．</p>
+<figure class="align-default" id="id10">
 <img alt="_images/image31.png" src="_images/image31.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 16 </span><span class="caption-text">日本語パックを入れたあとで，Settings 🡪
-Languageを選ぶと日本語が選択できるようになっている．</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+Languageを選ぶと日本語が選択できるようになっている．</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id12">
+<figure class="align-default" id="id11">
 <img alt="_images/image32.png" src="_images/image32.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 17 </span><span class="caption-text">日本語を選択したとき表示される画面．”Change
-and reload”をクリックすると画面が更新される．</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+and reload”をクリックすると画面が更新される．</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id13">
+<figure class="align-default" id="id12">
 <img alt="_images/image33.png" src="_images/image33.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">日本語化された画面</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">日本語化された画面</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id4">
-<h2>課題：最大公約数の求め方・ユークリッドの互除法<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>はじめてのJupyterLabプログラミング<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>JupyterLabが起動したら”Notebook”の”Python 3
+(ipykernel)”をクリックして新しいノートブックを作成し、そこにコードを記入して実行してみよう。</p>
+<figure class="align-default" id="id13">
+<img alt="_images/jupyterlab01.drawio.png" src="_images/jupyterlab01.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">JupyterLabを起動した画面。”Notebook”の”Python 3
+(ipykernel)”をクリックして新しいノートブックを作成する。</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id14">
+<img alt="_images/image16.png" src="_images/image16.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">新しい「ノートブック」が作成される。JupyterLabのノートブックは
+.ipynb
+という形式のファイルで、JupyterLabの中で開いて編集・実行できる。ノートブックの中では、青く囲まれた「セル」にコードを書き込んで実行できる。</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id15">
+<img alt="_images/jupyterlab03.drawio.png" src="_images/jupyterlab03.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">コードを実行している例。セルにコードを書き込み、上段の►マークをクリックするとコードが実行される。</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>JupyterLabはPythonのコードを記述・実行できるだけでなく、Markdown（マークダウン）形式で文書を記述できる。このため作業レポートの作成や実行結果の記録・報告などに非常に役立つ。この授業でもレポートをJupyterLabのノートブックとして作成、提出してもらう予定なので、Markdownの基礎も習得してほしい。文末の「補足：Markdownの初歩（JupyterLab用）」を参考にせよ。</p>
+<figure class="align-default" id="id16">
+<img alt="_images/jupyterlab04.drawio.png" src="_images/jupyterlab04.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Markdown形式で文書を書く方法</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id17">
+<img alt="_images/jupyterlab05.drawio.png" src="_images/jupyterlab05.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Markdown形式で記述した文書をフォーマットして表示する方法</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>ノートブックのファイル名は”Untitled.ipynb”となっているはずである。（複数のノートブックを作っていた場合は、Untitled1.ipynbなど番号のついた名前になっているかもしれない。）ファイル名を変更するには、左側のファイルが表示されている部分で当該ファイルを右クリックして”Rename”する。</p>
+<p>なお右クリックしたときにブラウザのメニューが表示され、RenameなどJupyterLabの操作ができないことがある。その場合は何度か右クリックして試してみよ。</p>
+<p>KU-LMSでJupyterノートブックのサンプル（フィボナッチ数列）を配布しているので、それをJupyterLabで表示し、内容を確認せよ。</p>
+<figure class="align-default" id="id18">
+<img alt="_images/jupyterlab06f.drawio.png" src="_images/jupyterlab06f.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">ファイルブラウザーが表示されていないときは，左のフォルダーアイコンをクリックする</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id19">
+<img alt="_images/jupyterlab07.drawio.png" src="_images/jupyterlab07.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">ノートブックのファイル名を変更する方法その1：ファイルブラウザーでファイル名を右クリック</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id20">
+<img alt="_images/jupyterlab08.drawio.png" src="_images/jupyterlab08.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">ノートブックのファイル名を変更する方法その2：「名前を変更」をクリックしファイル名を変更．なおファイルを削除したいときは”Move to Trash”を選択する</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id21">
+<img alt="_images/jupyterlab09.drawio.png" src="_images/jupyterlab09.drawio.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">ノートブックのファイル名が変更されたことを確認</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id22">
+<img alt="_images/image22.png" src="_images/image22.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">サンプルとして配布しているフィボナッチ数列のノートブック</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
+<h2>課題：最大公約数の求め方・ユークリッドの互除法<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>「ユークリッドの互除法」とは最大公約数を求める方法のひとつである。これについて以下の課題を実施せよ。</p>
 <p>提出方法と提出期限はKU-LMSに掲載する。</p>
 <ol class="arabic">
@@ -478,10 +505,10 @@ and reload”をクリックすると画面が更新される．</span><a class=
 </li>
 <li><p>作成したノートブック（.ipynbファイル）を提出せよ。</p></li>
 </ol>
-<figure class="align-default" id="id14">
+<figure class="align-default" id="id23">
 <img alt="_images/image23.png" src="_images/image23.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">最大公約数を求めるレポート課題のJupyterノートブック例（一部伏せ字）</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">最大公約数を求めるレポート課題のJupyterノートブック例（一部伏せ字）</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -533,76 +560,83 @@ and reload”をクリックすると画面が更新される．</span><a class=
 </tr>
 <tr class="row-odd"><td><p>数式（行内）</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">$E</span> <span class="pre">=</span> <span class="pre">mc^2$</span></code></p></td>
-<td><p>LaTeX 形式で数式を書ける。<span class="math notranslate nohighlight">\(...\)</span> で囲む。</p></td>
+<td><p>LaTeX 形式で数式を書ける。$…$ で囲む。</p></td>
 </tr>
 <tr class="row-even"><td><p>数式（ブロック数式）</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">$$E</span> <span class="pre">=</span> <span class="pre">mc^2$$</span></code></p></td>
-<td><p>ブロック数式は $<span class="math notranslate nohighlight">\( ... \)</span>$ で囲む。</p></td>
+<td><p>ブロック数式は $$ … $$ で囲む。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<figure class="align-default" id="id15">
+<figure class="align-default" id="id24">
 <img alt="_images/image24.png" src="_images/image24.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">JupyterLabのMarkdownセルにMarkdown形式で記入しフォーマットした例</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">JupyterLabのMarkdownセルにMarkdown形式で記入しフォーマットした例</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id5">
-<h1>配布されたJupyterLabノートブックを開くには<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
-<p>前回の授業で導入したMiniforgeとJupyterLabを用い，Pythonプログラミングを学習する．教材はJupyterLabノートブックとして配布するので，ここではダウンロードしたノートブックを自分のJupyterLabにアップロードする方法を説明する．</p>
 <section id="id6">
-<h2>配布されたノートブックをアップロードして開く<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<p>これ以降では講義資料をJupyterLabノートブックとしてKU-LMS経由で配布するので，それを学習し，課題に取り組んでほしい．ここでは配布されたノートブックを自分のJupyterLabにアップロードし，開く方法を示す．と言ってもファイルブラウザーにドラッグ＆ドロップして入れるだけなので，簡単である．</p>
-<figure class="align-default" id="id16">
-<img alt="_images/image25.png" src="_images/image25.png" />
+<h1>配布されたJupyterLabノートブックを開くには<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p>前回の授業で導入したMiniforgeとJupyterLabを用い，Pythonプログラミングを学習する．教材はJupyterLabノートブックとして配布するので，ここではダウンロードしたノートブックを自分のJupyterLabにアップロードする方法を説明する．</p>
+<section id="id7">
+<h2>配布されたノートブックをアップロードして開く<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>これ以降では講義資料をJupyterLabノートブックとしてGitHubで配布するので，それを学習し，課題に取り組んでほしい．ここでは配布されたノートブックを自分のJupyterLabにアップロードし，開く方法を示す．と言ってもファイルブラウザーにドラッグ＆ドロップして入れるだけなので，簡単である．</p>
+<figure class="align-default" id="id25">
+<img alt="_images/jupyterlab01f.drawio.png" src="_images/jupyterlab01f.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">ファイルブラウザーが表示されていないときは，フォルダーのアイコンをクリックして開く．</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
-<div class="legend">
-<p>ファイルブラウザー</p>
-<p>ファイルブラウザーが表示される．今回は新しいフォルダーを作り，その中にノートブックやデータファイルをアップロードすることにする．そのためにはフォルダーに＋がついたマークをクリックする．</p>
-</div>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">ファイルブラウザーが表示されていないときは，左上のフォルダーのアイコンをクリックして開く．</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id17">
-<img alt="_images/image27.png" src="_images/image27.png" />
+<figure class="align-default" id="id26">
+<img alt="_images/jupyterlab10.drawio.png" src="_images/jupyterlab10.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">新しいフォルダー（この例では”EXERCISE”）が作られたので，ダブルクリックして中に入る．</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
-<div class="legend">
-<ol class="arabic simple">
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-<p>図11：”EXERCISE”に入っていることを確認し（①，②），ファイルブラウザーにアップロードしたいノートブックやファイルをドラッグアンドドロップする（③）．またはアップロードボタン（④）をクリックし，ノートブックやファイルをアップロードする．</p>
-</div>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">今回は新しいフォルダーを作り，その中にノートブックやデータファイルをアップロードすることにする．そのためにはフォルダーに＋がついたマークをクリックする．</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id18">
-<img alt="_images/image29.png" src="_images/image29.png" />
+<figure class="align-default" id="id27">
+<img alt="_images/jupyterlab11.drawio.png" src="_images/jupyterlab11.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">アップロードしたファイルがファイルブラウザーに表示される．見たいノートブックをダブルクリックする．</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">新しいフォルダー（この例では”EXERCISE”）が作られたので，ダブルクリックして中に入る．</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id19">
-<img alt="_images/image30.png" src="_images/image30.png" />
+<figure class="align-default" id="id28">
+<img alt="_images/jupyterlab12.drawio.png" src="_images/jupyterlab12.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">ノートブックが表示される．実行結果も含めて保存されているので，実行結果のグラフなども（自分で実行しなくとも）表示されるはずである．</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">“EXERCISE”に入っていることを確認し（①，②），ファイルブラウザーにアップロードしたいノートブックやファイルをドラッグアンドドロップする（③）．またはアップロードボタン（④）をクリックし，ノートブックやファイルをアップロードする．</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id29">
+<img alt="_images/jupyterlab13ja.png" src="_images/jupyterlab13ja.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">アップロードしたファイルがファイルブラウザーに表示される．見たいノートブックをダブルクリックする．</span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id30">
+<img alt="_images/jupyterlab14ja.png" src="_images/jupyterlab14ja.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">ノートブックが表示される．実行結果も含めて保存されているノートブックであれば，実行結果のグラフなども（自分で実行しなくとも）表示される．</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
-<section id="id7">
-<h2>課題<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h2>課題<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>KU-LMSで配布しているJupyterLabノートブック「Matplotlibでグラフを描く」に掲載されている課題1および課題2に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．課題1と課題2を合わせてひとつのJupyterLabノートブックとすること．</p></li>
-<li><p>KU-LMSで配布しているJupyterLabノートブック「3次元のグラフを描く―Matplotlib
+<li><p>GitHubで配布しているJupyterLabノートブック「Matplotlibでグラフを描く」に掲載されている課題1および課題2に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．課題1と課題2を合わせてひとつのJupyterLabノートブックとすること．</p></li>
+<li><p>GitHubで配布しているJupyterLabノートブック「3次元のグラフを描く―Matplotlib
 /
 Plotly」に掲載されている課題に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．</p></li>
 </ol>
 <p>提出期限はKU-LMSにて指示する．</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>このページの本文と図版は <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">CC BY-NC-SA 4.0</a>
+のもとで提供されています。<br />
+コードやノートブックの例は MIT License に従います。<br />
+一部の画像（表で「CC ライセンス適用外」と明記されたスクリーンショットなど）は除外されます。<br />
+詳細は <a class="reference external" href="https://github.com/akonno/FluidSeminarMaterials/blob/main/LICENSE-docs.md">LICENSE-docs.md</a> を参照してください。</p>
+</div>
 </section>
 </section>
 
@@ -674,13 +708,14 @@ Plotly」に掲載されている課題に取り組み，作成したJupyterLab�
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">JupyterLabとは何か</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">JupyterLabをはじめる</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">JupyterLabの日本語化</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">課題：最大公約数の求め方・ユークリッドの互除法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">はじめてのJupyterLabプログラミング</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">課題：最大公約数の求め方・ユークリッドの互除法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-jupyterlab">補足：Markdownの初歩（JupyterLab用）</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">配布されたJupyterLabノートブックを開くには</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">配布されたノートブックをアップロードして開く</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">課題</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">配布されたJupyterLabノートブックを開くには</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">配布されたノートブックをアップロードして開く</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">課題</a></li>
 </ul>
 </li>
 </ul>
