@@ -11,7 +11,12 @@ This repository contains course materials used in the *Fluid Engineering Seminar
 The contents are written in **Japanese**, as they are intended for use in classes conducted in Japan.
 
 At the current stage, the repository includes only a portion of **JupyterLab-based notebooks** used for Python programming exercises.  
-In the future, it will be expanded to include additional materials such as **CFD practices with OpenFOAM (blueCFD-Core)** and **UNIX/Linux command-line training**.
+
+
+📘 **Online Textbook (GitHub Pages)**  
+The Jupyter Book version of these materials is available here:  
+👉 [https://akonno.github.io/FluidSeminarMaterials/intro.html](https://akonno.github.io/FluidSeminarMaterials/intro.html)
+
 
 ---
 
@@ -25,8 +30,13 @@ In the future, it will be expanded to include additional materials such as **CFD
 
 ## License
 
-This project is licensed under the **MIT License**.  
-See the [LICENSE](LICENSE) file for details.
+The repository contains two categories of content governed by different licenses:
+
+| Type | License | Description |
+|------|----------|-------------|
+| **Educational materials** (text, figures, and MyST/Markdown documents) | [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | May be shared and adapted for non-commercial educational use with attribution and share-alike terms. Some screenshots and third-party UI images are excluded; see [LICENSE-docs.md](LICENSE-docs.md) for details. |
+| **Source code and executable examples** (Python, notebook cells, and scripts) | [MIT License](LICENSE) | Freely usable, modifiable, and redistributable under the terms of the MIT License. |
+
 
 ---
 
