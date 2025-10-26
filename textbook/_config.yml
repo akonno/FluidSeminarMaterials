@@ -1,6 +1,7 @@
 # jb/_config.yml
 title: "流体工学セミナー・教材集"
-author: "金野祥久"
+# author: "KONNO Akihisa"
+copyright: "2025 KONNO Akihisa"
 language: ja
 execute:
   execute_notebooks: "off"
