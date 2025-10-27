@@ -171,9 +171,25 @@ JupyterLabのMarkdownセルにMarkdown形式で記入しフォーマットした
 
 前回の授業で導入したMiniforgeとJupyterLabを用い，Pythonプログラミングを学習する．教材はJupyterLabノートブックとして配布するので，ここではダウンロードしたノートブックを自分のJupyterLabにアップロードする方法を説明する．
 
-## 配布されたノートブックをアップロードして開く
+## GitHubからノートブックをダウンロード
 
-これ以降では講義資料をJupyterLabノートブックとしてGitHubで配布するので，それを学習し，課題に取り組んでほしい．ここでは配布されたノートブックを自分のJupyterLabにアップロードし，開く方法を示す．と言ってもファイルブラウザーにドラッグ＆ドロップして入れるだけなので，簡単である．
+
+これ以降では講義資料をJupyterLabノートブックとしてGitHubで配布するので，それを学習し，課題に取り組んでほしい．
+ここではGitHubのJupyterLabノートブック配布サイトからノートブックをダウンロードする方法を示す．
+
+
+```{figure} ./images/github-jupyterlab-notebook1.trimmed.png
+GitHubのJupyterLabノートブック配布サイト．ダウンロードしたい資料をクリックする
+```
+```{figure} ./images/github-jupyterlab-notebook2.drawio.png
+資料が表示される．右上のダウンロードボタンをクリックし，ダウンロードする
+```
+
+
+## 配布されたノートブックをアップロードして開く
+ここでは配布されたノートブックを自分のJupyterLabにアップロードし，開く方法を示す．と言ってもGitHubからダウンロードしたファイルを，ファイルブラウザーにドラッグ＆ドロップして入れるだけなので，簡単である．
+
+JupyterLabノートブック配布サイト：<https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab>
 
 ```{figure} ./images/jupyterlab01f.drawio.png
 ファイルブラウザーが表示されていないときは，左上のフォルダーのアイコンをクリックして開く．
@@ -201,9 +217,9 @@ JupyterLabのMarkdownセルにMarkdown形式で記入しフォーマットした
 
 ## 課題
 
-1.  GitHubで配布しているJupyterLabノートブック「Matplotlibでグラフを描く」に掲載されている課題1および課題2に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．課題1と課題2を合わせてひとつのJupyterLabノートブックとすること．
+1.  [GitHubで配布しているJupyterLabノートブック](https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab)「Matplotlibでグラフを描く」に掲載されている課題1および課題2に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．課題1と課題2を合わせてひとつのJupyterLabノートブックとすること．
 
-2.  GitHubで配布しているJupyterLabノートブック「3次元のグラフを描く―Matplotlib
+2.  [GitHubで配布しているJupyterLabノートブック](https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab)「3次元のグラフを描く―Matplotlib
     /
     Plotly」に掲載されている課題に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．
 
