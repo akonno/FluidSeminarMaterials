@@ -5,3 +5,7 @@ chapters:
   - file: miniforge
   - file: jupyterlab
   - file: pygame_intro
+  - file: pygame1
+  - file: lesson06
+  - file: lesson07
+  - file: PyGame-CE_CheatSheet.md
