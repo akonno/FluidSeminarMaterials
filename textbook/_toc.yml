@@ -6,6 +6,4 @@ chapters:
   - file: jupyterlab
   - file: pygame_intro
   - file: pygame1
-  - file: lesson06
-  - file: lesson07
-  - file: PyGame-CE_CheatSheet.md
+  # - file: PyGame-CE_CheatSheet.md
