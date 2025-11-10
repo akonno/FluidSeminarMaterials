@@ -30,11 +30,23 @@ jobs:
           pip install -U pip
           pip install jupyter-book
 
+      # debug: show current situation
+      - name: Show tree
+        run: |
+          pwd
+          ls -la
+          ls -la textbook || true
+          [ -f textbook/_config.yml ] && echo "_config.yml OK" || echo "MISSING _config.yml"
+          [ -f textbook/_toc.yml ]    && echo "_toc.yml OK"    || echo "MISSING _toc.yml"
+      - name: Show versions
+        run: |
+          which jupyter-book || true
+          jupyter-book --version || true
+
       # 4. Bookのビルド
       - name: Build Jupyter Book
-        working-directory: ./textbook
         run: |
-          jupyter-book build .
+          jupyter-book build textbook
 
       # 5. docs/フォルダをクリーンアップしてHTMLをコピー
       - name: Copy built HTML to docs/
