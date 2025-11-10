@@ -67,7 +67,7 @@ MiniforgeのGitHubサイト。なおこの図はWindowsの画面表示を「ラ�
 
 ```{figure} ./images/github-miniforge2.drawio.png
 :align: center
-「Instalｌ」の直下にWindowsでのインストール方法が記載されている。「the
+「Install」の直下にWindowsでのインストール方法が記載されている。「the
 Windows
 installer」をクリックしてダウンロードし、実行するとインストーラーが起動する。
 ```
