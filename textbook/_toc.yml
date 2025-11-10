@@ -1,9 +1,0 @@
-# jb/_toc.yml
-format: jb-book
-root: intro
-chapters:
-  - file: miniforge
-  - file: jupyterlab
-  - file: pygame_intro
-  - file: pygame1
-  - file: pygame2

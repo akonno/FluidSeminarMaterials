@@ -1,0 +1,15 @@
+version: 1
+project:
+  title: 流体工学セミナー・教材集
+  copyright: 2025 KONNO Akihisa
+  toc:
+    - file: intro.md
+    - file: miniforge.md
+    - file: jupyterlab.md
+    - file: pygame_intro.md
+    - file: pygame1.md
+    - file: pygame2.md
+site:
+  options:
+    folders: true
+  template: book-theme
