@@ -209,4 +209,8 @@ __marimo__/
 
 # draw.io backup files
 *.drawio.bkp
+
+# Jupyter Book build files
+textbook/_build/
+
 #eof
