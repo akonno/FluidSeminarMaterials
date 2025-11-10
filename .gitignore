@@ -9,6 +9,8 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+!docs/build/
+!docs/build/**
 develop-eggs/
 dist/
 downloads/
@@ -209,8 +211,5 @@ __marimo__/
 
 # draw.io backup files
 *.drawio.bkp
-
-# Jupyter Book build files
-textbook/_build/
 
 #eof
