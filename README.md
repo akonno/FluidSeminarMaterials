@@ -10,12 +10,12 @@ Department of Mechanical Engineering, **Kogakuin University**.
 This repository contains course materials used in the *Fluid Engineering Seminar* at Kogakuin University.  
 The contents are written in **Japanese**, as they are intended for use in classes conducted in Japan.
 
-At the current stage, the repository includes only a portion of **JupyterLab-based notebooks** used for Python programming exercises.  
+At the current stage, the repository includes both **JupyterLab-based notebooks** for Python programming exercises and **PyGame-CE–based lessons** for interactive graphics, animation, and creative expression.
 
 
 📘 **Online Textbook (GitHub Pages)**  
 The Jupyter Book version of these materials is available here:  
-👉 [https://akonno.github.io/FluidSeminarMaterials/intro.html](https://akonno.github.io/FluidSeminarMaterials/intro.html)
+👉 [https://akonno.github.io/FluidSeminarMaterials/](https://akonno.github.io/FluidSeminarMaterials/)
 
 
 ---
