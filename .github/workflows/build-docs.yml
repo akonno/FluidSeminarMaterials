@@ -32,9 +32,8 @@ jobs:
 
       # 4. Bookのビルド
       - name: Build Jupyter Book
-        working-directory: ./textbook
         run: |
-          jupyter-book build .
+          jupyter-book build textbook
 
       # 5. docs/フォルダをクリーンアップしてHTMLをコピー
       - name: Copy built HTML to docs/
