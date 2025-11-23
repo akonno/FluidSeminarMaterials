@@ -6,6 +6,7 @@ project:
     - file: intro.md
     - file: miniforge.md
     - file: jupyterlab.md
+    - file: kodingbasics.md
     - file: pygame1.md
     - file: pygame2.md
 site:
