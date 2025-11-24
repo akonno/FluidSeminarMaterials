@@ -1,7 +1,13 @@
+# Jupyter Book configuration file for FluidSeminarMaterials textbook.
+# This file configures the Sphinx documentation builder settings.
+# For more information, see: https://jupyterbook.org/customize/config.html
+# myst.yml（Jupyter Book 2 / MyST 用）
+# See docs at: https://mystmd.org/guide/frontmatter
 version: 1
+
 project:
   title: 流体工学セミナー・教材集
-  copyright: 2025 KONNO Akihisa
+  # ここは現在の toc と同じように
   toc:
     - file: intro.md
     - file: miniforge.md
@@ -9,7 +15,16 @@ project:
     - file: kodingbasics.md
     - file: pygame1.md
     - file: pygame2.md
+    - file: pygame3.md
+
+  # ★図や見出しの番号付け設定（プロジェクト全体に効く）
+  numbering:
+    figure:
+      enabled: true      # 明示的に有効化（本来デフォルトで true ですが念のため）
+      continue: true     # ページをまたいで連続番号にする
+
 site:
-  options:
-    folders: true
   template: book-theme
+  options:
+    # ★CSS ファイルの場所（myst.yml と同じディレクトリに custom.css を置く）
+    style: ./custom.css

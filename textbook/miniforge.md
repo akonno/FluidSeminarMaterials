@@ -62,11 +62,13 @@ Miniforgeインストーラーを以下のサイトからダウンロードし�
 ```{figure} ./images/media/image1.png
 :alt: MiniforgeのGitHubサイト
 :align: center
+:label: fig-miniforge-github
 MiniforgeのGitHubサイト。なおこの図はWindowsの画面表示を「ライト」にしている場合である。「ダーク」にしている場合は画面表示が暗くなる。このページ下部の「Install」のところまで行く。
 ```
 
 ```{figure} ./images/github-miniforge2.drawio.png
 :align: center
+:label: fig-miniforge-install-inst
 「Install」の直下にWindowsでのインストール方法が記載されている。「the
 Windows
 installer」をクリックしてダウンロードし、実行するとインストーラーが起動する。
@@ -78,20 +80,28 @@ installer」をクリックしてダウンロードし、実行するとイン�
 Folder"に気をつけること。
 
 ```{figure} ./images/media/image3.png
+:align: center
+:label: fig-miniforge-install-ss3
 インストール開始画面。「Next」をクリックして進む。
 ```
 
 ```{figure} ./images/media/image4.png
+:align: center
+:label: fig-miniforge-install-ss4
 ライセンス確認画面。内容を確認し、問題なければ「I
 Agree」をクリックして進む。
 ```
 
 ```{figure} ./images/media/image5.png
+:align: center
+:label: fig-miniforge-install-ss5
 インストールタイプの選択。「Just
 Me」を選択し（当初からそちらが選ばれているはず）、「Next」をクリックして進む。
 ```
 
 ```{figure} ./images/miniforge-install4.drawio.png
+:align: center
+:label: fig-miniforge-install-ss6
 インストール場所の選択。"Destination
 Folder"に**日本語文字など非ASCII文字が含まれている場合にはインストールを続行できない**ため、もし含まれている場合は英数字のみで構成されているフォルダ名、たとえば"C:\\ｍiniforge3"などにすること。なお\\（円記号）はパスの区切りである。
 ```
@@ -99,25 +109,35 @@ Folder"に**日本語文字など非ASCII文字が含まれている場合には
 適切なパスを選択したら、「Next」をクリックして進む。
 
 ```{figure} ./images/media/image7.png
+:align: center
+:label: fig-miniforge-install-ss7
 "Destination
 Folder"に日本語文字など非ASCII文字が含まれていた場合は、このようなエラーメッセージのパネルが表示される。表示されたら適宜修正すること。
 ```
 
 ```{figure} ./images/miniforge-install6.drawio.png
+:align: center
+:label: fig-miniforge-install-ss8
 インストールオプション選択画面。標準ではいちばん上の項目のみにチェックが入っているはずである。下段の項目の中で"Recommended"になっている項目にチェックを入れることを勧める。（任意。図は"Recommended"の項目を選んだ状態）
 ```
 
 選択したら「Install」をクリック。
 
 ```{figure} ./images/media/image9.png
+:align: center
+:label: fig-miniforge-install-ss9
 インストール中の画面
 ```
 
 ```{figure} ./images/media/image10.png
+:align: center
+:label: fig-miniforge-install-ss10
 インストール作業終了時の画面。インストール終了後は「Next」をクリックして進む。
 ```
 
 ```{figure} ./images/media/image11.png
+:align: center
+:label: fig-miniforge-install-ss11
 インストール終了画面。「Finish」をクリックして終了する。
 ```
 
@@ -127,11 +147,15 @@ Folder"に日本語文字など非ASCII文字が含まれていた場合は、�
 Promptが追加されているはずなので、これを起動する。
 
 ```{figure} ./images/Startmenu-Miniforge.drawio.png
-:alt: スタートメニューから「Miniforge Prompt」を起動する。
-現在入っている仮想環境。詳細は後述。
+:align: center
+:label: fig-miniforge-startmenu
+:alt: fig-win-startmenu
+スタートメニューから「Miniforge Prompt」を起動する。
 ```
 
 ```{figure} ./images/Miniforge-prompt1.drawio.png
+:align: center
+:label: fig-miniforge-prompt1
 Miniforge
 Promptを起動した画面。「プロンプト」が表示され、そこにキーボードからコマンドを入力してEnterキーを押すと、そのコマンドが実行される。（ウィンドウの色やフォントは「ターミナル」の設定に依るので、この画面とは異なる可能性がある。）
 ```
@@ -141,6 +165,8 @@ PromptはWindowsのコマンドラインインターフェイス（ターミナ�
 Promptが起動したら、pythonコマンドを実行してみよ。つまりプロンプトにpythonと打ち、Enterキーを押してみよ。Python環境に入り、Pythonのプロンプトが表示されるはずである。
 
 ```{figure} ./images/Miniforge-prompt2.drawio.png
+:align: center
+:label: fig-miniforge-prompt2
 Miniforge Promptでpythonを起動した例。この例ではPython
 3.12.11が起動していることが分かる。その後exit()でpythonを終了している。
 ```

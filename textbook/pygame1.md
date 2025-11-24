@@ -42,6 +42,17 @@ python -c "import sys, pygame; print(sys.version); print(pygame.version.ver)"
 
 - Pythonのバージョンと pygame-ce のバージョンが表示されれば，適切にインストールできている．
 
+### PyGame-CEのサンプルを実行
+
+PyGame-CEにはゲームや画面表示のサンプルがいくつか付属しているので，正しくインストールできているかどうかをサンプルプログラムにより確認できる．たとえば以下のコマンドを実行して確認せよ．（最初の2つは音が出るので注意！）
+
+```powershell
+python -m pygame.examples.aliens
+python -m pygame.examples.chimp
+python -m pygame.examples.moveit
+python -m pygame.examples.stars
+```
+
 ## JupyterLabをエディタとして使う
 
 ### エディタ（テキストエディタ）とは
@@ -74,31 +85,28 @@ Pythonのプログラムは，しばしば スクリプト（script） と呼ば
 
 今回はJupyterLabをエディタとして使い，それとは別にMiniforge PromptでPythonプログラムを実行する．そのため，先ほど起動したMiniforge Promptとは別にもう一つ，Miniforge Promptを起動して，JupyterLabを起動する．手順は以前の教材で説明しているので，ここでは省略する．
 
-```{figure} ./images/github-miniforge2.drawio.png
-:align: center
-「Instalｌ」の直下にWindowsでのインストール方法が記載されている．「the
-Windows
-installer」をクリックしてダウンロードし，実行するとインストーラーが起動する．
-```
-
 ```{figure} ./images/editor01.drawio.png
 :align: center
+:label: fig-jl-editor1
 JupyterLabの画面．Pythonファイルを置きたい場所まで移動し（①），下段の「その他」のところにある「Pythonファイル」（②）をクリックする．
 またはメニューからファイル --> 新規 --> Pythonファイルを選択しても良い．
 ```
 
 ```{figure} ./images/media/jupyterlab-editor3.png
 :align: center
+:label: fig-jl-editor3
 untitled1.pyというファイルが作られ，その画面が開く．ファイル名を変えたいときは，ファイルブラウザーのファイル名を右クリックし「名前を変更」を選ぶ．前の教材で説明したとおりである．
 ```
 
 ```{figure} ./images/media/jupyterlab-editor6.png
 :align: center
+:label: fig-jl-editor6
 実行したいプログラムを書く．
 ```
 
 ```{figure} ./images/editor04.drawio.png
 :align: center
+:label: fig-jl-editor4
 JupyterLab Notebookのセルとは異なり，ファイルを保存しないと実行できない．メニューからファイル --> Python Fileを保存 を選び，保存する．
 ```
 
@@ -111,6 +119,7 @@ python pytest1.py
 **そのファイルを保存した場所**で実行すること．`dir`コマンドでいまいるディレクトリにあるファイルを確認し，実行すること．（ディレクトリの移動には`cd`コマンドを用いる．詳細は適宜調べること．）そのファイルがある場所で実行しなかった場合やファイル名を間違えた場合には，`[Error 2] No such file or directory`というエラーが表示される．ファイルを保存したのにこのエラーが出るのは，たいていの場合そのファイルがある場所まで移動せずに実行した場合である．
 
 ```{figure} ./images/terminal1.drawio.png
+:label: fig-pygame-terminal1
 Miniforge Promptで，作成したプログラムを実行している例．白文字で表示されているのがユーザーが入力する文字列である．
 ①EXERCISE環境に入り，②プログラムを置いているディレクトリまで`cd`コマンドを使って移動する．③`dir`コマンドでそのファイルがあるかどうかを確認し（③'），④そのプログラムをpythonコマンドに与えて実行して，結果を確認する（④'）．
 ```
@@ -165,6 +174,8 @@ pygame.quit()
 プログラムの詳細は今後学ぶこととし，いまは説明しない．
 
 ```{figure} ./images/media/pygame-ss1.png
+:align: center
+:label: fig-pygame-ss1-1
 プログラムを実行すると表示されるはずのウィンドウ
 ```
 

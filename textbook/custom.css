@@ -1,0 +1,28 @@
+/* Custom CSS for FluidSeminarMaterials textbook */
+/* exercise and solution admonitions */
+/* 演習用 admonition */
+
+/* 練習問題 (exercise) */
+/* 既存の丸い i アイコンを消す */
+.myst-admonition.exercise .myst-admonition-header-icon {
+  display: none;
+}
+.myst-admonition.exercise .myst-admonition-header-text::before {
+  content: "✏️ ";   /* または "🧩 " */
+}
+
+/* 提出を求める課題 (assignment) */
+.myst-admonition.assignment .myst-admonition-header-icon {
+  display: none;
+}
+.myst-admonition.assignment .myst-admonition-header-text::before {
+  content: "📝 ";   /* または "📘 " や "📄 " */
+}
+
+/* 解答用 admonition */
+.myst-admonition.solution .myst-admonition-header-icon {
+  display: none;
+}
+.myst-admonition.solution .myst-admonition-header-text::before {
+  content: "💡 ";
+}

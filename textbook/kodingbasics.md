@@ -14,32 +14,38 @@ KodingBasicsサイトにアクセスする。
 ```{figure} ./images/kodingbasics-toppage.drawio.png
 :alt: KodingBasicsサイト
 :align: center
+:label: fig-kbtop
 KodingBasicsサイト．「Get Started」をクリックしてログイン画面に進む．
 ```
 
 ```{figure} ./images/media/kodingbasics-app1l.png
 :align: center
+:label: fig-kb1l
 ログイン画面（ライトモード）．「Google IDでログイン」をクリックし，工学院大学Google Workspace IDでログインする．
 ```
 
 ```{figure} ./images/media/kodingbasics-app1d.png
 :align: center
+:label: fig-kb1b
 ログイン画面（ダークモード）．OSの画面設定によっては，ダークモードで表示されるかもしれない．どちらでも使い方に変わりはない．なお右上のメニューから変更も可能である．
 ```
 
 
 ```{figure} ./images/media/kodingbasics-app2-mod.png
 :align: center
+:label: fig-kb2
 クラスコードとクラスパスコードの入力画面．教員から指示されたクラスコードとクラスパスコードを入力し，「クラスに参加」をクリック．
 ```
 
 ```{figure} ./images/kodingbasics-app3a.drawio.png
 :align: center
+:label: fig-kb3a
 クラスに参加した画面（アプリのメイン画面）．①現在までにといた問題数がカテゴリーごとに表示されている．②解きたい問題のカテゴリーを選択し，③「問題を呼び出し」をクリック．
 ```
 
 ```{figure} ./images/kodingbasics-app3b.drawio.png
 :align: center
+:label: fig-kb3b
 問題を呼び出した画面．①問題が表示されている．②回答欄に解答を記入し，③「解答を提出」をクリック．
 ```
 
@@ -47,11 +53,13 @@ KodingBasicsで提示される問題は，いずれも基本的にプログラ�
 
 ```{figure} ./images/kodingbasics-app3d.drawio.png
 :align: center
+:label: fig-kb3d
 正解した場合は，その旨が表示され，解答状況が更新される．
 ```
 
 ```{figure} ./images/media/kodingbasics-app3c-mod.png
 :align: center
+:label: fig-kb3c
 間違えた場合はその旨が表示される．不正解しても「解答状況」の表示や成績には影響しないので，安心して取り組んでほしい．
 ```
 
