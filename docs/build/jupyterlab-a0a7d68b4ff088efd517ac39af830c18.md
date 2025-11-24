@@ -47,6 +47,8 @@ Jupyter
 news?"という問い合わせパネルが表示されるかもしれない。適宜選択すれば良い。）
 
 ```{figure} ./images/jupyterlab01en.png
+:align: center
+:label: fig-jupyterlab1en
 JupyterLabを起動した画面
 ```
 
@@ -55,16 +57,22 @@ JupyterLabを起動した画面
 JupyterLabは日本語パックをインストールすると，日本語での表示に変更できる．JupyterLabの画面でSettings 🡪 Languageから日本語を選ぶ．
 
 ```{figure} ./images/media/image31.png
+:align: center
+:label: fig-jupyterlab31
 日本語パックを入れたあとで，Settings 🡪
 Languageを選ぶと日本語が選択できるようになっている．
 ```
 
 ```{figure} ./images/media/image32.png
+:align: center
+:label: fig-jupyterlab32
 日本語を選択したとき表示される画面．"Change
 and reload"をクリックすると画面が更新される．
 ```
 
 ```{figure} ./images/media/image33.png
+:align: center
+:label: fig-jupyterlab33
 日本語化された画面
 ```
 
@@ -74,27 +82,37 @@ JupyterLabが起動したら"Notebook"の"Python 3
 (ipykernel)"をクリックして新しいノートブックを作成し、そこにコードを記入して実行してみよう。
 
 ```{figure} ./images/jupyterlab01.drawio.png
+:align: center
+:label: fig-jupyterlab1ja
 JupyterLabを起動した画面。"Notebook"の"Python 3
 (ipykernel)"をクリックして新しいノートブックを作成する。
 ```
 
 ```{figure} ./images/media/image16.png
+:align: center
+:label: fig-jupyterlab2
 新しい「ノートブック」が作成される。JupyterLabのノートブックは
 .ipynb
 という形式のファイルで、JupyterLabの中で開いて編集・実行できる。ノートブックの中では、青く囲まれた「セル」にコードを書き込んで実行できる。
 ```
 
 ```{figure} ./images/jupyterlab03.drawio.png
+:align: center
+:label: fig-jupyterlab3
 コードを実行している例。セルにコードを書き込み、上段の►マークをクリックするとコードが実行される。
 ```
 
 JupyterLabはPythonのコードを記述・実行できるだけでなく、Markdown（マークダウン）形式で文書を記述できる。このため作業レポートの作成や実行結果の記録・報告などに非常に役立つ。この授業でもレポートをJupyterLabのノートブックとして作成、提出してもらう予定なので、Markdownの基礎も習得してほしい。文末の「補足：Markdownの初歩（JupyterLab用）」を参考にせよ。
 
 ```{figure} ./images/jupyterlab04.drawio.png
+:align: center
+:label: fig-jupyterlab4
 Markdown形式で文書を書く方法
 ```
 
 ```{figure} ./images/jupyterlab05.drawio.png
+:align: center
+:label: fig-jupyterlab5
 Markdown形式で記述した文書をフォーマットして表示する方法
 ```
 
@@ -105,27 +123,39 @@ Markdown形式で記述した文書をフォーマットして表示する方法
 KU-LMSでJupyterノートブックのサンプル（フィボナッチ数列）を配布しているので、それをJupyterLabで表示し、内容を確認せよ。
 
 ```{figure} ./images/jupyterlab06f.drawio.png
+:align: center
+:label: fig-jupyterlab6
 ファイルブラウザーが表示されていないときは，左のフォルダーアイコンをクリックする
 ```
 
 ```{figure} ./images/jupyterlab07.drawio.png
+:align: center
+:label: fig-jupyterlab7
 ノートブックのファイル名を変更する方法その1：ファイルブラウザーでファイル名を右クリック
 ```
 
 ```{figure} ./images/jupyterlab08.drawio.png
+:align: center
+:label: fig-jupyterlab8
 ノートブックのファイル名を変更する方法その2：「名前を変更」をクリックしファイル名を変更．なおファイルを削除したいときは"Move to Trash"を選択する
 ```
 
 ```{figure} ./images/jupyterlab09.drawio.png
+:align: center
+:label: fig-jupyterlab9
 ノートブックのファイル名が変更されたことを確認
 ```
 
 ```{figure} ./images/media/image22.png
+:align: center
+:label: fig-jupyterlab10
 サンプルとして配布しているフィボナッチ数列のノートブック
 ```
 
 ## 課題：最大公約数の求め方・ユークリッドの互除法
 
+```{admonition} 課題
+:class: assignment
 「ユークリッドの互除法」とは最大公約数を求める方法のひとつである。これについて以下の課題を実施せよ。
 
 提出方法と提出期限はKU-LMSに掲載する。
@@ -141,8 +171,11 @@ KU-LMSでJupyterノートブックのサンプル（フィボナッチ数列）�
     C)  上のプログラムより求められた、指定された2数値の最大公約数。指定数値はKU-LMSに掲載している。
 
 3.  作成したノートブック（.ipynbファイル）を提出せよ。
+```
 
 ```{figure} ./images/media/image23.png
+:align: center
+:label: fig-jupyterlab11
 最大公約数を求めるレポート課題のJupyterノートブック例（一部伏せ字）
 ```
 
@@ -164,6 +197,8 @@ KU-LMSでJupyterノートブックのサンプル（フィボナッチ数列）�
 
 
 ```{figure} ./images/media/image24.png
+:align: center
+:label: fig-jupyterlab12
 JupyterLabのMarkdownセルにMarkdown形式で記入しフォーマットした例
 ```
 
@@ -179,9 +214,13 @@ JupyterLabのMarkdownセルにMarkdown形式で記入しフォーマットした
 
 
 ```{figure} ./images/github-jupyterlab-notebook1.trimmed.png
+:align: center
+:label: fig-jupyterlab13
 GitHubのJupyterLabノートブック配布サイト．ダウンロードしたい資料をクリックする
 ```
 ```{figure} ./images/github-jupyterlab-notebook2.drawio.png
+:align: center
+:label: fig-jupyterlab14
 資料が表示される．右上のダウンロードボタンをクリックし，ダウンロードする
 ```
 
@@ -192,31 +231,44 @@ GitHubのJupyterLabノートブック配布サイト．ダウンロードした�
 JupyterLabノートブック配布サイト：<https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab>
 
 ```{figure} ./images/jupyterlab01f.drawio.png
+:align: center
+:label: fig-jupyterlab15
 ファイルブラウザーが表示されていないときは，左上のフォルダーのアイコンをクリックして開く．
 ```
 
 ```{figure} ./images/jupyterlab10.drawio.png
+:align: center
+:label: fig-jupyterlab16
 今回は新しいフォルダーを作り，その中にノートブックやデータファイルをアップロードすることにする．そのためにはフォルダーに＋がついたマークをクリックする．
 ```
 
 ```{figure} ./images/jupyterlab11.drawio.png
+:align: center
+:label: fig-jupyterlab17
 新しいフォルダー（この例では"EXERCISE"）が作られたので，ダブルクリックして中に入る．
 ```
 
 ```{figure} ./images/jupyterlab12.drawio.png
+:align: center
+:label: fig-jupyterlab18
 "EXERCISE"に入っていることを確認し（①，②），ファイルブラウザーにアップロードしたいノートブックやファイルをドラッグアンドドロップする（③）．またはアップロードボタン（④）をクリックし，ノートブックやファイルをアップロードする．
 ```
 
 ```{figure} ./images/jupyterlab13ja.png
+:align: center
+:label: fig-jupyterlab19
 アップロードしたファイルがファイルブラウザーに表示される．見たいノートブックをダブルクリックする．
 ```
 
 ```{figure} ./images/jupyterlab14ja.png
+:align: center
+:label: fig-jupyterlab20
 ノートブックが表示される．実行結果も含めて保存されているノートブックであれば，実行結果のグラフなども（自分で実行しなくとも）表示される．
 ```
 
 ## 課題
 
+```{admonition} 課題
 1.  [GitHubで配布しているJupyterLabノートブック](https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab)「Matplotlibでグラフを描く」に掲載されている課題1および課題2に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．課題1と課題2を合わせてひとつのJupyterLabノートブックとすること．
 
 2.  [GitHubで配布しているJupyterLabノートブック](https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab)「3次元のグラフを描く―Matplotlib
@@ -224,6 +276,7 @@ JupyterLabノートブック配布サイト：<https://github.com/akonno/FluidSe
     Plotly」に掲載されている課題に取り組み，作成したJupyterLabノートブックをKU-LMSから提出せよ．
 
 提出期限はKU-LMSにて指示する．
+```
 
 ```{note}
 このページの本文と図版は [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
