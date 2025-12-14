@@ -13,9 +13,12 @@ project:
     - file: miniforge.md
     - file: jupyterlab.md
     - file: kodingbasics.md
+    - file: hanoi.md
     - file: pygame1.md
     - file: pygame2.md
     - file: pygame3.md
+    - file: pygame4.md
+    - file: bouncingballs.md
 
   # ★図や見出しの番号付け設定（プロジェクト全体に効く）
   numbering:

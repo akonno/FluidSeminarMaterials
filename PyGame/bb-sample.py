@@ -51,6 +51,10 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        # Sキーでスクショ保存
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
+                pygame.image.save(screen, "bbsample.png")
+                print("Saved screenshot to bbsample.png.")
 
             # 左クリックで新しいボールを追加する例
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:

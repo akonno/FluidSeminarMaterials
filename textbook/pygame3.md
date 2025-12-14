@@ -502,7 +502,6 @@ collided = False
 
 これでFlappy Bird風の障害物くぐりゲームの骨組みができた．
 
-
 ```{figure} ./images/media/screenshot3-8.png
 :align: center
 :label: fig-ss3-8
