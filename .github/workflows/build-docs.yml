@@ -46,7 +46,7 @@ jobs:
         env:
           BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: |
-          jupyter-book build . -b html
+          jupyter-book build --html
 
       # 6. docs/フォルダをクリーンアップしてHTMLをコピー
       - name: Copy built HTML to docs/
