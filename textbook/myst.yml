@@ -6,7 +6,7 @@
 version: 1
 
 project:
-  title: 流体工学セミナー・教材集
+  title: 流体工学セミナー・教材サイト
   # ここは現在の toc と同じように
   toc:
     - file: intro.md
