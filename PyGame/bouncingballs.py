@@ -3,7 +3,7 @@
 # MIT License (see LICENSE for details)
 #
 # 教材用ミニ物理エンジン（Python + pygame-ce版）
-# 元: bouncingballs.js (KONNO Akihisa) をベースに移植・整理  :contentReference[oaicite:4]{index=4}
+# 元のJavaScript版の考え方をもとに、Pythonとpygame-ce向けに整理したもの
 #
 # 機能:
 # - Ball: 位置・速度・質量・半径・色などの状態を保持
@@ -47,8 +47,7 @@ class Ball:
 
     def is_active(self) -> bool:
         """
-        JS版では m[i] < 0 のボールは無視(死んだ扱い)としていたので、
-        それを再現。:contentReference[oaicite:5]{index=5}
+        m[i] < 0 のボールは無視（無効な状態）として扱う。
         """
         return self.m >= 0.0
 
@@ -91,7 +90,6 @@ class World:
           - バネ: -k*(x - x0), -k*(y - y0)
           - 速度比例抵抗: -c*vx, -c*vy
           - 万有引力: ほかのボールとの相互作用 etc.
-        :contentReference[oaicite:6]{index=6}
         """
         # 例: 簡単な重力を入れたければ下のコメントアウトを戻す:
         # g = 200.0  # px/s^2ぐらいのスケールで好きに決める
@@ -106,7 +104,7 @@ class World:
     def step(self, dt: float):
         """
         1ステップ分の時間積分を行う。
-        - 改良Euler法 (Heun/modified Euler)。元のbouncingballs.jsに対応。:contentReference[oaicite:7]{index=7}
+        - 改良Euler法 (Heun/modified Euler)。
         - 壁反射
         - 衝突応答
         """
@@ -129,7 +127,7 @@ class World:
         vyd = [0.0]*n
 
         # --------
-        # ステップ1: オイラーステップ (f1)  :contentReference[oaicite:8]{index=8}
+        # ステップ1: オイラーステップ (f1)
         # --------
         f1x = [0.0]*n
         f1y = [0.0]*n
@@ -146,7 +144,7 @@ class World:
             vyd[i] = vy[i] + (fy / m[i]) * dt if m[i] != 0 else vy[i]
 
         # --------
-        # ステップ2: 修正ステップ (f2)  :contentReference[oaicite:9]{index=9}
+        # ステップ2: 修正ステップ (f2)
         # --------
         for i in range(n):
             if m[i] < 0:
@@ -168,8 +166,8 @@ class World:
 
         # --------
         # 壁反射（境界条件）
-        # 元JSでは「位置がはみ出し、かつ速度がその方向を向いている時だけ反転」
-        # これにより高速で突き抜けた時の多重反転を抑える。:contentReference[oaicite:10]{index=10}
+        # 位置がはみ出し、かつ速度がその方向を向いている時だけ反転する。
+        # これにより高速で突き抜けた時の多重反転を抑える。
         # --------
         for i in range(n):
             if m[i] < 0:
@@ -185,14 +183,13 @@ class World:
 
         # --------
         # 衝突処理（2球間）
-        # JS版と同様、「同時に2個と衝突する状況は想定しない」簡略モデル。:contentReference[oaicite:11]{index=11}
+        # 「同時に2個と衝突する状況は想定しない」簡略モデル。
         # 手順:
         #   1. ボールi,jの中心距離dと相対速度rv = vj-viを調べる
         #   2. d < r_i + r_j かつ 互いに近づいている(dotprod < 0)時に衝突とみなす
         #   3. 接線方向は無視し、中心線方向成分だけ1次元弾性衝突(反発係数e付き)を解く
         #   4. 速度を更新
-        # NOTE: JS版の式では(m[i]*lvi + m[j]*lvj ± e*m[?]*(lvj-lvi))/(m[i]+m[j])
-        #       を用いていた。そこを忠実に再現する。:contentReference[oaicite:12]{index=12}
+        # 中心線方向の速度成分について、反発係数を含む衝突公式を使う。
         # --------
         for i in range(n-1):
             if m[i] < 0:
@@ -264,7 +261,7 @@ class World:
         全てのBallを円で描画する。
         trail(残像)を実装したい場合、呼び出し側(メインループ)で
         画面の上に半透明の白をかぶせてから、draw()を呼べば
-        "fadeToWhite"に近い表現になる。:contentReference[oaicite:13]{index=13}
+        前フレームが徐々に消える表現になる。
         """
         for b in self.balls:
             if not b.is_active():
@@ -278,8 +275,7 @@ class World:
 
     def draw_trail_overlay(self, surface: pygame.Surface, alpha: int = 30):
         """
-        元のfadeToWhite()は「白い半透明の四角を重ねる」ことで
-        前フレームの絵をだんだん消す方式だった。:contentReference[oaicite:14]{index=14}
+        白い半透明の四角を重ねることで、前フレームの絵をだんだん消す。
         pygame版では毎フレームこれを最初に呼ぶことで近い効果を再現できる。
         alpha: 0(完全透明)～255(完全不透明)
         """

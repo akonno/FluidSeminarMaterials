@@ -20,7 +20,7 @@ def main():
     world = World(width=WIDTH, height=HEIGHT, restitution=0.9)
 
     # ランダムなボールをいくつか投入
-    # m<0 は無効扱いなので、ここは正の質量を入れる。:contentReference[oaicite:2]{index=2}
+    # m<0 は無効扱いなので、ここは正の質量を入れる。
     for _ in range(10):
         r = random.uniform(10, 30)
         m = r * 0.5  # 適当に「半径に比例した質量」など
@@ -75,13 +75,13 @@ def main():
         #  - 改良Euler法による位置・速度の更新
         #  - 壁反射
         #  - 多球衝突(反発係数eと質量による速度更新)
-        # が走る。:contentReference[oaicite:3]{index=3}
+        # が走る。
         world.step(dt)
 
         # 画面を更新
         if use_trail:
             # 前フレームの残像を少しずつ白で飛ばす（fadeToWhite相当の再現）
-            # 元のbouncingballs.jsのfadeToWhite()は白半透明の矩形を重ねていた。:contentReference[oaicite:4]{index=4}
+            # 白い半透明の矩形を重ねて、前フレームの残像を表現する。
             world.draw_trail_overlay(screen, alpha=30)
         else:
             # 普通に背景を塗りつぶす

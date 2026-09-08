@@ -69,8 +69,8 @@ KodingBasicsを用いた課題は別途指示します．
 
 ```{note}
 このページの本文と図版は [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
-のもとで提供されています。  
-コードやノートブックの例は MIT License に従います。  
-一部の画像（表で「CC ライセンス適用外」と明記されたスクリーンショットなど）は除外されます。  
+のもとで提供されています。
+コードやノートブックの例は MIT License に従います。
+第三者の著作物を含む一部のスクリーンショット等は、CC BY-NC-SA 4.0の適用対象外です。
 詳細は [LICENSE-docs.md](https://github.com/akonno/FluidSeminarMaterials/blob/main/LICENSE-docs.md) を参照してください。
 ```

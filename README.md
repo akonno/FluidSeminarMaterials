@@ -22,9 +22,8 @@ The Jupyter Book version of these materials is available here:
 
 ## Description
 
-> Teaching and learning materials for the Fluid Engineering Seminar.  
-> Includes Python programming exercises with JupyterLab, CFD practices using OpenFOAM (blueCFD-Core), and UNIX/Linux command-line training.  
-> Designed for computational and experimental education in fluid mechanics.
+> Teaching and learning materials for the Python programming part of the Fluid Engineering Seminar.
+> The seminar also includes CFD and UNIX/Linux training; this repository and its GitHub Pages site currently focus on the Python programming materials.
 
 ---
 
