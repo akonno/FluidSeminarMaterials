@@ -175,6 +175,8 @@ conda環境は、同じPCの中に独立したPython実行環境を作る仕組�
 
 ## 授業用環境EXERCISEを作る
 
+ここでは、必要なパッケージを段階的に追加する「手動で作成する方法」を説明する。`conda create`と`conda activate`を使ってconda環境の基本を学ぶための手順である。
+
 Miniforge Promptで、次のコマンドを一度だけ実行する。環境名は必要に応じて変更してよい。
 
 ```powershell
@@ -217,15 +219,13 @@ conda install -c conda-forge numpy
 
 JupyterLabの導入は[JupyterLabの導入と基本操作](./jupyterlab)で説明する。pygame-ceの導入はpygame-ceのページで扱う。conda-forgeに必要なパッケージがない場合や、本教材が別途指定する場合に限りpipを使う。
 
-```powershell
-python -m pip install pygame-ce
-```
-
 pygame-ceをインストールしても、Pythonコードでのimport名は`pygame`である。
 
 ## environment.ymlから授業用環境一式を作る
 
 このリポジトリには、授業で使用する標準的なPython環境をまとめて記述した [`environment.yml`](https://github.com/akonno/FluidSeminarMaterials/blob/main/environment.yml) を用意している。これは、授業用環境一式を一度に作りたい場合、環境を作り直したい場合、または教員側で同じ環境を再現したい場合に利用できる。
+
+これは、上で説明した`conda create`による「手動で作成する方法」とは別の「environment.ymlから一括作成する方法」である。両方を順番に実行する必要はなく、環境を作る方法としてどちらか一方を選ぶ。
 
 `environment.yml`があるフォルダーでMiniforge Promptを開き、次のコマンドを実行する。
 
@@ -240,7 +240,7 @@ cd %USERPROFILE%\Downloads
 conda env create -f environment.yml
 ```
 
-ブラウザの保存先を変更している場合は、`environment.yml`を保存した実際のフォルダーへ移動する。ファイルの一括作成は便利だが、これは環境を作る方法の一つである。`conda create`や`conda activate`を使った手動の方法も、conda環境とパッケージ管理を理解するために引き続き利用する。
+ブラウザの保存先を変更している場合は、`environment.yml`を保存した実際のフォルダーへ移動する。すでに手動で`EXERCISE`環境を作成済みの場合、通常はこの`conda env create -f environment.yml`を改めて実行する必要はない。ファイルの一括作成は便利だが、手動で環境管理を学ぶ方法と同じく、環境を作る方法の一つである。
 
 ## conda自身の更新について
 

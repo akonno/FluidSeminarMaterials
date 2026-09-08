@@ -20,12 +20,14 @@ PyGame-CEを使うと，プログラムで動く世界を作ることができ�
 
 ## 環境セットアップ (Windows 11 + Miniforge)
 
-Miniforge Promptを開き、EXERCISE環境に入って、以下のコマンドを実行する。本教材ではpygame-ceをPyPIから導入するため、pipを使用する。
+Miniforge Promptを開き、EXERCISE環境に入って、以下のコマンドを実行する。次の手順は、手動で作成する方法で環境を準備した場合の導入方法である。本教材ではpygame-ceをPyPIから導入するため、pipを使用する。
 
 ```powershell
 conda activate EXERCISE     # EXERCISE環境に入る
 python -m pip install pygame-ce         # pygame-ceをインストール
 ```
+
+`environment.yml`から授業用環境を作成した場合は、pygame-ceもすでにインストールされているため、このpipコマンドは不要である。その場合も、`conda activate EXERCISE`を実行した状態で、次の動作確認やexamplesの実行を行える。
 
 **pip**（ピップ） は，Pythonの外部ライブラリを追加・管理するための仕組みである．
 conda と同じような役割をもつが，両者は参照しているリポジトリ（配布元）が異なる．
