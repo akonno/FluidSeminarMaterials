@@ -11,6 +11,12 @@
     <loc>http://localhost:3000/jupyterlab</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/notebook</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/euclid</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/kodingbasics</loc>
   </url>
   <url>
@@ -26,9 +32,9 @@
     <loc>http://localhost:3000/pygame3</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/pygame4</loc>
+    <loc>http://localhost:3000/bouncingballs</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/bouncingballs</loc>
+    <loc>http://localhost:3000/pygame4</loc>
   </url>
 </urlset>

@@ -1,7 +1,7 @@
 # 再帰的呼び出しーハノイの塔を例に
 
 ```{note}
-この回のゴール:
+このページのゴール:
 - ハノイの塔の手順を、
   **プログラムによって自動生成できる**こと
 - 問題を小さな同種の問題に分けて考える、
@@ -215,8 +215,7 @@ ChatGPTやGeminiなどの生成AIを、
 ## ライセンス
 
 ```{note}
-このページの本文と図版は CC BY-NC-SA 4.0 とする。  
-サンプルコードは MIT License とする。  
-一部の学生作品のスクリーンショットなどはこの限りではない。  
-提出物（あなた自身のコードやスクリーンショット）は，ポートフォリオや就職活動で自由に使ってよいものとする。
+このページの本文と自作図版は [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja) のもとで提供されています。
+コードやノートブックの例は MIT License に従います。
+第三者の著作物を含む一部のスクリーンショット等は、CC BY-NC-SA 4.0の適用対象外です。詳細は [LICENSE-docs.md](https://github.com/akonno/FluidSeminarMaterials/blob/main/LICENSE-docs.md) を参照してください。
 ```

@@ -1,7 +1,7 @@
-# PyGame-CEによるインタラクティブ表現入門その1：PyGame-CEのインストールと実行
+# pygame-ceの導入と最初のプログラム
 
 ```{note}
-この回のゴール:
+このページのゴール:
 1. pygame-ceでウィンドウを開ける
 2. 背景色と図形（円・四角形）を描ける
 3. スクリーンショットをLMSに提出できる
@@ -11,8 +11,7 @@
 
 **PyGame**（パイゲーム） は，Pythonというプログラミング言語でゲームやアニメーションを作るためのライブラリである．
 ウィンドウを開いて図形を描いたり，マウスやキーボードの操作に反応させたり，音を鳴らしたりすることができる．
-**PyGame-CE**（Community Edition） はPyGameを継承して改良を加えたコミュニティ版であり，最新のPython環境で安定して動作し，新しい機能も追加されている．
-教育や創作の場で使いやすく，現在も開発が続けられている実用的な基盤である．
+**pygame-ce**（Community Edition）は、pygameをもとに改良が続けられているコミュニティ版である。本教材では、WindowsのPython環境で導入しやすく、描画や入力を使った例を段階的に試せるライブラリとして利用する。
 
 PyGame-CEを使うと，プログラムで動く世界を作ることができる．
 画面上で形を動かしたり，操作に反応させたりしながら，動きの仕組みを直感的に学べる．
@@ -21,11 +20,10 @@ PyGame-CEを使うと，プログラムで動く世界を作ることができ�
 
 ## 環境セットアップ (Windows 11 + Miniforge)
 
-Miniforge Promptを開き，EXERCISE環境に入って，以下のコマンドを実行する．PyGame-CEは`conda`ではインストールできないので（2025年11月現在），`pip`を用いてインストールする．
+Miniforge Promptを開き、EXERCISE環境に入って、以下のコマンドを実行する。本教材ではpygame-ceをPyPIから導入するため、pipを使用する。
 
 ```powershell
 conda activate EXERCISE     # EXERCISE環境に入る
-python -m pip install --upgrade pip     # pipを最新版にアップグレード
 python -m pip install pygame-ce         # pygame-ceをインストール
 ```
 
@@ -40,7 +38,7 @@ pipのほうがより多くのライブラリを扱える一方で，condaほど
 python -c "import sys, pygame; print(sys.version); print(pygame.version.ver)"
 ```
 
-- Pythonのバージョンと pygame-ce のバージョンが表示されれば，適切にインストールできている．
+- Pythonのバージョンとpygame-ceのバージョンが表示されれば、導入できている。pygame-ceをインストールした場合も、Pythonコードでは`import pygame`と書く。
 
 ### PyGame-CEのサンプルを実行
 
@@ -53,7 +51,7 @@ python -m pygame.examples.moveit
 python -m pygame.examples.stars
 ```
 
-## JupyterLabをエディタとして使う
+## JupyterLabをテキストエディタとして使う
 
 ### エディタ（テキストエディタ）とは
 
@@ -65,7 +63,7 @@ python -m pygame.examples.stars
 エディタは「プログラムを書くためのノート」であり，**考えを形にする入口**であるといえる．
 どの言語を使う場合でも，エディタを自在に扱えることは，プログラミングの第一歩である．
 
-現在，プログラミングには専用のエディタを用いるのが一般的である．
+プログラミングでは専用のエディタを用いることが多い．
 その中でも **Visual Studio Code（VS Code）** は最も広く使われており，多くの言語に対応し，拡張機能やデバッグ支援などが充実している．
 本格的なプログラミングを行う際には，VS Codeの利用を推奨する．
 
@@ -83,7 +81,7 @@ Pythonのプログラムは，しばしば スクリプト（script） と呼ば
 
 ### JupyterLabのエディタとしての使い方
 
-今回はJupyterLabをエディタとして使い，それとは別にMiniforge PromptでPythonプログラムを実行する．そのため，先ほど起動したMiniforge Promptとは別にもう一つ，Miniforge Promptを起動して，JupyterLabを起動する．手順は以前の教材で説明しているので，ここでは省略する．
+今回はJupyterLabをエディタとして使い，それとは別にMiniforge PromptでPythonプログラムを実行する．そのため，先ほど起動したMiniforge Promptとは別にもう一つ，Miniforge Promptを起動して，JupyterLabを起動する．起動方法は[JupyterLabの導入と基本操作](./jupyterlab)を参照する．
 
 ```{figure} ./images/editor01.drawio.png
 :align: center
@@ -95,7 +93,7 @@ JupyterLabの画面．Pythonファイルを置きたい場所まで移動し（�
 ```{figure} ./images/media/jupyterlab-editor3.png
 :align: center
 :label: fig-jl-editor3
-untitled1.pyというファイルが作られ，その画面が開く．ファイル名を変えたいときは，ファイルブラウザーのファイル名を右クリックし「名前を変更」を選ぶ．前の教材で説明したとおりである．
+untitled1.pyというファイルが作られ，その画面が開く．ファイル名を変えたいときは，ファイルブラウザーのファイル名を右クリックし「名前を変更」を選ぶ．
 ```
 
 ```{figure} ./images/media/jupyterlab-editor6.png
@@ -186,7 +184,8 @@ pygame.quit()
 ## ライセンス
 
 ```{note}
-このページの本文と図版は CC BY-NC-SA 4.0 とします．  
-サンプルコードは MIT License とします．  
+このページの本文と自作図版は [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja) のもとで提供されています。
+コードやノートブックの例は MIT License に従います。
+第三者の著作物を含む一部のスクリーンショット等は、CC BY-NC-SA 4.0の適用対象外です。詳細は [LICENSE-docs.md](https://github.com/akonno/FluidSeminarMaterials/blob/main/LICENSE-docs.md) を参照してください。
 提出物（あなた自身のコードやスクリーンショット）は，ポートフォリオや就職活動で自由に使ってよいものとします．
 ```
