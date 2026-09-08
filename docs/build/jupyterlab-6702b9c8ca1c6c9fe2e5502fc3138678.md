@@ -17,6 +17,8 @@ conda activate EXERCISE
 conda install -c conda-forge jupyterlab jupyterlab-language-pack-ja-jp
 ```
 
+上の操作は、手動で作成する方法で`EXERCISE`環境を準備した場合に行う。`environment.yml`から授業用環境を作成した場合は、JupyterLabと日本語language packがすでにインストールされているため、このインストール操作は不要である。いずれの場合も、`conda activate EXERCISE`の後に`jupyter lab`を実行して起動する。
+
 インストール後、次のコマンドでJupyterLabを起動する。
 
 ```powershell

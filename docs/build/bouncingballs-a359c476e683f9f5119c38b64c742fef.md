@@ -148,11 +148,16 @@ class SpringWorld(World):
 `draw_trail_overlay()`は、前のフレームを白い半透明の面で少しずつ覆い、軌跡が残って見える効果を作る。
 
 ```python
-screen.fill((0, 0, 0))
+# メインループに入る前に、背景を一度だけ初期化する
+screen.fill((255, 255, 255))
+
+# メインループ内（残像を使う場合）
 world.draw_trail_overlay(screen, alpha=20)
 world.draw(screen)
 pygame.display.flip()
 ```
+
+残像を使うフレームでは、`draw_trail_overlay()`の前に`screen.fill()`を実行しない。半透明の面で前フレームを少しずつ覆ってから、現在のボールを描画することで軌跡が残る。残像を使わず画面を毎フレーム消去する場合は、`screen.fill()`で背景を塗り直してから`world.draw()`を呼ぶ。
 
 `alpha`を小さくすると長い軌跡が残り、大きくすると早く消える。
 
