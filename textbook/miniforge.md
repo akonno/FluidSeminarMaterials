@@ -209,19 +209,38 @@ conda env list
 
 ## パッケージを追加する
 
-パッケージは、まずconda-forgeからcondaで導入する。本教材で使う主要パッケージの例を示す。
+パッケージは、まずconda-forgeからcondaで導入する。例えば、数値計算用のNumPyを追加するには次のようにする。
 
 ```powershell
-conda install -c conda-forge jupyterlab jupyterlab-language-pack-ja-jp ipykernel numpy scipy matplotlib pandas plotly
+conda install -c conda-forge numpy
 ```
 
-conda-forgeに必要なパッケージがない場合や、本教材が別途指定する場合に限りpipを使う。pygame-ceは本教材ではPyPIから導入する。
+JupyterLabの導入は[JupyterLabの導入と基本操作](./jupyterlab)で説明する。pygame-ceの導入はpygame-ceのページで扱う。conda-forgeに必要なパッケージがない場合や、本教材が別途指定する場合に限りpipを使う。
 
 ```powershell
 python -m pip install pygame-ce
 ```
 
 pygame-ceをインストールしても、Pythonコードでのimport名は`pygame`である。
+
+## environment.ymlから授業用環境一式を作る
+
+このリポジトリには、授業で使用する標準的なPython環境をまとめて記述した [`environment.yml`](https://github.com/akonno/FluidSeminarMaterials/blob/main/environment.yml) を用意している。これは、授業用環境一式を一度に作りたい場合、環境を作り直したい場合、または教員側で同じ環境を再現したい場合に利用できる。
+
+`environment.yml`があるフォルダーでMiniforge Promptを開き、次のコマンドを実行する。
+
+```powershell
+conda env create -f environment.yml
+```
+
+例えば、GitHubから`environment.yml`をダウンロードしてDownloadsフォルダーに保存した場合は、保存場所を確認してから、次のようにそのフォルダーへ移動する。
+
+```powershell
+cd %USERPROFILE%\Downloads
+conda env create -f environment.yml
+```
+
+ブラウザの保存先を変更している場合は、`environment.yml`を保存した実際のフォルダーへ移動する。ファイルの一括作成は便利だが、これは環境を作る方法の一つである。`conda create`や`conda activate`を使った手動の方法も、conda環境とパッケージ管理を理解するために引き続き利用する。
 
 ## conda自身の更新について
 

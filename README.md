@@ -17,6 +17,8 @@ At the current stage, the repository includes both **JupyterLab-based notebooks*
 The Jupyter Book version of these materials is available here:  
 👉 [https://akonno.github.io/FluidSeminarMaterials/](https://akonno.github.io/FluidSeminarMaterials/)
 
+A reproducible course environment is defined in [`environment.yml`](environment.yml).
+
 
 ---
 
