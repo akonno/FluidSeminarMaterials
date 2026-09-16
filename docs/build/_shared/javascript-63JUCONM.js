@@ -1,1 +1,1 @@
-import{a,b,c,d,e}from"https://akonno.github.io/FluidSeminarMaterials//build/_shared/chunk-265RPIE7.js";import"https://akonno.github.io/FluidSeminarMaterials//build/_shared/chunk-OZE3FFNP.js";e();export{a as javascript,b as json,c as jsonld,d as typescript};
+import{a,b,c,d,e}from"https://akonno.github.io/FluidSeminarMaterials/build/_shared/chunk-265RPIE7.js";import"https://akonno.github.io/FluidSeminarMaterials/build/_shared/chunk-OZE3FFNP.js";e();export{a as javascript,b as json,c as jsonld,d as typescript};
