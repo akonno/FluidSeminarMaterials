@@ -22,9 +22,9 @@ Pandocによる初期Markdown化と`--extract-media`での画像抽出を行い�
 | `cavity.md` | pp.1、5--13 | 初期移植完了 |
 | `cavity-settings.md` | pp.14--23 | 初期移植完了 |
 | `blockmesh-boundary.md` | pp.24--31 | 初期移植完了 |
-| `external-flow-2d.md` | pp.32--34 | 見出し・課題の初期配置 |
-| `external-flow-3d.md` | pp.35--39 | 見出し・手順の初期配置 |
-| `external-flow-3d-custom.md` | pp.40--42 | 見出し・手順の初期配置 |
+| `external-flow-2d.md` | pp.32--34 | 課題、実行手順、学生作成図の非掲載方針を反映 |
+| `external-flow-3d.md` | pp.35--39 | Release取得、STL準備、実行・可視化手順、車両図を反映 |
+| `external-flow-3d-custom.md` | pp.40--42 | STL差し替え、寸法・座標、課題、出典不明図の非掲載方針を反映 |
 
 授業回を示す「前回」「今回」「次回」は、章名や節名を参照する表現へ置き換えた。
 
@@ -39,6 +39,19 @@ Phase 2Bでは、教員作成の説明図、OpenFOAM/ParaViewの解析結果、�
 - cavityとchannelの概念比較
 - channel境界条件
 - square-cylinderのblock、mesh、圧力、速度、vorticityの説明図
+
+図版方針の確認後、CC0のConcept Car 038に関係する車両形状・表面メッシュ・解析結果（`vehicle-model.png`、`vehicle-surface-mesh.png`、`vehicle-mesh.png`、`vehicle-pressure-velocity.png`）と、寸法・座標の説明図（`vehicle-dimensions.png`、`custom-domain-dimensions.png`）を追加した。権利上そのまま掲載しない図の位置には、Ghia、学生作成例、出典未確認モデル用のplaceholderを配置した。
+
+### Human-confirmed provenance updates
+
+次の画像については、2026-09-16に教材作成者へ確認した。`image40.png`、`image41.png`はCC0のConcept Car 038をユーザー本人がParaViewで表示・撮影した画像、`image44.png`、`image45.png`は同じモデルを用いたユーザー本人のOpenFOAM / ParaView結果、`image46.png`、`image47.png`はユーザー本人が作成した寸法・座標図である。これらは、元モデルの出典と、可視化・説明図の作成者を区別して記録した。
+
+- `image40.png` → `vehicle-model.png`：CC0モデルの表示例。Sketchfabのsource URLを本文とcase repositoryに記録。
+- `image41.png` → `vehicle-surface-mesh.png`：同じCC0モデルの表面メッシュ表示。
+- `image44.png` → `vehicle-mesh.png`：同じCC0モデルのOpenFOAM / ParaView解析メッシュ。
+- `image45.png` → `vehicle-pressure-velocity.png`：同じCC0モデルの圧力場・速度ベクトル結果。
+- `image46.png` → `vehicle-dimensions.png`：車両寸法・座標の自作説明図。
+- `image47.png` → `custom-domain-dimensions.png`：透明背景の自作線図を白背景へ合成した公開用派生PNG。原図はDOCX sourceに保持。
 
 ### Per-file provenance
 
@@ -61,8 +74,10 @@ Phase 2Bでは、教員作成の説明図、OpenFOAM/ParaViewの解析結果、�
 ## Figures withheld / replaced
 
 - Ghia et al. (1982)の原図2点は転載せず、`cavity-settings.md`に自作再計算図へのplaceholderを置いた。
-- 学生作成図は公開許諾が未確認のため掲載していない。
-- Sketchfab由来の車両画像、出典不明の3D結果図は、今回のMySTには掲載していない。
+- `image2.png`のblueCFD公式Web screenshotは転載せず、公式Downloadsページへのリンクに置き換えた。
+- `image37.png`--`image39.png`の同一卒業済み学生による課題例は、公開許諾が困難なため掲載していない。課題条件は文章で残した。
+- CC0のConcept Car 038に関係する`image40.png`、`image41.png`、`image44.png`、`image45.png`は、sourceとユーザー作成の可視化を区別して記録した。
+- `image48.png`は、可視化の作成者は確認できるが元3Dモデルの出典・ライセンスが未確認のため、placeholderへ置き換えた。
 - 古いParaView UIを含む図は、2026環境で再撮影するまで主要手順の根拠にしない。
 
 ## Equations converted
@@ -96,8 +111,8 @@ caseを使う章から次のReleaseページへリンクした。
 
 - Ghia benchmarkの自作再計算図は未作成。
 - `square-cylinder` caseは`v2026.1`に含まれていない。
-- 学生作成画像の公開許諾・匿名化・クレジットは未確定。
-- 出典不明の3D画像は掲載保留。
+- 学生作成画像は公開教材へ掲載せず、課題条件の文章だけを提供する。将来再利用する場合の許諾・クレジットは未確定。
+- `image48.png`の元3Dモデルの出典・ライセンスは未確認のため、公開教材へ掲載しない。
 - blueCFD-Core、ParaView、Windows UIスクリーンショットは将来の対象環境で再撮影する余地がある。
-- 後半3章は初期移植であり、図版・詳細なcase説明・課題導線の完全統合はPhase 2B後半で行う。
+- 後半3章は初期移植を補強した段階であり、caseとの詳細な対応や図版の完全更新はPhase 2B後半で行う。
 - WSL/Linux/macOS、standalone ParaView、Notepad2などの補足は、主経路と重複しない形への最終整理が必要。

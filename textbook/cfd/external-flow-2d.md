@@ -18,6 +18,29 @@
 
 blockMeshを実行したら、まずメッシュの形と境界patchをParaViewで確認する。その後に流れを計算し、圧力や速度場を可視化する。
 
+```{admonition} 課題例について
+過去の学生作品を参考例として使用していたが、公開教材では掲載しない。必要な提出内容は本文中の条件に従うこと。
+```
+
+## 解析の実行
+
+学生が作成したcaseでは、まず`blockMeshDict`と境界条件を確認し、次の順に実行する。solverの設定は2026年版のOpenFOAM 12 / `foamRun` workflowに合わせる。
+
+```sh
+blockMesh
+foamRun
+paraFoam
+```
+
+`blockMesh`の終了後にメッシュとpatchを確認し、計算が終了してから圧力場、速度場、必要に応じて渦度を表示する。square-cylinderの配布caseはないため、この章のcaseは各自が設計する。
+
+```{figure} ./images/placeholders/student-example-placeholder.png
+:alt: 過去の学生作成例を掲載しないことを示すplaceholder
+:align: center
+
+元資料では学生作成のblock設計図と解析結果を参考例として示していたが、公開教材では掲載しない。図の代わりに、この章の手順と課題条件を用いる。
+```
+
 ## 課題
 
 自分で決めた2次元形状について、流れ解析を実施する。単純な形状は対象から除外する。

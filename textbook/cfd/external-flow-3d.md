@@ -27,6 +27,26 @@ cp model/concept_car_038-mod.stl constant/geometry/STLObject.stl
 
 車両モデルの出典は、case repositoryの[`vehicle/model/README.md`](https://github.com/Kogakuin-FEL/OpenFOAM-exercises/blob/main/vehicle/model/README.md)に記録されている。
 
+この節で扱うモデルと図のprovenanceは次のとおりである。
+
+- Model: `FREE Concept Car 038 - public domain (CC0)`
+- Source: [Sketchfab](https://sketchfab.com/3d-models/free-concept-car-038-public-domain-cc0-0b4ca2a15ba7478db2a42ac9f0e687bf)
+- Visualization / CFD: Akihisa KonnoがParaView / OpenFOAMで作成
+
+```{figure} ./images/external-3d/vehicle-model.png
+:alt: CC0のConcept Car 038の形状
+:align: center
+
+CC0のConcept Car 038を用いた車両形状の例。
+```
+
+```{figure} ./images/external-3d/vehicle-surface-mesh.png
+:alt: Concept Car 038の表面メッシュ
+:align: center
+
+車両表面メッシュの表示例。画像はユーザーがParaViewで表示・撮影したものである。
+```
+
 ## Allrunを実行する
 
 ```sh
@@ -50,6 +70,20 @@ cp model/concept_car_038-mod.stl constant/geometry/STLObject.stl
 `paraFoam`で結果を開き、必要に応じて`Mesh Regions`で`internalMesh`を非表示にする。車両表面、床、出口などのregionを選び、圧力場や断面の速度ベクトルを表示する。
 
 最終時刻の`U`と`p`、力、streamline、cut-planeなどのfunction-object出力を確認する。設定と出力の詳細はcase repositoryの`VALIDATION.md`を参照する。
+
+```{figure} ./images/external-3d/vehicle-mesh.png
+:alt: CC0車両モデル周囲の解析メッシュ
+:align: center
+
+CC0の車両モデルを用い、OpenFOAM / ParaViewで作成した解析メッシュの例。
+```
+
+```{figure} ./images/external-3d/vehicle-pressure-velocity.png
+:alt: 車両表面の圧力場と断面の速度ベクトル
+:align: center
+
+車両表面の圧力場と断面の速度ベクトルを表示した結果例。画像はユーザーがOpenFOAM / ParaViewで作成したものである。
+```
 
 ## 課題
 

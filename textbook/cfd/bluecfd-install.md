@@ -17,7 +17,7 @@ blueCFD-Coreは、OpenFOAMをWindowsから利用するための環境をまと�
 
 ## インストール
 
-インストーラーは[blueCFD-Core Project](https://bluecfd.github.io/)の公式情報を確認して入手する。インストール時は、空白を含まないパスを選ぶ。授業で例として使うパスは次のとおりである。
+インストーラーは[blueCFD-Core Projectの公式Downloadsページ](https://bluecfd.github.io/Core/Downloads/)から入手する。インストール時は、空白を含まないパスを選ぶ。授業で例として使うパスは次のとおりである。
 
 ```text
 C:\blueCFD-Core\2024

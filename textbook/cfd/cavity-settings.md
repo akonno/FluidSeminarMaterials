@@ -111,6 +111,13 @@ patchとblockの定義は、次章のチャネルとblockMeshの説明につな�
 Ghia et al. (1982) の原図は、公開教材へそのまま転載しない。ここには、OpenFOAMの速度場から再構成した等間隔のstreamfunction contourを掲載する予定である。原図を掲載せず、文献と比較条件だけを残す。
 ```
 
+```{figure} ./images/placeholders/ghia-streamfunction-placeholder.png
+:alt: Ghia benchmark replacement placeholder
+:align: center
+
+Ghia et al. (1982) の原図は転載せず、OpenFOAMの計算結果から自作する等流関数コンターへ置き換える予定である。
+```
+
 比較課題では、Reynolds数だけでなく、メッシュ分割数、`deltaT`、終了時刻、比較した量を記録する。
 
 ## 課題
