@@ -22,7 +22,7 @@
 どのように考えれば、
 大量の手順をプログラムで生成できるかを考えることが目的である。
 
-```{figure} ./images/media/hanoisimulator.png
+```{figure} ../images/media/hanoisimulator.png
 :align: center
 :label: fig-hanoi-1
 ハノイの塔シミュレータの画面例

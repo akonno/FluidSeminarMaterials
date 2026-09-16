@@ -6,7 +6,7 @@
 
 このページは必修の手順ではない。コードの一部だけを使ったり、数字を変えたり、構造を参考にして別の作品を作ったりしてよい。
 
-```{figure} ./images/media/bb-sample.png
+```{figure} ../images/media/bb-sample.png
 :align: center
 :label: fig-bb-1
 `bouncingballs.py`と`bb-sample.py`によるボールの運動描画例。

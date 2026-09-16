@@ -68,7 +68,7 @@ pygame.quit()
 
 プログラム内で，円を(200, 200)の位置に，四角形を(50, 50)の位置に描いている．従ってそれぞれの図形は直線$y=x$の上に乗っているはずである．しかし画面上では図形は左上から右下方向の対角線上に表示され，円は四角形の右上ではなく右**下**に表示される．われわれの馴染んでいるxy座標系から考えると不自然である．これはなぜだろうか．
 
-```{figure} ./images/media/screenshot2-1.png
+```{figure} ../images/media/screenshot2-1.png
 :align: center
 :label: fig-ss2-1
 例に示したプログラムにより描画される図形
@@ -80,7 +80,7 @@ pygame.quit()
 - x座標は右向きが正
 - y座標は**下**向きが正
 
-```{figure} ./images/coordinate1.drawio.png
+```{figure} ../images/coordinate1.drawio.png
 :align: center
 :label: fig-pygame-coordinate
 コンピューターグラフィックスで一般的な座標系
@@ -108,7 +108,7 @@ RGBとは，光の三原色である**赤**（Red）・**緑**（Green）・**�
 
 参考：[RapidTables『RGB Color Codes』](https://www.rapidtables.com/web/color/RGB_Color.html)
 
-```{figure} ./images/media/colorsample.png
+```{figure} ../images/media/colorsample.png
 :align: center
 :label: fig-colorsample
 さまざまな色で描画した四角形
@@ -208,7 +208,7 @@ PyGameで図形を描画するとき，内側を塗りつぶさずに外周だ�
 
 このように線の太さを指定しなければ塗りつぶしに，太さを指定すれば外周のみになる．
 
-```{figure} ./images/media/screenshot2-2.png
+```{figure} ../images/media/screenshot2-2.png
 :align: center
 :label: fig-ss2-2
 塗りつぶした四角形と外周のみの四角形
@@ -221,7 +221,7 @@ PyGameで図形を描画するとき，内側を塗りつぶさずに外周だ�
     pygame.draw.rect(screen, (0, 0, 0), (50, 50, 80, 80), 2)    # 外周は黒い線で描く
 ```
 
-```{figure} ./images/media/screenshot2-3.png
+```{figure} ../images/media/screenshot2-3.png
 :align: center
 :label: fig-ss2-3
 塗りつぶしと外周とで異なる色を用いて描画した四角形
@@ -246,7 +246,7 @@ PyGameで図形を描画するとき，内側を塗りつぶさずに外周だ�
     pygame.draw.ellipse(screen, (0, 0, 255), (200, 200, 100, 50))
 ```
 
-```{figure} ./images/media/screenshot2-4.png
+```{figure} ../images/media/screenshot2-4.png
 :align: center
 :label: fig-ss2-4
 (200, 200)の位置に半径100の円，100×50の四角形（外周のみ），100×50の楕円を描画した例
@@ -256,7 +256,7 @@ PyGameで図形を描画するとき，内側を塗りつぶさずに外周だ�
 
 また，あとから描かれた図形が上に描画されることも理解せよ．描画する順序を逆にすると，円が上から描かれるので四角形や楕円は端部しか見えなくなる．
 
-```{figure} ./images/media/screenshot2-5.png
+```{figure} ../images/media/screenshot2-5.png
 :align: center
 :label: fig-ss2-5
 描画順序を楕円 --> 四角形 --> 円に変えた例．円が重なるため，四角形と楕円は端部しか表示されない．
@@ -289,7 +289,7 @@ while running:
 
 ```
 
-```{figure} ./images/media/screenshot2-6.png
+```{figure} ../images/media/screenshot2-6.png
 :align: center
 :label: fig-ss2-6
 円を半透明にした例．描画順序は楕円 --> 四角形 --> 円だが，円が半透明なので四角形と楕円が透けて見える．
@@ -311,7 +311,7 @@ while running:
     screen.blit(surface, (0, 0))
 ```
 
-```{figure} ./images/media/screenshot2-7.png
+```{figure} ../images/media/screenshot2-7.png
 :align: center
 :label: fig-ss2-7
 円を透明度を変えながら表示している例．左から0，64，128，192，255と設定している．透明度0の円は表示されないので，そこだけ外枠を描画している．
@@ -326,7 +326,7 @@ while running:
     pygame.draw.polygon(screen, (0, 0, 255), [(250, 150), (200, 250), (300, 250), (325, 200)])
 ```
 
-```{figure} ./images/media/screenshot2-8.png
+```{figure} ../images/media/screenshot2-8.png
 :align: center
 :label: fig-ss2-8
 多角形を描画している例．この例では三角形と不等辺の四角形を描画している．
@@ -339,7 +339,7 @@ while running:
         (100, 150), (300, 150), (140, 300)], 1) 
 ```
 
-```{figure} ./images/media/screenshot2-9.png
+```{figure} ../images/media/screenshot2-9.png
 :align: center
 :label: fig-ss2-9
 星形を描画（外形線のみ）
@@ -354,7 +354,7 @@ while running:
         (300, 150), (140, 300)], 1) 
 ```
 
-```{figure} ./images/media/screenshot2-10.png
+```{figure} ../images/media/screenshot2-10.png
 :align: center
 :label: fig-ss2-10
 星形を描画（塗りつぶしあり）
@@ -380,7 +380,7 @@ SVG、PDF、PostScriptなど多くの描画システムでも採用されてお�
         (140, 300), (160, 200), (100, 150), (180, 150)], 1)
 ```
 
-```{figure} ./images/media/screenshot2-11.png
+```{figure} ../images/media/screenshot2-11.png
 :align: center
 :label: fig-ss2-11
 星形を描画（凹の頂点を含め10点を指定）
@@ -396,7 +396,7 @@ SVG、PDF、PostScriptなど多くの描画システムでも採用されてお�
             (250, 350), (350, 250)], 2)  # 折れ線
 ```
 
-```{figure} ./images/media/screenshot2-12.png
+```{figure} ../images/media/screenshot2-12.png
 :align: center
 :label: fig-ss2-12
 線分と折れ線を描画
@@ -413,7 +413,7 @@ SVG、PDF、PostScriptなど多くの描画システムでも採用されてお�
             (250, 350), (350, 250)])  # polygon 塗りつぶし
 ```
 
-```{figure} ./images/media/screenshot2-13.png
+```{figure} ../images/media/screenshot2-13.png
 :align: center
 :label: fig-ss2-13
 上からlines, polygon（外形線のみ），polygon（塗りつぶし）で描画した図形
@@ -428,7 +428,7 @@ Pythonのプログラムなので，描画も当然ループを使って繰り�
         pygame.draw.rect(screen, (0, 255 - i * 20, i * 20), (20 + i * 30, 20 + i * 30, 80, 80))
 ```
 
-```{figure} ./images/media/screenshot2-14.png
+```{figure} ../images/media/screenshot2-14.png
 :align: center
 :label: fig-ss2-14
 位置と色を変えながら連続して描いた四角形の例
@@ -449,7 +449,7 @@ Pythonのプログラムなので，描画も当然ループを使って繰り�
                                 (100 + (i+3) * slide, 220 + (i+3) * slide), (50 + (i+3) * slide, 270 + (i+3) * slide)])
 ```
 
-```{figure} ./images/media/screenshot2-15.png
+```{figure} ../images/media/screenshot2-15.png
 :align: center
 :label: fig-ss2-15
 位置を変えながら連続して描いた多角形の例
@@ -479,7 +479,7 @@ while running:
 
 このプログラムを実行すると，フレームごとに円をランダムに描画するので，多数の円が高速に表示されたり消えたりするように見えるはずである．
 
-```{figure} ./images/media/screenshot2-16.png
+```{figure} ../images/media/screenshot2-16.png
 :align: center
 :label: fig-ss2-16
 ランダムに表示された円の例．色も位置もランダムに決められている．この画面は静止画だが，実際にはこのような画面が高速に切り替わりながら表示される．

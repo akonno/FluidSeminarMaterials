@@ -93,7 +93,7 @@ pygame.quit()
 
 このプログラムを実行すると，ボールに見立てた赤い円が画面上を直線的に動き回り，またウィンドウの周囲では跳ね返る（跳ね返っているように運動の向きを変える）．どうしてそのように動作するのか，今後の改造に向けてプログラムの中身を理解しておこう．
 
-```{figure} ./images/media/screenshot3-1.png
+```{figure} ../images/media/screenshot3-1.png
 :align: center
 :label: fig-ss3-1
 ボールが跳ね返るプログラムを実行した例．ただしこの例では画面を完全には消さず，ボールの軌道がだんだん薄くなりながら画面に残るように表示している．ボールが直線的に動いていること，壁（ウィンドウの外枠）で跳ね返っていることが分かる．
@@ -138,7 +138,7 @@ PyGame-CEでは$y$軸の正は下向きなので，`ay`に正の値を入れる�
 
 ただしアニメーションをずっと表示し続けると，おそらくだんだんとボールの跳ね返る高さが高くなり，ついには天井にぶつかり，その後もだんだん速くなり続けるだろう．上に述べたように完全弾性衝突に当たる計算をしているから，正しく計算されていればずっと同じ高さまで跳ね返り続けるはずである．どうしてだんだん高くなるのだろうか?
 
-```{figure} ./images/media/screenshot3-2.png
+```{figure} ../images/media/screenshot3-2.png
 :align: center
 :label: fig-ss3-2
 ボールが跳ね返るプログラムを実行した例・重力あり．地面で跳ね返ったボールが放物線を描いて再び落下する様子や，跳ね返る高さがだんだん高くなる様子が分かる．
@@ -157,7 +157,7 @@ PyGame-CEでは$y$軸の正は下向きなので，`ay`に正の値を入れる�
 
 このように$x$と$y$の計算に速度だけでなく，加速度も考慮する．この方法は加速度が一定の場合には解析解を与える．（高校物理または大学1年次の物理の授業で学んでいる式だと思われる．忘れていたら復習しよう．）
 
-```{figure} ./images/media/screenshot3-3.png
+```{figure} ../images/media/screenshot3-3.png
 :align: center
 :label: fig-ss3-3
 ボールが跳ね返るプログラムを実行した例・重力あり，制度改善版．跳ね返る高さがほぼ一定になったことが分かる．
@@ -208,7 +208,7 @@ y_lr = 270  # 右下のy座標
             y = y_lr + r
 ```
 
-```{figure} ./images/media/screenshot3-4.png
+```{figure} ../images/media/screenshot3-4.png
 :align: center
 :label: fig-ss3-4
 ボールが壁面および配置された長方形と衝突すると跳ね返るプログラムを実行した例・重力あり
@@ -234,7 +234,7 @@ pygame2で説明したように，マウスカーソルの位置は`mx, my = pyg
 上のコードをプログラムのどこに入れれば良いか? 適切な場所に入れて，マウスの動きに合わせて長方形が動くようにせよ．
 ```
 
-```{figure} ./images/media/screenshot3-5.png
+```{figure} ../images/media/screenshot3-5.png
 :align: center
 :label: fig-ss3-5
 ボールが壁面および配置された長方形と衝突すると跳ね返るプログラムを実行した例・長方形がマウスの動きに合わせて横移動する場合
@@ -244,7 +244,7 @@ pygame2で説明したように，マウスカーソルの位置は`mx, my = pyg
 
 現在の衝突のコードは判定が簡略化されており，特に長方形の角にボールが近づいた場合には実際に衝突する前に跳ね返る．また跳ね返る方向は常に衝突した方向の真逆である．これをより現実的な衝突に変更したい．
 
-```{figure} ./images/media/screenshot3-6.png
+```{figure} ../images/media/screenshot3-6.png
 :align: center
 :label: fig-ss3-6
 ボールが壁面および配置された長方形と衝突すると跳ね返るプログラムで，ボールが長方形の左上隅に「衝突」している例．実際にはボールと長方形とは接触しておらず，また衝突前と速度が反転していることが分かる．
@@ -257,7 +257,7 @@ pygame2で説明したように，マウスカーソルの位置は`mx, my = pyg
 
 衝突を改善するにあたり，まずボールの位置によって衝突判定を[](#fig-collision-rectangle)のように8通りに分類する．
 
-```{figure} ./images/collision-rectangle.drawio.png
+```{figure} ../images/collision-rectangle.drawio.png
 :align: center
 :label: fig-collision-rectangle
 ボールと長方形との衝突の場合分け．ボールの中心が長方形まわりのどの位置にあるかによって，衝突判定を8通りに分類する．
@@ -357,7 +357,7 @@ def collide_circle_corner(x, y, r, vx, vy, x_c, y_c):
         vx, vy = collide_circle_corner(x, y, r, vx, vy, x_lr, y_lr)
 ```
 
-```{figure} ./images/media/screenshot3-7.png
+```{figure} ../images/media/screenshot3-7.png
 :align: center
 :label: fig-ss3-7
 ボールと長方形との角の衝突を改善した例．なおボールが角にぶつかりやすいように，ボールの半径を大きくしている．ボールが長方形の右上隅に衝突して速度ベクトルの向きが変わっていることが分かる．
@@ -502,7 +502,7 @@ collided = False
 
 これでFlappy Bird風の障害物くぐりゲームの骨組みができた．
 
-```{figure} ./images/media/screenshot3-8.png
+```{figure} ../images/media/screenshot3-8.png
 :align: center
 :label: fig-ss3-8
 障害物くぐりゲームの画面

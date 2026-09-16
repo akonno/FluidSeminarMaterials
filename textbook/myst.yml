@@ -6,12 +6,21 @@ project:
   title: 流体工学セミナー・教材サイト
   toc:
     - file: intro.md
-    - file: miniforge.md
-    - file: jupyterlab.md
-    - file: notebook.md
-    - file: euclid.md
-    - file: kodingbasics.md
-    - file: hanoi.md
+
+    - title: Pythonプログラミング
+      children:
+        - file: python/miniforge.md
+        - file: python/jupyterlab.md
+        - file: python/notebook.md
+        - file: python/euclid.md
+        - file: python/kodingbasics.md
+        - file: python/hanoi.md
+        - file: python/pygame1.md
+        - file: python/pygame2.md
+        - file: python/pygame3.md
+        - file: python/bouncingballs.md
+        - file: python/pygame4.md
+
     - title: 数値流体解析
       children:
         - file: cfd/bluecfd-install.md
@@ -21,11 +30,6 @@ project:
         - file: cfd/external-flow-2d.md
         - file: cfd/external-flow-3d.md
         - file: cfd/external-flow-3d-custom.md
-    - file: pygame1.md
-    - file: pygame2.md
-    - file: pygame3.md
-    - file: bouncingballs.md
-    - file: pygame4.md
 
   numbering:
     figure:

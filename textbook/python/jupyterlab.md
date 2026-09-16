@@ -27,7 +27,7 @@ jupyter lab
 
 ブラウザが自動で開かない場合は、Miniforge Promptに表示された`http://localhost:8888/lab?...`または`http://127.0.0.1:8888/lab?...`のURLをブラウザで開く。
 
-```{figure} ./images/jupyterlab01en.png
+```{figure} ../images/jupyterlab01en.png
 :align: center
 :label: fig-jupyterlab1en
 JupyterLabを起動した画面。
@@ -37,19 +37,19 @@ JupyterLabを起動した画面。
 
 日本語language packをインストールした後、JupyterLabのSettings → Languageから日本語を選ぶ。「Change and reload」が表示された場合はクリックして画面を更新する。
 
-```{figure} ./images/media/image31.png
+```{figure} ../images/media/image31.png
 :align: center
 :label: fig-jupyterlab31
 Settings → Languageから日本語を選択する画面。
 ```
 
-```{figure} ./images/media/image32.png
+```{figure} ../images/media/image32.png
 :align: center
 :label: fig-jupyterlab32
 日本語を選択した後に表示される画面。
 ```
 
-```{figure} ./images/media/image33.png
+```{figure} ../images/media/image33.png
 :align: center
 :label: fig-jupyterlab33
 日本語化されたJupyterLabの画面。
@@ -59,13 +59,13 @@ Settings → Languageから日本語を選択する画面。
 
 JupyterLabのLauncherにある「Notebook」から「Python 3 (ipykernel)」を選ぶと、新しいNotebookを作成できる。
 
-```{figure} ./images/jupyterlab01.drawio.png
+```{figure} ../images/jupyterlab01.drawio.png
 :align: center
 :label: fig-jupyterlab1ja
 Launcherの「Notebook」から「Python 3 (ipykernel)」を選ぶ。
 ```
 
-```{figure} ./images/media/image16.png
+```{figure} ../images/media/image16.png
 :align: center
 :label: fig-jupyterlab2
 新しいNotebook。Notebookは`.ipynb`形式で保存され、セルにコードを記述する。
@@ -75,7 +75,7 @@ Launcherの「Notebook」から「Python 3 (ipykernel)」を選ぶ。
 
 コードセルにPythonコードを記述し、上部の実行ボタンをクリックする。実行結果はセルの下に表示される。
 
-```{figure} ./images/jupyterlab03.drawio.png
+```{figure} ../images/jupyterlab03.drawio.png
 :align: center
 :label: fig-jupyterlab3
 コードセルを実行している例。
@@ -87,25 +87,25 @@ Notebookの内容やMarkdownセルについては、[Notebookの使い方](./not
 
 JupyterLab左側のファイルブラウザーでは、フォルダーやファイルを作成、移動、名前変更、削除できる。新しく作ったNotebookの名前は`Untitled.ipynb`になることがあるため、内容が分かる名前に変更して保存する。
 
-```{figure} ./images/jupyterlab06f.drawio.png
+```{figure} ../images/jupyterlab06f.drawio.png
 :align: center
 :label: fig-jupyterlab6
 ファイルブラウザーが表示されていないときは、左のフォルダーアイコンをクリックする。
 ```
 
-```{figure} ./images/jupyterlab07.drawio.png
+```{figure} ../images/jupyterlab07.drawio.png
 :align: center
 :label: fig-jupyterlab7
 ファイルブラウザーでファイル名を右クリックして名前を変更する。
 ```
 
-```{figure} ./images/jupyterlab08.drawio.png
+```{figure} ../images/jupyterlab08.drawio.png
 :align: center
 :label: fig-jupyterlab8
 「名前を変更」を選んでファイル名を変更する。削除するときは「Move to Trash」を選ぶ。
 ```
 
-```{figure} ./images/jupyterlab09.drawio.png
+```{figure} ../images/jupyterlab09.drawio.png
 :align: center
 :label: fig-jupyterlab9
 ファイル名が変更されたことを確認する。
