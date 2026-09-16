@@ -10,6 +10,8 @@
 OpenFOAM-exercises-2026.1.zip
 ```
 
+Releaseページが404になる場合は、[cavity章の注意](cavity.md)を確認する。
+
 GitHubの`Source code (zip)`は学生用case packageではない。展開後、blueCFD-Core terminalから`vehicle`へ移動する。
 
 ## STLを準備する

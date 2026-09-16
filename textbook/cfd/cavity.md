@@ -21,6 +21,10 @@
 OpenFOAM-exercises-2026.1.zip
 ```
 
+```{note}
+このcase repositoryは授業受講者向けのprivate repositoryである。Releaseページが404になる場合は、授業で案内されたGitHubアカウントでログインし、GitHub Education Teamへの参加が完了していることを確認する。
+```
+
 Windows上で展開したら、blueCFD-Core terminalから展開先の`cavity`ディレクトリへ移動する。提出方法、締切、授業年度固有のお知らせはKU-LMSで確認する。
 
 ## Caseの構造

@@ -32,6 +32,8 @@
 OpenFOAM-exercises-2026.1.zip
 ```
 
+Releaseページが404になる場合は、[cavity章の注意](cavity.md)を確認する。
+
 展開後、blueCFD-Core terminalで実行する。
 
 ```sh

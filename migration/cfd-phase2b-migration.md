@@ -40,6 +40,24 @@ Phase 2Bでは、教員作成の説明図、OpenFOAM/ParaViewの解析結果、�
 - channel境界条件
 - square-cylinderのblock、mesh、圧力、速度、vorticityの説明図
 
+### Per-file provenance
+
+以下の11点は、DOCXの`word/media/`内の元ファイルを確認してから、意味のある名前へコピーした。分類は、DOCX内の用途、PDFでの配置、図の内容を基準にしている。解析結果や説明図について、元データの作成履歴まではDOCXから確認できない場合がある。
+
+| File | Original source | Classification | Publication status | Notes |
+| --- | --- | --- | --- | --- |
+| `textbook/cfd/images/bluecfd-install/bluecfd-terminal-first-run.png` | DOCX `word/media/image6.png` | blueCFD-Core UI screenshot | included | 初回terminal画面。対象versionに依存するため、将来の2026環境で再撮影候補。 |
+| `textbook/cfd/images/cavity/cavity-goal.png` | DOCX `word/media/image1.png` | ParaView result / self-created screenshot | included | cavityの圧力・速度ベクトルの到達目標。原資料の解析結果を再利用。 |
+| `textbook/cfd/images/cavity/cavity-velocity-vectors.png` | DOCX `word/media/image12.png` | ParaView result / self-created screenshot | included | Glyphによる速度ベクトル表示。UIはParaView版に依存する。 |
+| `textbook/cfd/images/cavity/paraview-pressure.png` | DOCX `word/media/image10.png` | ParaView result / self-created screenshot | included | cavityの圧力場表示。計算結果の再現条件は別途確認が必要。 |
+| `textbook/cfd/images/blockmesh/cavity-channel-comparison.png` | DOCX `word/media/image23.png` | self-created explanatory figure | included | cavityとHagen--Poiseuille流れの概念比較図。 |
+| `textbook/cfd/images/blockmesh/channel-boundary-conditions.png` | DOCX `word/media/image26.png` | self-created explanatory figure | included | channelの境界条件説明図。実caseの設定ファイルを正とする。 |
+| `textbook/cfd/images/blockmesh/square-cylinder-blocks.png` | DOCX `word/media/image27.png` | self-created explanatory figure | included | 角柱まわりのblock分割説明。square-cylinder caseはv2026.1未収録。 |
+| `textbook/cfd/images/blockmesh/square-cylinder-mesh.png` | DOCX `word/media/image33.png` | OpenFOAM result visualization | included | 角柱後流の解析格子。`image32.png`と同内容の重複mediaは採用していない。 |
+| `textbook/cfd/images/blockmesh/square-cylinder-pressure.png` | DOCX `word/media/image34.png` | OpenFOAM result visualization | included | 角柱後流の圧力コンター。作成条件は原資料由来で、再計算図ではない。 |
+| `textbook/cfd/images/blockmesh/square-cylinder-speed.png` | DOCX `word/media/image35.png` | OpenFOAM result visualization | included | 角柱後流の速度絶対値コンター。作成条件は原資料由来で、再計算図ではない。 |
+| `textbook/cfd/images/blockmesh/square-cylinder-vorticity.png` | DOCX `word/media/image36.png` | ParaView result / self-created screenshot | included | `postProcess -func vorticity`後の表示例。UIは対象versionに依存する。 |
+
 ## Figures withheld / replaced
 
 - Ghia et al. (1982)の原図2点は転載せず、`cavity-settings.md`に自作再計算図へのplaceholderを置いた。
