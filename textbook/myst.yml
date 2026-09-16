@@ -12,6 +12,15 @@ project:
     - file: euclid.md
     - file: kodingbasics.md
     - file: hanoi.md
+    - title: 数値流体解析
+      children:
+        - file: cfd/bluecfd-install.md
+        - file: cfd/cavity.md
+        - file: cfd/cavity-settings.md
+        - file: cfd/blockmesh-boundary.md
+        - file: cfd/external-flow-2d.md
+        - file: cfd/external-flow-3d.md
+        - file: cfd/external-flow-3d-custom.md
     - file: pygame1.md
     - file: pygame2.md
     - file: pygame3.md
