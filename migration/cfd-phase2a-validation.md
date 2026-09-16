@@ -286,13 +286,13 @@ channel/
   system/fvSolution
 ```
 
-archiveには`Allrun`、`Allclean`、`README.md`、`constant/momentumTransport`は含まれない。`controlDict`は`foamRun` / `incompressibleFluid`を指定する一方、`fvSolution`には旧形式のPISO設定が残っていた。
+archiveには`Allrun`、`Allclean`、`README.md`、`constant/momentumTransport`は含まれない。`controlDict`は旧形式の`icoFoam`を指定し、`fvSolution`には旧形式のPISO設定が残っていた。`foamRun` / `incompressibleFluid`の設定は、後続のcase repository側で更新された`channel`に属する。
 
 ### Verified: execution
 
 - archiveをtemporary directoryへ展開し、`blockMesh`を実行すると成功した。メッシュは400 cells、領域は概ね`0..1 x 0..0.1 x 0..0.01`で、inlet/outlet/fixedWalls/frontAndBack patchを生成した。
-- archiveの`foamRun`はstatus 1で、`solver not specified in the controlDict or on command-line`を表示した。
-- `foamRun -solver incompressibleFluid`もstatus 1で、`system/fvSolution`のPIMPLE keyword不足を報告した。
+- archiveで`foamRun`を実行するとstatus 1で、旧`icoFoam` caseの設定が現行の`foamRun` workflowと互換でないことを確認した。
+- `foamRun -solver incompressibleFluid`もstatus 1で、archiveの`system/fvSolution`に現行workflowが必要とするPIMPLE keywordがないことを報告した。
 
 ### Verified: current case repository comparison
 
