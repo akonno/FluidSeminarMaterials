@@ -25,13 +25,13 @@ Markdownセルを選択して、次のような記法を入力する。セルを
 | 複数行コード | 3個のバッククォートで囲む | Pythonコードを表示 |
 | 数式 | `$E = mc^2$`、`$$E = mc^2$$` | LaTeX形式 |
 
-```{figure} ./images/jupyterlab04.drawio.png
+```{figure} ../images/jupyterlab04.drawio.png
 :align: center
 :label: fig-jupyterlab4
 Markdown形式で文書を書く方法。
 ```
 
-```{figure} ./images/jupyterlab05.drawio.png
+```{figure} ../images/jupyterlab05.drawio.png
 :align: center
 :label: fig-jupyterlab5
 Markdown形式で記述した文書を表示する方法。
@@ -45,13 +45,13 @@ Markdown形式で記述した文書を表示する方法。
 
 配布Notebookは、GitHubのファイル一覧から対象ファイルを開き、ダウンロードボタンを使って保存する。
 
-```{figure} ./images/github-jupyterlab-notebook1.trimmed.png
+```{figure} ../images/github-jupyterlab-notebook1.trimmed.png
 :align: center
 :label: fig-jupyterlab13
 GitHubのNotebook配布ページで、ダウンロードしたい資料を選ぶ。
 ```
 
-```{figure} ./images/github-jupyterlab-notebook2.drawio.png
+```{figure} ../images/github-jupyterlab-notebook2.drawio.png
 :align: center
 :label: fig-jupyterlab14
 Notebookを表示し、右上のダウンロードボタンをクリックする。
@@ -63,37 +63,37 @@ GitHubからダウンロードしたNotebookは、JupyterLabのファイルブ�
 
 配布Notebook：<https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab>
 
-```{figure} ./images/jupyterlab01f.drawio.png
+```{figure} ../images/jupyterlab01f.drawio.png
 :align: center
 :label: fig-jupyterlab15
 ファイルブラウザーが表示されていないときは、左上のフォルダーアイコンをクリックして開く。
 ```
 
-```{figure} ./images/jupyterlab10.drawio.png
+```{figure} ../images/jupyterlab10.drawio.png
 :align: center
 :label: fig-jupyterlab16
 新しいフォルダーを作成し、その中にNotebookやデータファイルをアップロードする。
 ```
 
-```{figure} ./images/jupyterlab11.drawio.png
+```{figure} ../images/jupyterlab11.drawio.png
 :align: center
 :label: fig-jupyterlab17
 作成したフォルダーを開く。
 ```
 
-```{figure} ./images/jupyterlab12.drawio.png
+```{figure} ../images/jupyterlab12.drawio.png
 :align: center
 :label: fig-jupyterlab18
 Notebookやデータファイルをドラッグ＆ドロップするか、アップロードボタンをクリックする。
 ```
 
-```{figure} ./images/jupyterlab13ja.png
+```{figure} ../images/jupyterlab13ja.png
 :align: center
 :label: fig-jupyterlab19
 アップロードしたNotebookをファイルブラウザーから開く。
 ```
 
-```{figure} ./images/jupyterlab14ja.png
+```{figure} ../images/jupyterlab14ja.png
 :align: center
 :label: fig-jupyterlab20
 保存された実行結果を含むNotebookを表示した例。

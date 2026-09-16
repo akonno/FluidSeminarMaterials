@@ -37,4 +37,25 @@
   <url>
     <loc>http://localhost:3000/pygame4</loc>
   </url>
+  <url>
+    <loc>http://localhost:3000/bluecfd-install</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/cavity</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/cavity-settings</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/blockmesh-boundary</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-flow-2d</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-flow-3d</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/external-flow-3d-custom</loc>
+  </url>
 </urlset>

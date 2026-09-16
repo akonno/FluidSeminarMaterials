@@ -44,14 +44,14 @@ Miniforgeインストーラーを以下のサイトからダウンロードし�
 
 <https://github.com/conda-forge/miniforge>
 
-```{figure} ./images/media/image1.png
+```{figure} ../images/media/image1.png
 :alt: MiniforgeのGitHubサイト
 :align: center
 :label: fig-miniforge-github
 MiniforgeのGitHubサイト。ページ下部の「Install」のところまで移動する。
 ```
 
-```{figure} ./images/github-miniforge2.drawio.png
+```{figure} ../images/github-miniforge2.drawio.png
 :align: center
 :label: fig-miniforge-install-inst
 「Install」の直下にWindowsでのインストール方法が記載されている。「the Windows installer」をクリックしてダウンロードし、実行する。
@@ -61,25 +61,25 @@ MiniforgeのGitHubサイト。ページ下部の「Install」のところまで�
 
 インストールの手順を以下に示す。特に「Destination Folder」に注意すること。
 
-```{figure} ./images/media/image3.png
+```{figure} ../images/media/image3.png
 :align: center
 :label: fig-miniforge-install-ss3
 インストール開始画面。「Next」をクリックして進む。
 ```
 
-```{figure} ./images/media/image4.png
+```{figure} ../images/media/image4.png
 :align: center
 :label: fig-miniforge-install-ss4
 ライセンス確認画面。内容を確認し、問題なければ「I Agree」をクリックして進む。
 ```
 
-```{figure} ./images/media/image5.png
+```{figure} ../images/media/image5.png
 :align: center
 :label: fig-miniforge-install-ss5
 インストールタイプの選択。「Just Me」を選択し、「Next」をクリックして進む。
 ```
 
-```{figure} ./images/miniforge-install4.drawio.png
+```{figure} ../images/miniforge-install4.drawio.png
 :align: center
 :label: fig-miniforge-install-ss6
 インストール場所の選択。日本語などの非ASCII文字を含まないパスを選ぶ。例として `C:\miniforge3` のような場所を指定する。
@@ -87,13 +87,13 @@ MiniforgeのGitHubサイト。ページ下部の「Install」のところまで�
 
 適切なパスを選択したら、「Next」をクリックして進む。
 
-```{figure} ./images/media/image7.png
+```{figure} ../images/media/image7.png
 :align: center
 :label: fig-miniforge-install-ss7
 インストール場所に問題がある場合に表示されるエラーメッセージの例。
 ```
 
-```{figure} ./images/miniforge-install6.drawio.png
+```{figure} ../images/miniforge-install6.drawio.png
 :align: center
 :label: fig-miniforge-install-ss8
 インストールオプション選択画面。必要に応じて推奨項目を選択する。
@@ -101,19 +101,19 @@ MiniforgeのGitHubサイト。ページ下部の「Install」のところまで�
 
 「Install」をクリックするとインストールが始まる。
 
-```{figure} ./images/media/image9.png
+```{figure} ../images/media/image9.png
 :align: center
 :label: fig-miniforge-install-ss9
 インストール中の画面。
 ```
 
-```{figure} ./images/media/image10.png
+```{figure} ../images/media/image10.png
 :align: center
 :label: fig-miniforge-install-ss10
 インストール終了時の画面。
 ```
 
-```{figure} ./images/media/image11.png
+```{figure} ../images/media/image11.png
 :align: center
 :label: fig-miniforge-install-ss11
 インストール終了画面。「Finish」をクリックして終了する。
@@ -125,13 +125,13 @@ MiniforgeのGitHubサイト。ページ下部の「Install」のところまで�
 
 インストールが成功すると、スタートメニューにMiniforge Promptが追加される。
 
-```{figure} ./images/Startmenu-Miniforge.drawio.png
+```{figure} ../images/Startmenu-Miniforge.drawio.png
 :align: center
 :label: fig-miniforge-startmenu
 スタートメニューから「Miniforge Prompt」を起動する。
 ```
 
-```{figure} ./images/Miniforge-prompt1.drawio.png
+```{figure} ../images/Miniforge-prompt1.drawio.png
 :align: center
 :label: fig-miniforge-prompt1
 Miniforge Promptを起動した画面。入力したコマンドをEnterキーで実行する。
@@ -163,7 +163,7 @@ exit()
 
 `>>>`が表示されている間はPythonの命令を受け付ける。`exit()`でPythonを終了し、Miniforge Promptに戻る。
 
-```{figure} ./images/Miniforge-prompt2.drawio.png
+```{figure} ../images/Miniforge-prompt2.drawio.png
 :align: center
 :label: fig-miniforge-prompt2
 Miniforge PromptでPythonを起動した例。
