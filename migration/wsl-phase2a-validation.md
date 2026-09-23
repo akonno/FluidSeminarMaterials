@@ -130,7 +130,7 @@ python -m pip install --no-deps -i https://test.pypi.org/simple/ --upgrade ubx
 - `ubx --help` はexit 0。実装は `-s/--status` と `-c/--config` を同じargumentとして登録している。短縮形は現在も有効だが、教材の標準は長形式とする。
 - cleanなtest HOMEでの `ubx --status` はstatusを表示せず `ID:` を求め、stdinを閉じるとexit 1。configがない初回状態では、`--status`もuser info読込・初期設定へ進む挙動。
 - `ubx --config`もcredential入力前の `ID:` promptまで進むことを確認した。stdinを閉じて終了させ、test HOMEにconfig fileが作られていないことを確認。
-- test accountや授業用class code/one-time passwordは投入していない。認証・保存後のstatus表示は試していない。
+- その後、人間が通常のWSL端末で `ubx --config` を完了し、保存済み設定を使う `ubx --status` が進捗を返すことを確認した。credentialの値はこのreportに記録していない。
 
 ### Recommendation
 
@@ -146,17 +146,18 @@ python -m pip install --no-deps -i https://test.pypi.org/simple/ --upgrade ubx
 | Python / venv | PASS | fresh専用venvを作成・有効化。 |
 | pip / UBX install | PASS | 指定のPyPI/TestPyPI分離install成功。 |
 | CLI version / help | PASS | `ubx --version`、`ubx --help`成功。 |
-| UBX configuration | PARTIAL | wizardが入力promptまで進むことを確認。test accountのID/class code/OTPがなく、値を入力して保存する試験はしていない。 |
-| First question | NOT RUN | 有効なtest account/configなし。実授業データを使って進めることは避けた。 |
-| Firestore / Web progress | NOT VERIFIED | loginもFirestoreへの照会・変更もしていない。 |
+| UBX configuration | PASS | 人間がWSL端末で対話設定を完了。credential値は記録していない。 |
+| First question | PASS | UBXで課題を1問正解。 |
+| UBX status progress update | PASS | 正解前の残り3問から、正解後に残り2問へ変化。 |
+| Teacher-side Web progress | PASS | 教員側Web UIで進捗表示を確認。Firestoreを直接操作・確認していない。 |
 
-### Blocker / next step
+### E2E result and propagation timing
 
-実授業の登録情報ではなく、明示的に許可されたdisposable UBX test account・class・one-time credentialと、教員側で照合できる非本番または合意済みtest recordが必要。これが用意されるまで、初回問題正解・Firestore記録確認をE2E PASSとはしない。
+学生側の `config` → 課題1問正解 → status進捗更新 → 教員側Web UI表示まで確認済み。正解後、Web UIを開いた時点ですでに進捗が表示されていた。観測上は5分以内だが、同期・反映に要した正確な時間は測定していない。即時反映や特定時間を保証するものではない。
 
 ## 9. GUI / WSLg validation
 
-### Verified — process/protocol level
+### Verified — process/protocol and user visual confirmation
 
 - WSL 2上で `DISPLAY` と `WAYLAND_DISPLAY` が設定されていた。
 - `xdpyinfo` はexit 0でX displayへ接続した。
@@ -224,22 +225,28 @@ WSL導入・基本操作・Windows連携・package設定・演習の境界が明
 1. `explorer.exe .` は初回・再実行とも一時検証フォルダー `wsl-ubx-phase2a-20260924` を開いたことをユーザーが目視確認。両回とも呼び出し元のexit codeは1だったが、実際の表示成功を確認済み。
 2. `xeyes` と `xclock` のwindow表示はユーザーが目視確認済み。`xlogo` / `oclock`はprocess起動のみ確認し、視認は未確認。`xclock`にfont charset warning。
 3. `ubx --status`はclean configなしでID入力へ進む。未設定時の安全なread-only確認手順ではない。
-4. UBX user configuration、課題1問正解、Firestore/Web UI反映はtest credentialがなく未検証。
-5. 既存環境での観察であり、fresh Windows/Ubuntu installの再現試験ではない。
+4. UBX configuration、課題1問正解、status進捗更新、教員側Web UI表示は人間による手作業で確認済み。正解後の残り問題数は3から2へ変化した。
+5. 既存環境での観察であり、fresh Windows/Ubuntu installの再現試験ではない。`xlogo` / `oclock`の目視とUBX対話課題の`C.UTF-8`表示は未確認だが、いずれもPhase 2B blockerではない。
 
 ## 15. Recommendations for Phase 2B
 
-- Windows 11向け導入はMicrosoft公式 `wsl --install`を中心にし、既存WSL時の分岐と再起動・Ubuntu初回ユーザー作成を含める。再現性が必要ならUbuntu LTS targetを明記する。
+- Windows 11向け導入はMicrosoft公式 `wsl --install`を中心にし、既存WSL時の分岐と再起動・Ubuntu初回ユーザー作成を含める。対象案はUbuntu 24.04 LTS系とする。
 - Ubuntu 24.04系のsystem Pythonでは `python3 -m venv`、venv内では `python -m pip` を使う。
-- UBXはPyPIから `requests`、TestPyPIから `ubx`を `--no-deps` で分けてinstall。教材のCLIは長形式。
-- `ubx --config`の説明に年度固有情報を入れず、クラス参加値はKU-LMSで案内。初回問題/教員側記録の説明は、disposable test accountでE2E確認できるまで「検証済み」と書かない。
+- UBXはPyPIから `requests`、TestPyPIから `ubx`を `--no-deps` で分けてinstall。教材では `ubx --config`、`ubx --status`、`ubx --help`、`ubx --version`の長形式を標準にする。
+- UBXの対話設定から最低1問正解し、statusで進捗を確かめ、教員側Web UIで表示を確認する環境checkpointを採用候補とする。年度固有のクラス参加情報はKU-LMSで案内する。
 - GUI self-checkは `xeyes` を第一候補とする。WSLgでのwindow表示はこの実機で目視確認済み。`xclock`も表示確認済みだがfont warningがあったため、教材例は `xeyes` に絞る。
 - 作業ファイルはWSL Linux filesystemを主とし、Windows Explorer連携は `\\wsl.localhost` / `\\wsl$`を案内。`explorer.exe .`も表示成功を実機確認した操作例として使える。
-- Locale変更は必須にしない。`C.UTF-8`で対話課題の日本語表示を別途確認できた場合に限り、追加設定不要と確定する。
+- Locale変更は必須にしない。UBX対話課題の`C.UTF-8`表示は未確認だが、これはPhase 2B blockerではない。
 
 ### Phase 2B readiness
 
-**Phase 2B blocked by:** UBXの実config→first question→Firestore teacher viewを安全に通すためのdisposable test account/class/credentialがない。GUIの `xeyes` と `xclock` window表示、および `explorer.exe .` による一時フォルダー表示はユーザーが目視確認済み。UBX checkpoint全体が実証済みであるという前提の本文確定は、disposable testでE2Eを確認するまで保留する。
+**ready for Phase 2B.** UBXの対話設定、1問正解、statusの残り問題数3→2、教員側Web UIでの進捗表示まで確認済み。GUIの`xeyes` / `xclock`表示と`explorer.exe .`も目視確認済み。
+
+### Non-blocking limitations
+
+- fresh Windows環境で `wsl --install` を再実施していない。
+- Web progressは確認時点ですでに表示済みだったため、正確な反映時間は未測定（観測上5分以内）。
+- `xlogo` / `oclock`の画面表示、およびUBX対話課題の`C.UTF-8`表示は未確認。
 
 ## 16. Git / artifact status
 
