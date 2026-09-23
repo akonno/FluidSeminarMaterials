@@ -38,6 +38,21 @@
     <loc>http://localhost:3000/pygame4</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/wsl-install</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/linux-basics</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/wsl-files-and-gui</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/ubx-setup</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/ubx-exercises</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/bluecfd-install</loc>
   </url>
   <url>
