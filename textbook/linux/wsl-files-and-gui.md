@@ -1,6 +1,6 @@
 # Windowsとのファイル連携とWSLg
 
-Linuxのコマンドラインで使う課題やプロジェクトのファイルは、原則としてWSL内のLinux filesystem（たとえばホームディレクトリ`/home/...`）に置く。Windows側のfilesystem上では、多数のファイルを扱うLinux toolsの処理が遅くなる場合がある。
+Linuxのコマンドラインで使う課題やプロジェクトのファイルは、原則としてWSL内のLinuxのファイルシステム（たとえばホームディレクトリ`/home/...`）に置く。Windows側のファイルシステム上では、多数のファイルを扱うLinuxのツールの処理が遅くなる場合がある。
 
 WSLやWindows Terminalの一般的な説明は、[WSLの導入とUbuntuの起動](wsl-install.md)で紹介した参考資料も参照できる。
 
@@ -28,7 +28,7 @@ Explorerのアドレス欄からWSL内を直接開く場合は、`\\wsl.localhos
 
 ## WSLgでGUIアプリを確認する
 
-WSLgを使うと、一部のLinux GUIアプリをWindowsデスクトップ上に表示できる。GUI確認は任意のself-checkで、提出課題でもUBX課題の実行条件でもない。
+WSLgを使うと、一部のLinux GUIアプリをWindowsデスクトップ上に表示できる。GUIの動作確認は任意で行うものであり、提出課題でもUBX課題の実行条件でもない。
 
 `x11-apps`がまだインストールされていない場合は、Ubuntuの端末で一度だけ次を実行する。
 

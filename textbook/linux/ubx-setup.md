@@ -22,7 +22,7 @@ python3 -m venv ~/venv-ubx
 source ~/venv-ubx/bin/activate
 ```
 
-有効化すると、端末のpromptの先頭に`(venv-ubx)`のような表示が加わる。仮想環境の中では`python`と`python -m pip`を使う。
+有効化すると、端末のプロンプトの先頭に`(venv-ubx)`のような表示が加わる。仮想環境の中では`python`と`python -m pip`を使う。
 
 ## UBXをインストールする
 
@@ -40,7 +40,7 @@ ubx --version
 ubx --help
 ```
 
-Phase 2Aの検証時はUBX 1.0.1だった。異なる版が表示された場合は、授業の案内に従う。
+本教材は2026年9月時点でUBX 1.0.1を使って動作確認している。異なる版が表示された場合は、授業の案内に従う。
 
 ## UBXを設定する
 

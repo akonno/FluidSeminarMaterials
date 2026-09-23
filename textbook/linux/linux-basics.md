@@ -52,7 +52,7 @@ yes
 
 ## ファイルとディレクトリ
 
-Linuxでは、ファイルを入れる場所を<strong>directory（ディレクトリ）</strong>と呼ぶ。Windowsの「フォルダー」に相当する。コマンドを実行している場所を<strong>current directory（カレントディレクトリ）</strong>という。
+Linuxでは、ファイルを入れる場所を<strong>ディレクトリ（directory）</strong>と呼ぶ。Windowsの「フォルダー」に相当する。コマンドを実行している場所を<strong>カレントディレクトリ（current directory）</strong>という。
 
 次のコマンドで、現在の場所と、その中にあるファイルやディレクトリを確認できる。
 
@@ -72,11 +72,11 @@ pwd
 
 `..`は一つ上のディレクトリ、`~`は自分のホームディレクトリを表す。
 
-<strong>absolute path（絶対パス）</strong>は、ルートディレクトリ`/`から始まる場所の表し方である。<strong>relative path（相対パス）</strong>は、カレントディレクトリを基準にした表し方である。同じファイルでも、現在の場所によって相対パスの書き方は変わる。
+<strong>絶対パス（absolute path）</strong>は、ルートディレクトリ`/`から始まる場所の表し方である。<strong>相対パス（relative path）</strong>は、カレントディレクトリを基準にした表し方である。同じファイルでも、現在の場所によって相対パスの書き方は変わる。
 
 ## 背景：UnixとLinux
 
-LinuxはUnixそのものではないが、Unixに似た考え方を持つOSである。ここで学ぶコマンドラインの基本は、macOSなど他のUnix系環境にも共通する部分が多いが、コマンドや動作がすべて同じとは限らない。詳しい背景は、[WSL導入ページの参考資料](wsl-install.md)を参照できる。
+LinuxはUnixそのものではないが、Unix系（Unix-like）のOSである。ここで学ぶコマンドラインの基本は、macOSなど他のUnix系環境にも共通する部分が多いが、コマンドや動作がすべて同じとは限らない。詳しい背景は、[WSL導入ページの参考資料](wsl-install.md)を参照できる。
 
 ## 次に読むページ
 
