@@ -21,6 +21,14 @@ project:
         - file: python/bouncingballs.md
         - file: python/pygame4.md
 
+    - title: Linux / UNIX操作
+      children:
+        - file: linux/wsl-install.md
+        - file: linux/linux-basics.md
+        - file: linux/wsl-files-and-gui.md
+        - file: linux/ubx-setup.md
+        - file: linux/ubx-exercises.md
+
     - title: 数値流体解析
       children:
         - file: cfd/bluecfd-install.md
