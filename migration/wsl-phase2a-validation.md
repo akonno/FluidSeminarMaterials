@@ -162,11 +162,12 @@ python -m pip install --no-deps -i https://test.pypi.org/simple/ --upgrade ubx
 - `xdpyinfo` はexit 0でX displayへ接続した。
 - Ubuntu上で `x11-apps` 7.7+11build3、`x11-utils` 7.7+6build2が既に導入済み。今回apt install/updateは行っていない。
 - `xeyes`、`xclock`、`xlogo`、`oclock`は全てcommandが存在し、各プロセスは2秒のtimeoutまで稼働した。起動時fatal errorはなかった。`xclock`のみfont charset warningをstderrへ出した。
-- Windows native UI surfaceが利用できなかったため、各windowの実表示を人間の目で確認できたかは **Not verified**。process起動とdisplay protocol接続を、画面表示の視認確認と同一視しない。
+- ユーザーが初回試験で `xeyes` と `xclock` のwindow表示を目視確認した。再試験では `xeyes -geometry 320x240+40+40` も表示された。今回の `xeyes` は枠付きで、目以外の領域は透明に見えた。マウスカーソルがwindow内にある間は目が追随し、window外では追随せず停止した。これは観察された挙動として記録し、window表示の失敗とは扱わない。
+- `xlogo` と `oclock` はprocess起動まで確認したが、画面上の表示は目視確認していない。process起動とdisplay protocol接続だけでは、これらのwindow表示確認の代替にならない。
 
 ### Recommendation
 
-2026教材のself-checkは `xeyes` 1つに絞る案がよい。Microsoft公式も `x11-apps` と `xeyes` / `xclock`を例示し、この実機ではxclockにfont warningが出た。`x11-utils`は診断コマンド `xdpyinfo` 等向けで、学生のGUI self-checkに必須ではない。導入は必要な場合だけ `sudo apt install x11-apps`。GUI確認はUBX checkpointとは別の任意self-checkとする。
+2026教材のself-checkは `xeyes` 1つに絞る案がよい。Microsoft公式も `x11-apps` と `xeyes` / `xclock`を例示し、この実機ではxclockにfont warningが出た。`xeyes`のwindow表示は目視確認済み。枠外が透明に見えること、pointer追随がwindow内に限られることも観察事項として記録する。`x11-utils`は診断コマンド `xdpyinfo` 等向けで、学生のGUI self-checkに必須ではない。導入は必要な場合だけ `sudo apt install x11-apps`。GUI確認はUBX checkpointとは別の任意self-checkとする。
 
 Source: [Run Linux GUI apps with WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)（確認日: 2026-09-24）。
 
@@ -221,7 +222,7 @@ WSL導入・基本操作・Windows連携・package設定・演習の境界が明
 ## 14. Issues found
 
 1. `explorer.exe .` は初回・再実行とも一時検証フォルダー `wsl-ubx-phase2a-20260924` を開いたことをユーザーが目視確認。両回とも呼び出し元のexit codeは1だったが、実際の表示成功を確認済み。
-2. X display serverへ接続でき、Xアプリprocessも起動したが、GUI windowの視認はできていない。`xclock`にfont charset warning。
+2. `xeyes` と `xclock` のwindow表示はユーザーが目視確認済み。`xlogo` / `oclock`はprocess起動のみ確認し、視認は未確認。`xclock`にfont charset warning。
 3. `ubx --status`はclean configなしでID入力へ進む。未設定時の安全なread-only確認手順ではない。
 4. UBX user configuration、課題1問正解、Firestore/Web UI反映はtest credentialがなく未検証。
 5. 既存環境での観察であり、fresh Windows/Ubuntu installの再現試験ではない。
@@ -232,14 +233,14 @@ WSL導入・基本操作・Windows連携・package設定・演習の境界が明
 - Ubuntu 24.04系のsystem Pythonでは `python3 -m venv`、venv内では `python -m pip` を使う。
 - UBXはPyPIから `requests`、TestPyPIから `ubx`を `--no-deps` で分けてinstall。教材のCLIは長形式。
 - `ubx --config`の説明に年度固有情報を入れず、クラス参加値はKU-LMSで案内。初回問題/教員側記録の説明は、disposable test accountでE2E確認できるまで「検証済み」と書かない。
-- GUIは `xeyes` のlocal self-check候補。windowを実際に目視できる環境で再確認してから教材の期待結果を確定する。
+- GUI self-checkは `xeyes` を第一候補とする。WSLgでのwindow表示はこの実機で目視確認済み。`xclock`も表示確認済みだがfont warningがあったため、教材例は `xeyes` に絞る。
 - 作業ファイルはWSL Linux filesystemを主とし、Windows Explorer連携は `\\wsl.localhost` / `\\wsl$`を案内。`explorer.exe .`も表示成功を実機確認した操作例として使える。
 - Locale変更は必須にしない。`C.UTF-8`で対話課題の日本語表示を別途確認できた場合に限り、追加設定不要と確定する。
 
 ### Phase 2B readiness
 
-**Phase 2B blocked by:** UBXの実config→first question→Firestore teacher viewを安全に通すためのdisposable test account/class/credentialがない。また、GUIアプリwindowの視認確認が未了。`explorer.exe .` は実際に一時フォルダーを開いたことを確認済み。説明の草稿は開始できるが、checkpoint全体が実証済みであるという前提の本文確定は保留する。
+**Phase 2B blocked by:** UBXの実config→first question→Firestore teacher viewを安全に通すためのdisposable test account/class/credentialがない。GUIの `xeyes` と `xclock` window表示、および `explorer.exe .` による一時フォルダー表示はユーザーが目視確認済み。UBX checkpoint全体が実証済みであるという前提の本文確定は、disposable testでE2Eを確認するまで保留する。
 
 ## 16. Git / artifact status
 
-Phase 1 inventory commitは `origin/main` 上へrebaseしてpush済み。GitHub Actionsによる `Auto-build Jupyter Book` commitも確認し、local `main` をfast-forwardで同期した。Phase 2作業branch `migrate-wsl-ubx-myst` は同期済みmain HEADから作成した。このreportのみを同branchへcommitする。教材本文、TOC、images、kEduApps sourceは変更していない。既存の未追跡source資料・notebook・contact sheet類は今回のcommit対象外。
+Phase 1 inventory commitは `origin/main` 上へrebaseしてpush済み。GitHub Actionsによる `Auto-build Jupyter Book` commitも確認し、local `main` をfast-forwardで同期した。Phase 2作業branch `migrate-wsl-ubx-myst` は同期済みmain HEADから作成した。教材本文、TOC、images、kEduApps sourceは変更していない。既存の未追跡source資料・notebook・contact sheet類はvalidation reportの管理対象外。
