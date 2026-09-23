@@ -55,6 +55,13 @@ xeyes
 
 小さな`xeyes`ウィンドウが表示され、ウィンドウ内でポインターを動かすと目が反応すれば、GUI表示を確認できる。ウィンドウを閉じるか、起動した端末でCtrl+Cを押すと終了する。
 
+```{figure} ./images/wsl/xeyes-wslg-2026.png
+:alt: WSLg上で表示されたxeyesのウィンドウ
+:align: center
+
+教材作成者がWindows 11のWSLg上で撮影した`xeyes`の表示例（2026年9月）。
+```
+
 これは自分の環境を確認するためのself-checkであり、提出課題やUBXのcheckpointではない。必要なアプリだけを確認すればよく、GUI表示はコマンドライン課題の実行条件ではない。
 
 ## 次に読むページ
