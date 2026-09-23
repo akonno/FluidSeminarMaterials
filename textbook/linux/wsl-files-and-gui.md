@@ -1,59 +1,49 @@
 # Windowsとのファイル連携とWSLg
 
-WSLではLinuxのコマンドを使いながら、Windowsのファイルやアプリケーションとも連携できる。ここでは、作業ファイルを置く場所と、UbuntuからWindows Explorerを開く方法を確認する。
+Linuxのコマンドラインで使う課題やプロジェクトのファイルは、原則としてWSL内のLinux filesystem（たとえばホームディレクトリ`/home/...`）に置く。Windows側のfilesystem上では、多数のファイルを扱うLinux toolsの処理が遅くなる場合がある。
 
-## Linuxの作業ファイルはWSL内に置く
-
-Linuxのコマンドラインで使う課題やプロジェクトのファイルは、原則としてWSLのLinux filesystem、たとえばホームディレクトリの中に置く。Linux用ツールを使う作業は、Linux側のファイルシステム上で行う。
-
-WindowsのC:ドライブは、WSLから通常`/mnt/c/`以下で参照できる。Windows側にあるファイルを一時的に利用するときなどに使えるが、Linuxで継続して作業するプロジェクトの主な保存先にはしない。
-
-```text
-/mnt/c/
-```
+WSLやWindows Terminalの一般的な説明は、[WSLの導入とUbuntuの起動](wsl-install.md)で紹介した参考資料も参照できる。
 
 ## Windows Explorerで現在の場所を開く
 
-Ubuntuの端末で、次のコマンドを実行する。
+Ubuntuの端末で次を実行すると、現在のディレクトリをWindows Explorerで開ける。
 
 ```bash
 explorer.exe .
 ```
 
-末尾の`.`は「現在のディレクトリ」を表す。Windows Explorerが開き、端末で作業している場所のファイルを確認できる。
+`.`は現在のディレクトリを表す。Linux側で作業するファイルはWSL内に置いたまま、Explorerで閲覧できる。
 
-Windows Explorerのアドレス欄からWSLのファイルを見る場合は、次の形式を使える。`<DistroName>`の部分は、`wsl -l -v`に表示される実際のディストリビューション名に置き換える。
+## WindowsのファイルをWSLから見る
 
-```text
-\\wsl.localhost\<DistroName>
-```
-
-互換性のため、次の形式が使える環境もある。
+WindowsのC:ドライブは、WSLから通常`/mnt/c/`以下で参照できる。Windows側のファイルを一時的に使うときなどに利用する。
 
 ```text
-\\wsl$\<DistroName>
+/mnt/c/
 ```
 
-Linuxの作業ファイルはWSL内に置いたまま、Explorerから閲覧・コピーできる。Windows側のファイルをLinuxから参照する方法と、Linux側のプロジェクトをWSL内で扱う方法を使い分けよう。
+```{note}
+Explorerのアドレス欄からWSL内を直接開く場合は、`\\wsl.localhost\<DistroName>`を使える。`<DistroName>`は`wsl -l -v`で確認する。環境によっては互換表記`\\wsl$\<DistroName>`も利用できる。
+```
 
 ## WSLgでGUIアプリを確認する
 
-WSL 2では、WSLgを通して一部のLinux GUIアプリをWindowsデスクトップに表示できる。コマンドラインの演習にはGUI確認は必要ないが、環境を試す場合は次のself-checkを行える。
+WSLgを使うと、一部のLinux GUIアプリをWindowsデスクトップ上に表示できる。GUI確認は任意のself-checkで、提出課題でもUBX課題の実行条件でもない。
 
-`x11-apps`がまだインストールされていない場合、Ubuntuの端末で次を実行する。
+`x11-apps`がまだインストールされていない場合は、Ubuntuの端末で一度だけ次を実行する。
 
 ```bash
 sudo apt update
 sudo apt install x11-apps
 ```
 
-続いて、GUIアプリを起動する。
+次に`xeyes`を起動する。
 
 ```bash
 xeyes
 ```
 
-小さな`xeyes`ウィンドウが表示され、ウィンドウ内でポインターを動かすと目が反応すれば、GUI表示を確認できる。ウィンドウを閉じるか、起動した端末でCtrl+Cを押すと終了する。
+ウィンドウが表示され、ウィンドウ内でポインターを動かすと目が反応すれば、GUI表示を確認できる。ウィンドウを閉じるか、起動した端末でCtrl+Cを押すと終了する。
 
 ```{figure} ./images/wsl/xeyes-wslg-2026.png
 :alt: WSLg上で表示されたxeyesのウィンドウ
@@ -62,11 +52,9 @@ xeyes
 教材作成者がWindows 11のWSLg上で撮影した`xeyes`の表示例（2026年9月）。
 ```
 
-これは自分の環境を確認するためのself-checkであり、提出課題やUBXのcheckpointではない。必要なアプリだけを確認すればよく、GUI表示はコマンドライン課題の実行条件ではない。
-
 ## 次に読むページ
 
-コマンドラインの練習システムUBXを使う場合は、[UBXを使う準備](ubx-setup.md)へ進む。
+UBXを使う場合は、[UBXを使う準備](ubx-setup.md)へ進む。
 
 ## ライセンス
 
