@@ -105,18 +105,25 @@ patchとblockの定義は、次章のチャネルとblockMeshの説明につな�
 
 ## Ghia benchmarkとの比較
 
-原資料では、Re=400、1000を必須、Re=3200、5000を任意とする比較課題を扱っている。Ghia et al.の結果はbenchmarkとして参照し、計算条件、メッシュ、時間発展の扱いをレポートに明記する。
+原資料では、Re=400、1000を必須、Re=3200、5000を任意とする比較課題を扱っている。Ghia et al. (1982) の結果をbenchmarkとして参照し、計算条件、メッシュ、時間発展の扱いをレポートに明記する。
 
 ```{note}
-Ghia et al. (1982) の原図は、公開教材へそのまま転載しない。ここには、OpenFOAMの速度場から再構成した等間隔のstreamfunction contourを掲載する予定である。原図を掲載せず、文献と比較条件だけを残す。
+図は Ghia et al. (1982) の原図を転載したものではない。Linux上のOpenFOAM 14による計算速度場からstreamfunctionを再構成した自作図であり、Ghia et al.の研究はベンチマークとして参照している。
 ```
 
-```{figure} ./images/placeholders/ghia-streamfunction-placeholder.png
-:alt: Ghia benchmark replacement placeholder
+図はRe=400、1000、3200、5000のstreamfunction contourを比較している。2次元非圧縮流れでは、streamfunctionが一定の線（`ψ = const.`）は流線に相当する。4ケースすべて、定常性を確認した速度場から再構成した。Re=400と1000は無次元時刻 `t*=80`、Re=3200は `t*=200`、Re=5000は `t*=290` の場を用いている。
+
+contour levelは等間隔ではない。Ghia et al. (1982) のFig. 3およびTable IIIの見せ方を参考に、主渦の内側、外殻、隅の渦を少数の線で示し、各ReのOpenFOAM場に応じてlevelを選んだ。Ghia原図の線位置をトレースしたものではない。
+
+```{figure} ./images/cavity/cavity-streamfunction-contours.png
+:alt: OpenFOAMの速度場から再構成したRe=400、1000、3200、5000のcavity streamfunction contour
 :align: center
+:width: 100%
 
-Ghia et al. (1982) の原図は転載せず、OpenFOAMの計算結果から自作する等流関数コンターへ置き換える予定である。
+OpenFOAMの定常lid-driven cavity速度場から再構成したstreamfunction contour。Re=400、1000、3200、5000を比較している。Ghia et al. (1982) の原図は転載せず、各Reの計算結果から作成した自作図である。
 ```
+
+比較の参考文献: [Ghia, U., Ghia, K. N., and Shin, C. T. (1982), “High-Re solutions for incompressible flow using the Navier–Stokes equations and a multigrid method,” *Journal of Computational Physics*, 48(3), 387–411](https://doi.org/10.1016/0021-9991%2882%2990058-4)。
 
 比較課題では、Reynolds数だけでなく、メッシュ分割数、`deltaT`、終了時刻、比較した量を記録する。
 
