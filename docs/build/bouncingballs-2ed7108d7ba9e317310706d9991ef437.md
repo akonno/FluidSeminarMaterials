@@ -180,8 +180,8 @@ pygame.display.flip()
 
 ## bouncingballs.pyへのリンク
 
-- [`bouncingballs.py`](https://github.com/akonno/FluidSeminarMaterials/blob/main/PyGame/bouncingballs.py)
-- [`bb-sample.py`](https://github.com/akonno/FluidSeminarMaterials/blob/main/PyGame/bb-sample.py)
+- [`bouncingballs.py`](https://github.com/akonno/FluidSeminarMaterials/blob/main/student/pygame/bouncingballs.py)
+- [`bb-sample.py`](https://github.com/akonno/FluidSeminarMaterials/blob/main/student/pygame/bb-sample.py)
 
 上の2つのファイルを同じフォルダーに置き、`bb-sample.py`を実行すると、ボールが跳ね返りながら運動するシミュレーションを表示できる。
 

@@ -221,26 +221,26 @@ JupyterLabの導入は[JupyterLabの導入と基本操作](./jupyterlab)で説�
 
 pygame-ceをインストールしても、Pythonコードでのimport名は`pygame`である。
 
-## environment-student.ymlから履修者向け環境一式を作る
+## student/environment.ymlから履修者向け環境を作る
 
-このリポジトリには、履修者がPython/JupyterLab演習で使う標準的なConda環境をまとめた [`environment-student.yml`](https://github.com/akonno/FluidSeminarMaterials/blob/main/environment-student.yml) を用意している。これは学生用の演習環境であり、教材サイトをbuildする環境ではない。授業用環境一式を作成・再作成したい場合や、教員側で同じ環境を再現したい場合に利用できる。
+このリポジトリには、履修者がPython/JupyterLab演習で使う標準的なConda環境をまとめた [`student/environment.yml`](https://github.com/akonno/FluidSeminarMaterials/blob/main/student/environment.yml) を用意している。これは学生用の演習環境であり、教材サイトをbuildする環境ではない。授業用環境を作成・再作成したい場合に利用できる。
 
-これは、上で説明した`conda create`による「手動で作成する方法」とは別の「environment-student.ymlから一括作成する方法」である。両方を順番に実行する必要はなく、環境を作る方法としてどちらか一方を選ぶ。
+これは、上で説明した`conda create`による「手動で作成する方法」とは別の「environment.ymlから一括作成する方法」である。両方を順番に実行する必要はなく、環境を作る方法としてどちらか一方を選ぶ。
 
-`environment-student.yml`があるフォルダーでMiniforge Promptを開き、次のコマンドを実行する。
-
-```powershell
-conda env create -f environment-student.yml
-```
-
-例えば、GitHubから`environment-student.yml`をダウンロードしてDownloadsフォルダーに保存した場合は、保存場所を確認してから、次のようにそのフォルダーへ移動する。
+リポジトリを取得している場合は、そのrootでMiniforge Promptを開き、次のコマンドを実行する。
 
 ```powershell
-cd %USERPROFILE%\Downloads
-conda env create -f environment-student.yml
+conda env create -f student/environment.yml
 ```
 
-ブラウザの保存先を変更している場合は、`environment-student.yml`を保存した実際のフォルダーへ移動する。すでに手動で`EXERCISE`環境を作成済みの場合、通常はこの`conda env create -f environment-student.yml`を改めて実行する必要はない。ファイルの一括作成は便利だが、手動で環境管理を学ぶ方法と同じく、環境を作る方法の一つである。
+`student/`ディレクトリ内で実行する場合は、`-f environment.yml`と指定できる。GitHubからファイルだけをダウンロードしてDownloadsフォルダーに保存した場合も、保存場所へ移動して同じ指定を使う。
+
+```powershell
+cd $env:USERPROFILE\Downloads
+conda env create -f environment.yml
+```
+
+ブラウザの保存先を変更している場合は、ファイルを保存した実際のフォルダーへ移動する。すでに手動で`EXERCISE`環境を作成済みの場合、通常は環境ファイルから作成し直す必要はない。ファイルの一括作成は、環境を作る方法の一つである。
 
 ## conda自身の更新について
 

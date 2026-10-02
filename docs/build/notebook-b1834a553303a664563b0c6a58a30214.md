@@ -61,7 +61,7 @@ Notebookを表示し、右上のダウンロードボタンをクリックする
 
 GitHubからダウンロードしたNotebookは、JupyterLabのファイルブラウザーへドラッグ＆ドロップするか、アップロードボタンから追加する。
 
-配布Notebook：<https://github.com/akonno/FluidSeminarMaterials/tree/main/JupyterLab>
+配布Notebook：<https://github.com/akonno/FluidSeminarMaterials/tree/main/student/notebooks>
 
 ```{figure} ../images/jupyterlab01f.drawio.png
 :align: center
@@ -109,8 +109,8 @@ Notebookやデータファイルをドラッグ＆ドロップするか、アッ
 :class: assignment
 以下の配布Notebookの課題に取り組み、作成したNotebookをKU-LMSから提出する。「Matplotlibでグラフを描く」の課題1と課題2は、一つのNotebookにまとめること。
 
-1. [「Matplotlibでグラフを描く」](https://github.com/akonno/FluidSeminarMaterials/blob/main/JupyterLab/Matplotlib%E3%81%A7%E3%82%B0%E3%83%A9%E3%83%95%E3%82%92%E6%8F%8F%E3%81%8F.ipynb)の課題1および課題2に取り組む。
-2. [「3次元のグラフを描く―Matplotlib_Plotly」](https://github.com/akonno/FluidSeminarMaterials/blob/main/JupyterLab/3%E6%AC%A1%E5%85%83%E3%81%AE%E3%82%B0%E3%83%A9%E3%83%95%E3%82%92%E6%8F%8F%E3%81%8F%E2%80%95Matplotlib_Plotly.ipynb)の課題に取り組む。
+1. [「Matplotlibでグラフを描く」](https://github.com/akonno/FluidSeminarMaterials/blob/main/student/notebooks/Matplotlib%E3%81%A7%E3%82%B0%E3%83%A9%E3%83%95%E3%82%92%E6%8F%8F%E3%81%8F.ipynb)の課題1および課題2に取り組む。
+2. [「3次元のグラフを描く―Matplotlib_Plotly」](https://github.com/akonno/FluidSeminarMaterials/blob/main/student/notebooks/3%E6%AC%A1%E5%85%83%E3%81%AE%E3%82%B0%E3%83%A9%E3%83%95%E3%82%92%E6%8F%8F%E3%81%8F%E2%80%95Matplotlib_Plotly.ipynb)の課題に取り組む。
 
 提出方法と提出期限はKU-LMSで確認する。
 ```
