@@ -74,12 +74,20 @@ instance/
 textbook/_build/
 docs/_build/
 
+# Local-only OpenFOAM validation cases and generated book output
+/migration/cfd-cavity-validation/re*/case/
+/migration/cfd-re1000-pilot/case/
+/_build/
+
 # PyBuilder
 .pybuilder/
 target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# Local-only completed report example for an active exercise
+/JupyterLab/ユークリッドの互除法・レポートサンプル.ipynb
 
 # IPython
 profile_default/
