@@ -62,6 +62,9 @@
     <loc>http://localhost:3000/cavity-settings</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/cavity-validation</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/blockmesh-boundary</loc>
   </url>
   <url>
