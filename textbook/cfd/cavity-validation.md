@@ -60,6 +60,87 @@ nu = 1.0e-4 m^2/s
 
 この比較では、格子を細分化するにつれてRe=1000の中心線速度が対応するbenchmarkへ近づく。粗いメッシュの計算結果を、別のReynolds数の解とみなすことはできない。この実験では「粗いRe=1000の計算はRe=400に近づく」という解釈は支持されなかった。
 
+## セル数だけでなく、配置も重要
+
+同じセル数でも、セルをどこに配置するかによって計算結果の精度は変わる。ここでは、同じRe=1000のlid-driven cavityについて、uniform 64×64、moderate graded 64×64、uniform 128×128の3つを比較する。
+
+```{figure} ./images/cavity/validation/nonuniform-mesh-comparison.svg
+:alt: uniform 64×64、moderate graded 64×64、uniform 128×128の格子配置比較
+:align: center
+:width: 100%
+
+同じcavityに配置した3種類の格子。中央のmoderate格子はuniform 64×64と同じ4096セルを壁面近くへ再配分している。右のuniform 128×128は16384セルである。
+```
+
+uniform 64×64では、x方向とy方向のセル幅はどちらも一定で、`Δ/L = 0.015625`である。moderate 64×64ではセル数を増やさず、壁面近くを細かく、中央部を粗くした。壁際の最小幅は`Δ/L = 0.007184`、中央付近の最大幅は`Δ/L = 0.028737`である。
+
+```{figure} ./images/cavity/validation/moderate-grading-detail.svg
+:alt: moderate格子の全体と壁隅および中央付近のセル幅拡大図
+:align: center
+:width: 100%
+
+moderate格子の全体図と拡大図。壁際のセルは細かく、中央付近のセルは広くなっている。
+```
+
+moderate格子の壁際の最小幅`0.007184 L`は、uniform 128×128の一定幅`0.007813 L`より少し小さい。一方、moderate格子の中央付近はuniform 128×128よりかなり粗い。4096セルを増やしたのではなく、必要と考えた場所へ配置し直した格子である。
+
+moderate caseの`blockMeshDict`では、x方向とy方向に次のmulti-gradingを指定している。
+
+```foam
+simpleGrading
+(
+    ( (0.5 0.5 4) (0.5 0.5 0.25) )
+    ( (0.5 0.5 4) (0.5 0.5 0.25) )
+    1
+)
+```
+
+各tripletは`(blockFraction nDivFraction expansionRatio)`を表す。x方向、y方向とも領域を半分ずつに分け、各半領域に64セルの半分である32セルを置く。壁から中央へセル幅が少しずつ大きくなり、中央から反対側の壁へ向かって小さくなる。
+
+ここで`4`は隣り合うセルの幅を4倍にする指定ではない。最初の半領域で、壁側の端セルに対する中央側の端セルの幅の比を示す。32セルの間で幅を少しずつ広げ、中央側の端セルを壁側の端セルの約4倍にする。隣り合う幅の比はおよそ`4^(1/31) ≈ 1.046`である。
+
+| 格子 | cells | min Δ/L | max Δ/L | Ghia RMSE（u / v / 合成） |
+|---|---:|---:|---:|---:|
+| uniform 64×64 | 4096 | 0.015625 | 0.015625 | 0.01143 / 0.01178 / 0.01161 |
+| moderate graded 64×64 | 4096 | 0.007184 | 0.028737 | 0.002207 / 0.006780 / 0.005042 |
+| uniform 128×128 | 16384 | 0.007813 | 0.007813 | 0.001780 / 0.005805 / 0.004293 |
+
+```{figure} ./images/cavity/validation/nonuniform-centerline-u-comparison.svg
+:alt: 3種類の格子による垂直中心線速度uとGhia Re=1000 benchmarkの比較
+:align: center
+:width: 100%
+
+垂直中心線速度`u`の比較。丸印はGhia et al. (1982) のRe=1000 benchmarkを示す。
+```
+
+```{figure} ./images/cavity/validation/nonuniform-centerline-v-comparison.svg
+:alt: 3種類の格子による水平中心線速度vとGhia Re=1000 benchmarkの比較
+:align: center
+:width: 100%
+
+水平中心線速度`v`の比較。丸印はGhia et al. (1982) のRe=1000 benchmarkを示す。
+```
+
+```{figure} ./images/cavity/validation/nonuniform-streamfunction-comparison.svg
+:alt: 3種類の格子で計算したcavityのstreamfunction contour比較
+:align: center
+:width: 100%
+
+3種類の格子で得られたstreamfunction contour。主渦と下隅の渦構造を格子間で見比べられる。
+```
+
+moderate 64×64の合成RMSEは`0.005042`で、uniform 64×64の`0.01161`より約56.6%小さい。一方、uniform 128×128の`0.004293`より約17.4%大きく、同等とは言えない。この比較は格子配置による精度改善の一例であり、格子収束を証明するものではない。
+
+壁面へセルを強く集中させれば、いつも全体の精度が上がるわけでもない。次の表では64×64のmild、moderate、strongを比較する。strongでは`u`のRMSEがmoderateより少し小さいが、`v`と合成RMSEは大きくなっている。
+
+| 64×64格子 | Ghia RMSE（u / v / 合成） |
+|---|---:|
+| mild | 0.004998 / 0.006620 / 0.005866 |
+| moderate | 0.002207 / 0.006780 / 0.005042 |
+| strong | 0.001998 / 0.007638 / 0.005582 |
+
+今回の計算では、uniform 64×64の`deltaT`は`3.90625e-4 s`、moderate 64×64では`1.25e-4 s`だった。観測されたmax Coはそれぞれ`0.222`と`0.120`である。壁際の最小セルが小さくなるとCourant数の制約が厳しくなり、`deltaT`を小さくする必要が生じる場合がある。ただし、必要な時間刻みは流れ場や局所セル幅などにもよる。この結果だけから、不等間隔格子では必ず同じ倍率で計算step数が増えるとは言えない。
+
 ## 各時間刻みで方程式が解けても定常とは限らない
 
 次に、Re=1000、128×128メッシュの時間発展を調べる。まず、t*=80の定常場で選んだ**同じstreamfunction level**を、t*=5、20、80の各時刻に適用して比較する。
