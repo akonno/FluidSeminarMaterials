@@ -87,7 +87,7 @@ target/
 .ipynb_checkpoints
 
 # Local-only completed report example for an active exercise
-/JupyterLab/ユークリッドの互除法・レポートサンプル.ipynb
+/student/notebooks/ユークリッドの互除法・レポートサンプル.ipynb
 
 # IPython
 profile_default/
