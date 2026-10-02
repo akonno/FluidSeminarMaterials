@@ -17,7 +17,7 @@ At the current stage, the repository includes both **JupyterLab-based notebooks*
 The Jupyter Book version of these materials is available here:  
 👉 [https://akonno.github.io/FluidSeminarMaterials/](https://akonno.github.io/FluidSeminarMaterials/)
 
-A reproducible course environment is defined in [`environment.yml`](environment.yml).
+A reproducible Conda environment for students' Python/JupyterLab exercises is defined in [`environment-student.yml`](environment-student.yml). It is separate from the textbook build environment: GitHub Actions builds the Jupyter Book with Python 3.14 and Jupyter Book 2.1.6, while local Linux builds use the `textbook-build` environment.
 
 
 ---
