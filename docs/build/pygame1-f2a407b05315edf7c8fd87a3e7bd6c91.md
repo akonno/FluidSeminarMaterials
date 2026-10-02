@@ -27,7 +27,7 @@ conda activate EXERCISE     # EXERCISE環境に入る
 python -m pip install pygame-ce         # pygame-ceをインストール
 ```
 
-`environment.yml`から授業用環境を作成した場合は、pygame-ceもすでにインストールされているため、このpipコマンドは不要である。その場合も、`conda activate EXERCISE`を実行した状態で、次の動作確認やexamplesの実行を行える。
+履修者向けPython演習環境の`environment-student.yml`から環境を作成した場合は、pygame-ceもすでにインストールされているため、このpipコマンドは不要である。その場合も、`conda activate EXERCISE`を実行した状態で、次の動作確認やexamplesの実行を行える。
 
 **pip**（ピップ） は，Pythonの外部ライブラリを追加・管理するための仕組みである．
 conda と同じような役割をもつが，両者は参照しているリポジトリ（配布元）が異なる．
