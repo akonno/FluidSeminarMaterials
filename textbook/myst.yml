@@ -34,6 +34,7 @@ project:
         - file: cfd/bluecfd-install.md
         - file: cfd/cavity.md
         - file: cfd/cavity-settings.md
+        - file: cfd/cavity-validation.md
         - file: cfd/blockmesh-boundary.md
         - file: cfd/external-flow-2d.md
         - file: cfd/external-flow-3d.md
