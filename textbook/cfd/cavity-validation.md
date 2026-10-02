@@ -64,13 +64,11 @@ nu = 1.0e-4 m^2/s
 
 同じセル数でも、セルをどこに配置するかによって計算結果の精度は変わる。ここでは、同じRe=1000のlid-driven cavityについて、uniform 64×64、moderate graded 64×64、uniform 128×128の3つを比較する。
 
-```{figure} ./images/cavity/validation/nonuniform-mesh-comparison.svg
-:alt: uniform 64×64、moderate graded 64×64、uniform 128×128の格子配置比較
-:align: center
-:width: 100%
+[![uniform 64×64、moderate graded 64×64、uniform 128×128の格子配置比較](./images/cavity/validation/nonuniform-mesh-comparison.svg)](./images/cavity/validation/nonuniform-mesh-comparison.svg)
 
-同じcavityに配置した3種類の格子。中央のmoderate格子はuniform 64×64と同じ4096セルを壁面近くへ再配分している。右のuniform 128×128は16384セルである。
-```
+*同じcavityに配置した3種類の格子。中央のmoderate格子はuniform 64×64と同じ4096セルを壁面近くへ再配分している。右のuniform 128×128は16384セルである。*
+
+特にuniform 128×128は格子線が密なため、細部は図をクリックして拡大して確認してください。
 
 uniform 64×64では、x方向とy方向のセル幅はどちらも一定で、`Δ/L = 0.015625`である。moderate 64×64ではセル数を増やさず、壁面近くを細かく、中央部を粗くした。壁際の最小幅は`Δ/L = 0.007184`、中央付近の最大幅は`Δ/L = 0.028737`である。
 
