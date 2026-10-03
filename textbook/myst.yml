@@ -37,6 +37,7 @@ project:
         - file: cfd/cavity-validation.md
         - file: cfd/blockmesh-boundary.md
         - file: cfd/external-flow-2d.md
+        - file: cfd/domain-size.md
         - file: cfd/external-flow-3d.md
         - file: cfd/external-flow-3d-custom.md
 
