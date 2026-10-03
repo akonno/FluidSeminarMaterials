@@ -71,6 +71,9 @@
     <loc>http://localhost:3000/external-flow-2d</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/domain-size</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/external-flow-3d</loc>
   </url>
   <url>
