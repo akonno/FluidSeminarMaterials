@@ -10,22 +10,27 @@ Department of Mechanical Engineering, **Kogakuin University**.
 This repository contains course materials used in the *Fluid Engineering Seminar* at Kogakuin University.  
 The contents are written in **Japanese**, as they are intended for use in classes conducted in Japan.
 
-At the current stage, the repository includes both **JupyterLab-based notebooks** for Python programming exercises and **PyGame-CE–based lessons** for interactive graphics, animation, and creative expression.
+The online textbook is built from [`textbook/`](textbook/) and published with GitHub Pages. It covers three main areas:
+
+- **Python / JupyterLab programming**, including PyGame-CE lessons
+- **UNIX / Linux / WSL operation**, including UBX exercises
+- **CFD / OpenFOAM**, including simulations with blueCFD-Core and visualization with ParaView
 
 
 📘 **Online Textbook (GitHub Pages)**  
 The Jupyter Book version of these materials is available here:  
 👉 [https://akonno.github.io/FluidSeminarMaterials/](https://akonno.github.io/FluidSeminarMaterials/)
 
-Student-facing materials, including the Conda environment, Jupyter notebooks, sample data, and PyGame exercise files, are grouped in [`student/`](student/). The [`student/environment.yml`](student/environment.yml) file is for Python/JupyterLab exercises and is separate from the textbook build environment: GitHub Actions builds the Jupyter Book with Python 3.14 and Jupyter Book 2.1.6, while local Linux builds use the `textbook-build` environment. The `authoring/` directory contains maintainer tools and examples for preparing course materials.
+Student-facing materials, including the Conda environment, Jupyter notebooks, small exercise datasets, and PyGame files, are grouped in [`student/`](student/). The [`student/environment.yml`](student/environment.yml) file is for learner Python/JupyterLab exercises, not for building the textbook. GitHub Actions builds the Jupyter Book with Python 3.14 and Jupyter Book 2.1.6; local Linux builds use the separate `textbook-build` environment. Larger, versioned CFD case packages may be distributed separately, for example through a dedicated repository or GitHub Release assets.
+
+The [`authoring/`](authoring/) directory contains maintainer tools and examples for preparing course materials.
 
 
 ---
 
 ## Description
 
-> Teaching and learning materials for the Python programming part of the Fluid Engineering Seminar.
-> The seminar also includes CFD and UNIX/Linux training; this repository and its GitHub Pages site currently focus on the Python programming materials.
+> Japanese-language teaching materials for the Fluid Engineering Seminar, covering Python/JupyterLab programming, UNIX/Linux/WSL operation, and CFD/OpenFOAM.
 
 ---
 
