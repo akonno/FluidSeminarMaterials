@@ -1,15 +1,55 @@
 # cavityの計算条件を変更する
 
-この章では、cavity caseの設定ファイルを読み、粘性係数、Reynolds数、メッシュ、時間刻み、計算領域を変更する。原資料pp.14--23を、OpenFOAM 12のcase構造に合わせて整理している。
+この章では、cavity caseの設定ファイルを読み、粘性係数、Reynolds数、メッシュ、時間刻み、計算領域を変更する。設定を変えたとき、流れや計算結果がどう変化するかを確認しよう。
 
 ## 設定ファイルを編集する
 
-設定ファイルはテキストファイルなので、blueCFD-Coreに付属するエディタ、Windowsの任意のテキストエディタ、またはVS Codeなどで開ける。教材では特定のエディタを必須にしない。
+OpenFOAMの設定ファイルはテキストファイルであり、テキストエディタで編集できる。blueCFD-Core 2024-1に付属するNotepad2は手軽な選択肢だが、使用するエディタは限定しない。Windowsの「メモ帳」やVS Codeなど、ほかのテキストエディタを使ってもよい。
+
+### Notepad2で設定ファイルを開く
+
+配布ZIPを展開したディレクトリでblueCFD-Core terminalを開き、`cavity` caseへ移動してNotepad2を起動する。
 
 ```sh
 cd cavity
+notepad2
+```
+
+起動直後は空の編集画面が表示される。Notepad2のメニューから **File → Open** を選び、case内の`constant/physicalProperties`を開く。
+
+```{figure} ./images/cavity/notepad2-start.png
+:alt: 起動直後のNotepad2の空の編集画面
+:align: center
+
+Notepad2を起動した直後の画面。
+```
+
+開いたファイルでは、`nu`の行に動粘性係数が設定されている。たとえば初期値は`0.01`であり、Reynolds数に合わせてこの数値を変更し、保存する。
+
+```{figure} ./images/cavity/notepad2-physicalproperties.png
+:alt: Notepad2で開いたphysicalPropertiesファイルのnu設定行
+:align: center
+
+Notepad2で`constant/physicalProperties`を開いた画面。`nu`の数値を編集できる。
+```
+
+`notepad2`で起動すると、Notepad2を閉じるまでblueCFD-Core terminalは次のコマンドを受け付けない。エディタを開いたままterminalを使う場合は、末尾に`&`を付けて起動する。
+
+```sh
+notepad2 &
+```
+
+`&`はコマンドをバックグラウンドで実行する指定である。
+
+### Windows側から設定ファイルを開く
+
+Windowsのエディタで編集したい場合は、caseのディレクトリで次を実行すると、その場所をエクスプローラーで開ける。
+
+```sh
 explorer.exe .
 ```
+
+エクスプローラーから`constant/physicalProperties`などを選び、任意のテキストエディタで編集してよい。
 
 開く主なファイルは次のとおりである。
 
@@ -109,7 +149,7 @@ patchとblockの定義は、次章のチャネルとblockMeshの説明につな�
 
 ## Ghia benchmarkとの比較
 
-原資料では、Re=400、1000を必須、Re=3200、5000を任意とする比較課題を扱っている。Ghia et al. (1982) の結果をbenchmarkとして参照し、計算条件、メッシュ、時間発展の扱いをレポートに明記する。
+Ghia et al. (1982) の結果をbenchmarkとして参照し、計算条件、メッシュ、時間発展の扱いをレポートに明記する。
 
 ```{note}
 図は Ghia et al. (1982) の原図を転載したものではない。Linux上のOpenFOAM 14による計算速度場からstreamfunctionを再構成した自作図であり、Ghia et al.の研究はベンチマークとして参照している。
