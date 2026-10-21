@@ -1,6 +1,6 @@
 # blockMeshと境界条件
 
-この章では、流れ場の形状をblockMeshで定義する方法を学ぶ。原資料pp.24--31の、チャネル流れ、blockとpatch、角柱まわり流れ、渦度の可視化、課題をまとめている。
+この章では、流れ場の形状をblockMeshで定義する方法を学ぶ。チャネル流れを例にblockとpatch、境界条件、メッシュ生成、角柱まわり流れのケース構築を確認する。
 
 ## この章の目標
 
@@ -24,7 +24,9 @@
 
 ## チャネルcaseを実行する
 
-2026年版のchannel caseは、`OpenFOAM-exercises`のRelease Assetに含まれている。古い`channel_2024.tgz`を使わず、次のReleaseから取得する。
+`channel` caseは、前の[「cavityを実行して可視化する」](cavity.md)の章でダウンロードした`OpenFOAM-exercises-2026.1.zip`に含まれている。すでにダウンロード・展開している場合は、その中の`channel`を使えばよく、再ダウンロードは不要である。
+
+まだ入手していない場合は、次のReleaseから取得する。
 
 <a href="https://github.com/Kogakuin-FEL/OpenFOAM-exercises/releases/tag/v2026.1" target="_blank" rel="noopener">OpenFOAM-exercises v2026.1 Release</a>
 
@@ -32,7 +34,7 @@
 OpenFOAM-exercises-2026.1.zip
 ```
 
-Releaseページが404になる場合は、[cavity章の注意](cavity.md)を確認する。
+Releaseページが404になる場合は、[「cavityを実行して可視化する」の章にある注意事項](cavity.md)を確認する。
 
 展開後、blueCFD-Core terminalで実行する。
 
@@ -49,10 +51,8 @@ paraFoam
 :alt: チャネル流れの境界条件
 :align: center
 
-チャネル流れの境界条件を示す原資料の説明図。実際のcaseでは、配布された`0/`と設定ファイルを正として確認する。
+チャネル流れの境界条件の概念図。実際のcaseでは、配布された`0/`と設定ファイルを確認する。
 ```
-
-旧版資料では`tar xf channel_2024.tgz`と`icoFoam`を案内していたが、旧archiveは現行caseのsourceではない。2026年版ではRelease Assetの`channel`を使い、OpenFOAM 12の`foamRun` workflowを実行する。
 
 ## blockMeshDictの基本
 
@@ -100,9 +100,13 @@ frontAndBack
 
 点の並びは、使用するOpenFOAM版のblockMeshの規則に従う。patchの型と`0/U`、`0/p`の組み合わせが整合していることを確認する。
 
-## 角柱まわり流れの考え方
+## チャネル内流れから角柱まわり流れへ
 
-原資料では、8個のblockで角柱まわりの2次元流れ場を作り、後流の圧力、速度、渦度を調べている。
+ここまでは、チャネル内を流れる流体を解析した。次は、このチャネルの計算領域を変更し、流れの中に置かれた角柱のまわりを流体が通過する場合を解析してみよう。
+
+先ほど使用した`channel` caseをコピーし、計算領域を変更して角柱まわり流れの計算caseを作成しよう。角柱の周囲は、図に示すように8個のblockに分けて構成できる。`blockMeshDict`と境界条件は自分で設計する。
+
+以下に角柱まわり流れのblock分割と解析結果の例を示す。
 
 ```{figure} ./images/blockmesh/square-cylinder-blocks.png
 :alt: 角柱まわり流れのblock分割
@@ -132,7 +136,34 @@ frontAndBack
 角柱後流の速度絶対値を示す例。
 ```
 
-2026.1 Releaseには、検証済みのsquare-cylinder caseは含まれていない。ここではblockMesh、patch、後流、カルマン渦を考える例として説明する。配布caseとして実行できると誤解しないこと。
+### channel caseを複製して作業用caseを作る
+
+ZIPを展開したディレクトリで、元の`channel`を残したままコピーを作り、コピー先で作業する。
+
+```sh
+cp -r channel square-cylinder
+cd square-cylinder
+```
+
+角柱を含む流体領域では、角柱内部にセルを作らず、その周囲の流体領域を8個のblockに分ける。頂点番号、hexの接続、block間の面、セル分割数を整合させる。入口、出口、角柱表面、上下境界、前後面をpatchとして定義し、各patch名と`0/U`、`0/p`の境界条件を一致させる。
+
+主に見直すファイルは次のとおりである。
+
+- `system/blockMeshDict`：頂点、block、分割数、patch
+- `0/U`、`0/p`：各patchの速度・圧力境界条件
+- `constant/physicalProperties`：動粘性係数とReynolds数
+- `system/controlDict`：時間刻み、終了時刻、出力間隔
+- `constant/momentumTransport`：流れのモデル
+- 必要に応じて`system/fvSchemes`、`system/fvSolution`：離散化・solver設定
+
+### メッシュを作り、計算する
+
+1. `blockMeshDict`と境界条件を編集する。
+2. `blockMesh`を実行し、`checkMesh`でメッシュを確認する。
+3. `paraFoam`でメッシュとpatchを確認する。問題があればcaseを修正して`blockMesh`からやり直す。
+4. `foamRun`で計算する。
+5. 必要に応じて渦度を計算し、ParaViewで後流とカルマン渦を確認する。
+6. 計算条件、メッシュ、可視化結果を記録する。
 
 ## 渦度を後処理する
 
@@ -152,8 +183,6 @@ paraFoam
 `postProcess -func vorticity`で生成した渦度を表示した例。
 ```
 
-旧資料にある単独の`vorticity`コマンドは、OpenFOAM 5以前を対象としたlegacy情報である。2026年版の手順では`postProcess -func vorticity`を使う。
-
 ## 課題
 
 角柱まわり流れについて、次の内容をレポートにまとめる。
@@ -163,7 +192,7 @@ paraFoam
 3. 角柱まわり流れを解析する。カルマン渦が現れる条件を試みるが、観察できない場合も結果として記録する。
 4. 解析条件、メッシュ、可視化結果を適切にレポートへまとめる。
 
-2026.1 Releaseにはsquare-cylinder caseがないため、ケース配布と実行手順は別途用意されるまで保留である。提出方法と期限はKU-LMSで確認する。
+任意形状へ発展させる課題は[指定形状まわりの2次元外部流れ](external-flow-2d.md)を参照する。提出方法と期限はKU-LMSで確認する。
 
 ## ライセンス
 

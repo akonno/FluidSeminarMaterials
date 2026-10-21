@@ -1,6 +1,6 @@
 # 与えられた車両形状による3次元外部流れ
 
-原資料pp.35--39では、配布された車両形状を使って、3次元外部流れのメッシュ生成、計算、可視化を行う。2026年版では、case本体をKU-LMSのtgzではなく、OpenFOAM演習case repositoryのRelease Assetから配布する。
+配布された車両形状を使って、3次元外部流れのメッシュ生成、計算、可視化を行う。caseはOpenFOAM演習case repositoryのRelease Assetから取得する。
 
 ## Caseを入手する
 
@@ -50,9 +50,10 @@ CC0のConcept Car 038を用いた車両形状の例。
 ## Allrunを実行する
 
 ```sh
-./Allclean
 ./Allrun
 ```
+
+既存の計算結果を消して最初から実行する場合は、`./Allclean`を実行してから`./Allrun`を実行する。`Allclean`は、コピーした`constant/geometry/STLObject.stl`を削除しない。
 
 `Allrun`は、概ね次の処理を行う。
 

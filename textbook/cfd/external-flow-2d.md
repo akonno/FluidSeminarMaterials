@@ -1,10 +1,10 @@
 # 指定形状まわりの2次元外部流れ
 
-原資料pp.32--34では、方眼紙とblockMeshを使って自分で2次元形状を定義し、物体まわりの流れを解析する。ここでは、その課題の考え方と提出内容をまとめる。実行可能なcaseは、課題条件に合わせて学生が作成する。
+この課題では、自分で決めた2次元形状を方眼紙などで設計し、blockMeshで流体領域を定義して物体まわりの流れを解析する。実行可能なcaseは、課題条件に合わせて学生が作成する。
 
 ## 課題の位置づけ
 
-前章の角柱は、blockとpatchの定義を学ぶための単純な例だった。今回は、単純な直方体などを避け、自分で決めた2次元形状を流体領域の中に配置する。
+前章の[角柱まわり流れ](blockmesh-boundary.md)では、配布されたchannel caseを土台に8ブロックのメッシュと境界条件を設計する。ここではその考え方を発展させ、単純な直方体などを避け、自分で決めた2次元形状を流体領域の中に配置する。
 
 ## 方眼紙で形状を設計する
 
@@ -18,28 +18,30 @@
 
 blockMeshを実行したら、まずメッシュの形と境界patchをParaViewで確認する。その後に流れを計算し、圧力や速度場を可視化する。
 
-```{admonition} 課題例について
-過去の学生作品を参考例として使用していたが、公開教材では掲載しない。必要な提出内容は本文中の条件に従うこと。
-```
-
 ## 解析の実行
 
-学生が作成したcaseでは、まず`blockMeshDict`と境界条件を確認し、次の順に実行する。solverの設定は2026年版のOpenFOAM 12 / `foamRun` workflowに合わせる。
+学生が作成したcaseでは、まず`blockMeshDict`と境界条件を確認し、OpenFOAM 12の`foamRun` workflowで実行する。
 
 ```sh
 blockMesh
-foamRun
+checkMesh
 paraFoam
 ```
 
-`blockMesh`の終了後にメッシュとpatchを確認し、計算が終了してから圧力場、速度場、必要に応じて渦度を表示する。square-cylinderの配布caseはないため、この章のcaseは各自が設計する。
+`blockMesh`と`checkMesh`の後、`paraFoam`で計算前のメッシュとpatchを確認する。問題がなければ計算し、結果をParaViewで可視化する。
 
-```{figure} ./images/placeholders/student-example-placeholder.png
-:alt: 過去の学生作成例を掲載しないことを示すplaceholder
-:align: center
-
-元資料では学生作成のblock設計図と解析結果を参考例として示していたが、公開教材では掲載しない。図の代わりに、この章の手順と課題条件を用いる。
+```sh
+foamRun
 ```
+
+必要に応じて計算後に渦度を生成する。
+
+```sh
+postProcess -func vorticity
+paraFoam
+```
+
+角柱のケース構築は[前章の手順](blockmesh-boundary.md)を参考にする。
 
 ## 課題
 
@@ -52,8 +54,6 @@ paraFoam
 - meshとpatchの定義
 - Reynolds数などの解析条件
 - 圧力場、速度場、その他の観察結果
-
-学生が作成した図は、公開教材へ転載する前に本人の許諾と出典表示を確認する。ここでは個別の学生作成図を掲載しない。
 
 提出方法と期限はKU-LMSで確認する。
 
