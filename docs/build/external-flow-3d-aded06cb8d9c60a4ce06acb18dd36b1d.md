@@ -4,26 +4,28 @@
 
 ## Caseを入手する
 
-<a href="https://github.com/Kogakuin-FEL/OpenFOAM-exercises/releases/tag/v2026.1" target="_blank" rel="noopener">OpenFOAM-exercises v2026.1 Release</a>から、次のZIPをダウンロードして展開する。
+`vehicle` caseは、前の[「cavityを実行して可視化する」](cavity.md)の章でダウンロードした`OpenFOAM-exercises-2026.1.zip`に含まれている。すでにダウンロード・展開している場合は、その中の`vehicle`を使えばよく、再ダウンロードは不要である。
+
+まだ入手していない場合は、次のReleaseから取得する。
+
+<a href="https://github.com/Kogakuin-FEL/OpenFOAM-exercises/releases/tag/v2026.1" target="_blank" rel="noopener">OpenFOAM-exercises v2026.1 Release</a>
 
 ```text
 OpenFOAM-exercises-2026.1.zip
 ```
 
-Releaseページが404になる場合は、[cavity章の注意](cavity.md)を確認する。
+GitHubが自動生成する`Source code (zip)`は学生用case packageではない。Release Assetの`OpenFOAM-exercises-2026.1.zip`を使用する。Releaseページが404になる場合は、[「cavityを実行して可視化する」の章にある注意事項](cavity.md)を確認する。
 
-GitHubの`Source code (zip)`は学生用case packageではない。展開後、blueCFD-Core terminalから`vehicle`へ移動する。
+以下の操作は、ZIPを展開したディレクトリでblueCFD-Core terminalを開いて実行する。
 
 ## STLを準備する
 
-サンプルSTLは`model/`にあり、caseが読む固定名へコピーして使う。
+計算前に、`vehicle/model/`にあるSTLをcaseが読む`constant/geometry/STLObject.stl`へコピーする。
 
 ```sh
 cd vehicle
 cp model/concept_car_038-mod.stl constant/geometry/STLObject.stl
 ```
-
-`STLObject.stl`は、Gitで管理するサンプルをcase用の場所へ置く作業ファイルである。初期状態では意図的に`constant/geometry/`へコピーされていない。
 
 車両モデルの出典は、case repositoryの[`vehicle/model/README.md`](https://github.com/Kogakuin-FEL/OpenFOAM-exercises/blob/main/vehicle/model/README.md)に記録されている。
 
