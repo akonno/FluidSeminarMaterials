@@ -82,25 +82,7 @@ blocks
 - `edges`：直線以外の辺が必要な場合の定義。
 - `boundary`：外側の面をpatchへ分類する定義。
 
-これまで扱った`cavity`と`channel`では、計算領域全体を1個のblockで表していたため、`blocks`には`hex`の定義が1個だけあった。複雑な形状では計算領域を複数のblockに分け、`blocks`の中に必要な数の`hex`定義を並べることができる。1個の`hex`定義が1個のblockを表すが、1個の計算セルを表すわけではない。blockの内部は、指定した分割数に従って細分化される。
-
-角柱まわり流れでは、8個のblockを使う。次は構造を示すための省略例であり、`...`を含むため実行可能な`blockMeshDict`の構文ではない。頂点番号、分割数、gradingなどは自分で設定する。
-
-```foam
-blocks
-(
-    hex (...) (...) simpleGrading (...)
-    hex (...) (...) simpleGrading (...)
-    hex (...) (...) simpleGrading (...)
-    hex (...) (...) simpleGrading (...)
-    hex (...) (...) simpleGrading (...)
-    hex (...) (...) simpleGrading (...)
-    hex (...) (...) simpleGrading (...)
-    hex (...) (...) simpleGrading (...)
-);
-```
-
-隣り合うblockでは、共有面の頂点とセル分割が整合するように設計する。
+これまで扱った`cavity`と`channel`では、計算領域全体を1個のblockで表していた。`blockMeshDict`では複数のblockを組み合わせることもできる。その具体例を、後述する角柱まわり流れで見ていく。
 
 ## 2次元patch
 
@@ -122,11 +104,9 @@ frontAndBack
 
 ## チャネル内流れから角柱まわり流れへ
 
-ここまでは、チャネル内を流れる流体を解析した。次は、このチャネルの計算領域を変更し、流れの中に置かれた角柱のまわりを流体が通過する場合を解析してみよう。
+ここまでは、チャネル内を流れる流体を解析した。次は、先ほど使用した`channel` caseをもとに計算領域を変更し、流れの中に置かれた角柱のまわりを流体が通過する場合を解析してみよう。角柱内部は流体領域に含めず、その周囲の流体領域を8個のblockで構成する。
 
-先ほど使用した`channel` caseをコピーし、`blockMeshDict`の`blocks`に8個の`hex`定義を並べて角柱まわりの計算領域を作成しよう。頂点番号や分割数、境界条件は自分で設計する。角柱内部は流体領域に含めない。
-
-以下に角柱まわり流れのblock分割と解析結果の例を示す。
+以下に角柱まわり流れのblock分割例を示す。
 
 ```{figure} ./images/blockmesh/square-cylinder-blocks.png
 :alt: 角柱まわり流れのblock分割
@@ -134,6 +114,26 @@ frontAndBack
 
 角柱まわり流れのblock分割例。図中のblockは流体領域を表す。
 ```
+
+`cavity`や`channel`では`blocks`の中に`hex`の定義が1個だけだったが、複数のblockを使う場合は、blockごとに`hex`を定義して並べる。この角柱まわり流れでは8個のblockを使うため、`blocks`の中に8個の`hex`定義を書く。
+
+次の例は8個の定義の構造を示すための省略表記である。`...`を含むため、実行できる`blockMeshDict`ではない。頂点番号、分割数、gradingは自分で設定する。1個の`hex`は1個のblockを表し、1個の計算セルを意味するわけではない。各blockの内部は指定した分割数で細分化される。隣接するblockでは、共有面の頂点とセル分割が整合するように設計する。
+
+```foam
+blocks
+(
+    hex (...) (...) simpleGrading (...)
+    hex (...) (...) simpleGrading (...)
+    hex (...) (...) simpleGrading (...)
+    hex (...) (...) simpleGrading (...)
+    hex (...) (...) simpleGrading (...)
+    hex (...) (...) simpleGrading (...)
+    hex (...) (...) simpleGrading (...)
+    hex (...) (...) simpleGrading (...)
+);
+```
+
+続いて、解析格子と計算結果の例を示す。
 
 ```{figure} ./images/blockmesh/square-cylinder-mesh.png
 :alt: 角柱後流の解析格子
@@ -165,7 +165,7 @@ cp -r channel square-cylinder
 cd square-cylinder
 ```
 
-角柱を含む流体領域では、角柱内部にセルを作らず、その周囲の流体領域を8個のblockに分ける。頂点番号、hexの接続、block間の面、セル分割数を整合させる。入口、出口、角柱表面、上下境界、前後面をpatchとして定義し、各patch名と`0/U`、`0/p`の境界条件を一致させる。
+入口、出口、角柱表面、上下境界、前後面をpatchとして定義し、各patch名と`0/U`、`0/p`の境界条件を一致させる。
 
 主に見直すファイルは次のとおりである。
 
