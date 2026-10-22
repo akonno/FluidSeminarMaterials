@@ -77,8 +77,20 @@ blocks
 );
 ```
 
-- `vertices`：座標を持つ節点。
-- `blocks`：節点を順序づけて作る流体領域。
+`vertices`の各行には、記述した順に0から頂点番号が付く。`blocks`の`hex`では、この番号を使ってblockの8頂点を指定する。次の図は、上のコードの座標と頂点番号の対応を示している。
+
+```{figure} ./images/blockmesh/cavity-vertices.png
+:alt: cavityの直方体に付けた頂点番号と座標軸
+:align: center
+:width: 70%
+
+`vertices`の記述順に割り当てられる頂点番号と、直方体上の位置との対応。
+```
+
+この例の`hex (0 1 2 3 4 5 6 7)`では、頂点番号の順序によってblockの局所座標系とセル分割方向が決まる。`hex`の番号は任意の順に並べず、図と対応する順序で指定する。
+
+- `vertices`：座標を持つ頂点の一覧。番号は記述順に付く。
+- `blocks`：頂点番号を使って定義するblockと、その内部のセル分割。
 - `edges`：直線以外の辺が必要な場合の定義。
 - `boundary`：外側の面をpatchへ分類する定義。
 
@@ -86,7 +98,30 @@ blocks
 
 ## 2次元patch
 
-厚さ方向を1セルにした2次元caseでは、前後面を`empty`にする。入口・出口・壁のpatchには、それぞれの物理条件に合った型と場の境界条件を指定する。
+厚さ方向を1セルにした2次元caseでは、前後面を`empty`にする。境界面は、その面を構成する頂点番号を`boundary`の`faces`に指定してpatchへ分類する。キャビティでは、上面が`movingWall`、底面と左右側面が`fixedWalls`、厚さ方向の2面が`frontAndBack`に対応する。
+
+```{figure} ./images/blockmesh/cavity-boundary-patches.png
+:alt: cavityの直方体と境界面を指定する頂点番号
+:align: center
+:width: 70%
+
+キャビティの頂点番号。上部に分けて示した面が`movingWall`、底面と左右側面が`fixedWalls`、厚さ方向の前後面が`frontAndBack`に対応する。
+```
+
+例えば、上面の`movingWall`は次のように指定する。
+
+```foam
+movingWall
+{
+    type wall;
+    faces
+    (
+        (3 7 6 2)
+    );
+}
+```
+
+`boundary`の`faces`には、境界面を構成する頂点番号を指定する。少なくともOpenFOAM Foundation 12以降では、同じ面を構成する頂点番号であれば、その記述順序は問われない。
 
 ```foam
 frontAndBack
@@ -100,7 +135,7 @@ frontAndBack
 }
 ```
 
-点の並びは、使用するOpenFOAM版のblockMeshの規則に従う。patchの型と`0/U`、`0/p`の組み合わせが整合していることを確認する。
+`frontAndBack`は厚さ方向の前後面を表し、2次元caseでは`empty`にする。patchの型と`0/U`、`0/p`の組み合わせが整合していることを確認する。
 
 ## チャネル内流れから角柱まわり流れへ
 
